@@ -1,1 +1,3 @@
-﻿Index wird später noch gefüllt
+﻿Das ist die Starteite.
+
+Muss ich noch füllen...
