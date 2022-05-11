@@ -18,12 +18,11 @@ github_username: "FrankFK"
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
 #########################################################################################
-remote_theme: pages-themes/slate@v0.2.0
+theme: "minima"
 
 rss: rss
     
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
 
