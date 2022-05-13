@@ -1,4 +1,5 @@
 ---
+layout: default
 ---
 Das ist die About-Seite
 

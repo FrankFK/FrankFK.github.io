@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: IPC with polymorphic objects and System.Text.Json Serialization
-tags: C# Polymorphic-Objects Serialization
+tags: C#
 ---
 
 # Inter Process Communication with Anonymous Pipes, polymorphic objects and System.Text.Json Serialization (C#, .NET 6)
