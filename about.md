@@ -1,3 +1,5 @@
-﻿Das ist die About-Seite
+---
+---
+Das ist die About-Seite
 
 Muss ich noch füllen...

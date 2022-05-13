@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: IPC with polymorphic objects and System.Text.Json Serialization
 tags: C# Polymorphic-Objects Serialization
 ---

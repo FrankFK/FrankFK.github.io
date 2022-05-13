@@ -1,3 +1,3 @@
-﻿Das ist die Starteite.
+Das ist die Starteite.
 
 Muss ich noch füllen...
