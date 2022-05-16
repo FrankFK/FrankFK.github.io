@@ -2,14 +2,12 @@
 layout: posts
 title: IPC with polymorphic objects and System.Text.Json Serialization
 tags: .NET
+excerpt_separator: <!--more-->
 ---
 
-# Inter Process Communication with Anonymous Pipes, polymorphic objects and System.Text.Json Serialization (C#, .NET 6)
+The task: I have two processes. Process `A` creates graphical objects, process `B` displays these objects on the screen. To do this, the objects must be transferred from `A` to `B`. The tools for this are quickly found: The objects can be serialized to a string with `System.Text.Json` in process `A` and deserialized in process `B`. Anonymous pipes can be used to transfer the strings from `A` to `B`. The difficulties lie in the details...
 
-
-
-## The task
-I have two processes. Process `A` creates graphical objects, process `B` displays these objects on the screen. To do this, the objects must be transferred from `A` to `B`. The tools for this are quickly found: The objects can be serialized to a string with `System.Text.Json` in process `A` and deserialized in process `B`. Anonymous pipes can be used to transfer the strings from `A` to `B`. The difficulties lie in the details...
+<!--more-->
 
 ## Polymorphic serialization and deserialization
 The classes to be transferred are polymorphic. `System.Text.Json` doesn't handle that very well. In addition, the base class contains further subclasses, which are also polymorphic. That makes it a little bit more difficult. In simplified terms, there are the following classes: The `ScreenObject` class is the base class with basic properties that every object to be drawn has. Derived from this are two classes `ScreenLine` (a line) and `ScreenFigure` (e.g. a polygon). `ScreenFigure` contains a `ShapeBase` property. `ShapeBase` is a base class with two derived classes, `PolygonShape` and `ImageShape`.
