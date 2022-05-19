@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Über mich
 ---
 Das ist die About-Seite
 

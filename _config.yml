@@ -1,10 +1,15 @@
-title: "Woopec"
-author: "FrankFK"
-description: "Simple graphics with C#" # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+title: "Frank Kruse"
+author: "Frank Kruse"
+email: "woopec.graphics@gmail.com"
 
+description: "Learning programming with C# and Graphics" # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+
+# minima:
+#  social_links:
+#    github: FrankFK
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
-email: "woopec.graphics@gmail.com"
+
 #twitter_username: "twitteruser"
 github_username: "FrankFK"
 #linkedin_username: "linkedinuser"
@@ -14,6 +19,8 @@ github_username: "FrankFK"
 #pinterest_username: username
 #youtube_username: username
 #googleplus_username: +username
+
+show_excerpts: true
 
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
@@ -29,6 +36,15 @@ plugins:
 titles_from_headings:
   strip_title: true
   collections: true
+
+header_pages:
+  - blog.md
+  - woopec-docs-index.html
+  - about.md
+
+collections:
+  woopec_docs:
+    output: true
 
 defaults:
   - scope:

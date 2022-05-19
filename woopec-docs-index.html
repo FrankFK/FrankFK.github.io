@@ -1,0 +1,21 @@
+---
+layout: default
+title: Woopec Doc
+---
+
+<div class="home">
+    {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+    {%- endif -%}
+
+    <p>Hier kommt vielleicht noch etwas Inhalt hin...</p>
+
+    {% for woopec_doc in site.woopec_docs %}
+    <h2>
+        <a href="{{ woopec_doc.url }}">
+            {{ woopec_doc.title }}
+        </a>
+    </h2>
+    {% endfor %}
+
+</div>
