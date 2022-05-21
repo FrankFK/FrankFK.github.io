@@ -74,7 +74,7 @@ the first move is performed. In this example cynthia and wally will move at the 
 You only have to install Visual Studio (Community Edition, or Visual Studio Code) and the [Woopec.Wpf-Library](https://www.nuget.org/packages/Woopec.Wpf). 
 All of these are free to use. For your program you create a Visual Studio Project of type 
 "WPF Application", add the Woopec-library and add the WoopecCanvas to your MainWindow. 
-Then you can write your first turtle program. [Getting started](./GettingStarted.md) describes this in more detail.
+Then you can write your first turtle program. [Getting started](GettingStarted.html) describes this in more detail.
 
 
 Your program must have a main-method named `TurtleMain()`, this method is started automatically:
@@ -145,6 +145,8 @@ This example generates the following picture in just a few seconds:
 
 **And now: Write your own programs and have fun.**
 
+### Links
 
+* [Getting started](GettingStarted.html) describes the installation steps.
 
 

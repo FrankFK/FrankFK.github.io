@@ -1,8 +1,6 @@
 ---
 layout: page
-name: Getting started
-position: Developer
-title: Woopec - Getting Started with turtle graphics in C#
+title: Woopec - Getting Started with Turtle Graphics in C#
 date: 2022-05-01
 ---
 To be honest: Getting started with Visual Studio and C# may be a little bit more difficult than getting started with - for instance - python.
@@ -111,6 +109,8 @@ In the example above the "Woopec WPF Project" template was used. If you do not w
   ```
 
 * Add the method `public static void TurtleMain()` to one of your classes and put your turtle code into this method.
+
+
   
 
 

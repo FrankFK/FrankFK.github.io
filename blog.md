@@ -1,5 +1,12 @@
 ---
 layout: home
-title: Franks Blog
+title: Blog
+list_title: Latest Posts
 ---
-Braucht der Blog überhaupt eine zusätzlichen Inhalt?
+Sometimes I worry about software development or I look for solutions to C# problems.
+If I come up with anything useful, I'll post it here.
+
+## [Blog Archive](/archive.html)
+
+
+
