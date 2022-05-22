@@ -35,7 +35,7 @@ This is the result:
 
 This demo shows more features:
 
-![Animated Demo](AnimatedExample1.gif)
+![Animated Demo](WoopecAnimation.gif)
 
 You can find more information here
 * [Getting started](GettingStarted.html)
