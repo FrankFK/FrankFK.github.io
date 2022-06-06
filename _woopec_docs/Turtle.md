@@ -135,6 +135,8 @@ The IntelliSense-Feature of Visual Studio shows these comments when you move the
 | Method                                                  | Description                                                  |
 | ------------------------------------------------------- | ------------------------------------------------------------ |
 | TextInput(string title, string prompt) [Type is string] | Pop up a dialog window for input of a string. Returns the user-input |
+
+
 ## More Examples
 
 The library contains a few demo programs. All of these programs are in the namespace
