@@ -96,36 +96,45 @@ The IntelliSense-Feature of Visual Studio shows these comments when you move the
 
 ![IntelliSense](./IntelliSense.png)
 
-| Method                                           | Description                                           |
-|--------------------------------------------------|-------------------------------------------------------|
-| **Move, Draw and Position State:**
-| Forward(double distance)                         | Move forward                                          |
-| Backward(double distance)                        | Move backward                                         |
-| Left(double angle)                               | Rotate left                                           |
-| Right(double angle)                              | Rotate right                                          |
-| SetPosition(Vec2D position) GoTo(Vec2D position) | Change position.                                      |
-| Position [Type is Vec2D]                         | Get or change position                                |
-| SetHeading(double angle)                         | Change heading (rotate to this heading)               |
-| Heading [Type is double]                         | Get or change heading                                 |
-| Speed [Type is Speed]                            | Get or change speed                                   |
-| **Drawing state:**
-| PenUp()                                          | Pull the pen down, drawing when moving                                                       |
-| PenDown()                                        | Pull the pen up, no drawing when moving                                                       |
-| IsDown [Type is bool]                            | Get or change state of pen                            |
-| **Color control:**
-| PenColor [Type is Color]                         | Pencolor                                              |
-| FillColor [Type is Color]                        | Fillcolor                                             |
-| Color [Type is Color]                            | Change pencolor and fillcolor                         |
-| **Visibility and appearance:**
-| HideTurtle()                                     | Make the turtle invisible                             |
-| ShowTurtle()                                     | Make the turtle visible                               |
-| IsVisible (Type is bool)                         | True if turtle is shown, false if is hidden           |
-| Shape (Type is a Shape)                          | Get or change shape of the turtle                     |
-| **Filling:**
-| BeginFill()                                      | Start the filling                                     |
-| EndFill()                                        | Fill the shape drawn after the last call of BeginFill()|
-| Filling (Type is bool)                           | Return fillstate (true if filling, false else)        |
+### Turtle class
 
+| Method                                           | Description                                             |
+| ------------------------------------------------ | ------------------------------------------------------- |
+| **Move, Draw and Position State:**               |                                                         |
+| Forward(double distance)                         | Move forward                                            |
+| Backward(double distance)                        | Move backward                                           |
+| Left(double angle)                               | Rotate left                                             |
+| Right(double angle)                              | Rotate right                                            |
+| SetPosition(Vec2D position) GoTo(Vec2D position) | Change position.                                        |
+| Position [Type is Vec2D]                         | Get or change position                                  |
+| SetHeading(double angle)                         | Change heading (rotate to this heading)                 |
+| Heading [Type is double]                         | Get or change heading                                   |
+| Speed [Type is Speed]                            | Get or change speed                                     |
+| **Drawing state:**                               |                                                         |
+| PenUp()                                          | Pull the pen down, drawing when moving                  |
+| PenDown()                                        | Pull the pen up, no drawing when moving                 |
+| IsDown [Type is bool]                            | Get or change state of pen                              |
+| **Color control:**                               |                                                         |
+| PenColor [Type is Color]                         | Pencolor                                                |
+| FillColor [Type is Color]                        | Fillcolor                                               |
+| Color [Type is Color]                            | Change pencolor and fillcolor                           |
+| **Visibility and appearance:**                   |                                                         |
+| HideTurtle()                                     | Make the turtle invisible                               |
+| ShowTurtle()                                     | Make the turtle visible                                 |
+| IsVisible (Type is bool)                         | True if turtle is shown, false if is hidden             |
+| Shape (Type is a Shape)                          | Get or change shape of the turtle                       |
+| **Filling:**                                     |                                                         |
+| BeginFill()                                      | Start the filling                                       |
+| EndFill()                                        | Fill the shape drawn after the last call of BeginFill() |
+| Filling (Type is bool)                           | Return fillstate (true if filling, false else)          |
+| **Other**                                        |                                                         |
+| Screen (Type is Screen)                          | The screen on which this turtle is drawn                |
+
+### Screen class
+
+| Method                                                  | Description                                                  |
+| ------------------------------------------------------- | ------------------------------------------------------------ |
+| TextInput(string title, string prompt) [Type is string] | Pop up a dialog window for input of a string. Returns the user-input |
 ## More Examples
 
 The library contains a few demo programs. All of these programs are in the namespace
@@ -149,4 +158,6 @@ This example generates the following picture in just a few seconds:
 
 * [Getting started](GettingStarted.html) describes the installation steps.
 
+### A little test (for future use)
 
+![Code: Variables, for and while Loops](https://badgen.net/badge/Code/Variables,%20for%20and%20while%20Loops?labelColor=blue&color=grey) ![Practices: Variable-Debugging](https://badgen.net/badge/Practices/Variable-Debugging?labelColor=green&color=grey)  ![Principles: Coding Conventions, DRY](https://badgen.net/badge/Principles/Codinge%20Conventions,%20DRY-Principle?labelColor=yellow&color=grey)
