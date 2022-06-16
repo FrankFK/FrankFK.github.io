@@ -137,6 +137,7 @@ The IntelliSense-Feature of Visual Studio shows these comments when you move the
 | TextInput(string title, string prompt) [Type is string] | Pop up a dialog window for input of a string. Returns the user-input |
 | NumInput(string title, string prompt) [Type is int]     | Pop up a dialog window for input of an integer number. Returns the user-input |
 | DoubleInput(string title, string prompt) [Type is double] | Pop up a dialog window for input of a double number. Returns the user-input |
+| Bye()                                                   | Shut the window |
 
 
 ## More Examples
