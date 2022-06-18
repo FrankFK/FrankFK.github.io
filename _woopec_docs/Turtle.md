@@ -139,6 +139,16 @@ The IntelliSense-Feature of Visual Studio shows these comments when you move the
 | DoubleInput(string title, string prompt) [Type is double] | Pop up a dialog window for input of a double number. Returns the user-input |
 | Bye()                                                   | Shut the window |
 
+### Shapes  class
+
+| Method                                  | Description                                                  |
+| --------------------------------------- | ------------------------------------------------------------ |
+| Add(string name, `List<Vec2D>` polygon) | Add a polygon to the shapelist                               |
+| Add(string name, Shape shape)           | Add a compound shape to the sapelist. A compound shape contains several polygons |
+| Get(string name) [Type is Shape]        | Get the shape of the given name                              |
+| GetNames() [Type is `List<string>`]     | Get a list of all currently available turtle shape-names     |
+
+
 
 ## More Examples
 

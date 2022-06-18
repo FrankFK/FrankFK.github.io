@@ -6,7 +6,11 @@ date: 2022-04-30
 
 Programming is fun. Programming with graphics is even more fun. C# is a great programming language. For beginners there should be an easy start to graphic programming with C#.  Woopec tries to help - it's free.
 
-The first version contains turtle graphics. Here is a little code example: 
+This demo shows some of Woopec's features:
+
+![Woopec Animation Demo](WoopecAnimation.gif)
+
+To make programming easy for beginners, Woopec include turtle graphics. Here is a little code example: 
 ```c#
 public static void TurtleMain()
 {
@@ -33,9 +37,6 @@ This is the result:
 
 ![Turtle Fill Example](filldemo.jpg)
 
-This demo shows more features:
-
-![Animated Demo](WoopecAnimation.gif)
 
 You can find more information here
 * [Getting started](GettingStarted.html)

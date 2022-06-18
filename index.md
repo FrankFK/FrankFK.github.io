@@ -3,6 +3,8 @@ layout: page
 title: Hi, I'm Frank
 ---
 
+![Woopec Animation Demo](woopec_docs/WoopecAnimation.gif)
+
 Sometimes I worry about software development or I look for solutions to C# problems. 
 If I come up with anything useful, I'll post it in my **[Blog](/blog.html)**.
 
