@@ -10,7 +10,7 @@ This demo shows some of Woopec's features:
 
 ![Woopec Animation Demo](WoopecAnimation.gif)
 
-To make programming easy for beginners, Woopec include turtle graphics. Here is a little code example: 
+To make programming easy for beginners, Woopec includes turtle graphics. Here is a little code example: 
 ```c#
 public static void TurtleMain()
 {
