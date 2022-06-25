@@ -179,7 +179,7 @@ Badgen
 ![Code: Variables, for and while Loops](https://badgen.net/badge/Code/Variables,%20for%20and%20while%20Loops?labelColor=blue&color=grey) ![Practices: Variable-Debugging](https://badgen.net/badge/Practices/Variable-Debugging?labelColor=green&color=grey)  ![Principles: Coding Conventions, DRY](https://badgen.net/badge/Principles/Codinge%20Conventions,%20DRY-Principle?labelColor=yellow&color=grey)
 
 Shield io dynamic
-![Code: Variables, for and while Loops](https://img.shields.io/static/v1?label=Code&message=Variables,%20for%20and%20while%20Loops&color=blue) ![Practices: Variable-Debugging](https://img.shields.io/static/v1?label=Practices&message=Variable-Debugging&color=lightgrey) ![Principles: Coding Conventions, DRY-Principle](https://img.shields.io/static/v1?label=Principles&message=Codinge%20Conventions,%20DRY-Principle&color=yellow)
+![Code: Variables, for and while Loops](https://img.shields.io/static/v1?labelColor=blue&color=lightgrey&label=Code&message=Variables,%20for%20and%20while%20Loops) ![Practices: Variable-Debugging](https://img.shields.io/static/v1?labelColor=brightgreen&color=lightgrey&label=Practices&message=Variable-Debugging) ![Principles: Coding Conventions, DRY-Principle](https://img.shields.io/static/v1?labelColor=yellow&color=lightgrey&label=Principles&message=Codinge%20Conventions,%20DRY-Principle)
 
 
 forthebadge static
