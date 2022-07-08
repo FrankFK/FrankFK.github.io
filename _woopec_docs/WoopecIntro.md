@@ -2,15 +2,47 @@
 layout: page
 title: Woopec - Introduction
 date: 2022-04-30
+excerpt_separator: <!--more-->
 ---
 
-Programming is fun. Programming with graphics is even more fun. C# is a great programming language. For beginners there should be an easy start to graphic programming with C#.  Woopec tries to help - it's free.
+Programming is fun. Programming with graphics is even more fun. C# is a great programming language. For beginners there should be an easy start to graphic programming with C#.  Woopec helps with easy to learn Turtle Graphics.
 
-This demo shows some of Woopec's features:
+![Woopec C# Turtle Graphics Animation Demo](WoopecAnimation.gif)
 
-![Woopec Animation Demo](WoopecAnimation.gif)
+<!--more-->
 
-To make programming easy for beginners, Woopec includes turtle graphics. Here is a little code example: 
+This quote from the documentation of the [pyhton-Turtle-Graphics](https://docs.python.org/3/library/turtle.html#module-turtle) describes the advantages of turtle graphics:
+
+> Turtle graphics is a popular way for introducing programming to kids. It was part of the original Logo programming language developed by Wally Feurzeig, Seymour Papert and Cynthia Solomon in 1967.
+> 
+> Imagine a robotic turtle starting at (0, 0) in the x-y plane. [...] give it the command turtle.Forward(15), and it moves (on-screen!) 15 pixels in the direction it is facing, drawing a line as it moves. Give it the command turtle.Right(25), and it rotates in-place 25 degrees clockwise.
+>
+> Turtle can draw intricate shapes using programs that repeat simple moves. By combining together these and similar commands, intricate shapes and pictures can easily be drawn
+
+With Woopec you can program turtle graphics with C#. Here you can see a small sample program:
+
+```c#
+public static void TurtleMain()
+{
+    var turtle = Turtle.Seymour();
+
+    turtle.Right(45);
+    turtle.Forward(50);
+    turtle.Left(90);
+    turtle.Forward(100);
+    turtle.Right(45);
+    turtle.Forward(20);
+}
+```
+
+This program produces the following result:
+
+![Woopec C# Turtle graphics result of simple example](./FirstSample.png)
+
+Woopec is free, you only have to install Visual Studio and download the Woopec package. [Getting started](GettingStarted.html) describes this in more detail.
+
+The next program is a bit bigger: 
+
 ```c#
 public static void TurtleMain()
 {
@@ -35,10 +67,25 @@ public static void TurtleMain()
 
 This is the result:
 
-![Turtle Fill Example](filldemo.jpg)
+![Woopec C# turtle graphics Filling Example](filldemo.jpg)
 
+It is possible to use different shapes (a turtle, a bird, an arrow) or to create own shapes. You can create multiple objects that move simultaneously on the screen. There are commands to ask the user for input. And you also can use Woopec without animations to draw things quickly. The following example calls the C# version of the [pyhton ByteDesignDemo](https://github.com/python/cpython/blob/main/Lib/turtledemo/bytedesign.py) 
+
+```csharp
+    public static void TurtleMain()
+    {
+        Woopec.Examples.TurtleDemoByteDesign.Run();
+    }
+```
+
+This example generates the following picture in just a few seconds:
+
+![Woopec C# turtle graphics Byte Design Demo](./ByteDesignDemo.png)
+
+I'm still developing Woopec and there will be more.
 
 You can find more information here
+
 * [Getting started](GettingStarted.html)
 * Features of [turtle graphics](Turtle.html)
 

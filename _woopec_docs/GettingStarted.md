@@ -57,7 +57,7 @@ This program gets a turtle with name Seymour and moves this turtle a little bit.
 
 Now close the turtle window and try to change the program code such that it creates this graphic:
 
-![First graphic](./FirstSample.png)
+![Woopec C# turtle graphics first program](./FirstSample.png)
 
 Start the program again to see if the result is OK. Your first turtle program is finished! 
 
@@ -111,7 +111,6 @@ In the example above the "Woopec WPF Project" template was used. If you do not w
 * Add the method `public static void TurtleMain()` to one of your classes and put your turtle code into this method.
 
 
-  
 
 
 

@@ -9,17 +9,7 @@ date: 2022-05-02
 
 ## Introduction
 
-> Turtle graphics is a popular way for introducing programming to kids. It was part of the original Logo programming language developed by Wally Feurzeig, Seymour Papert and Cynthia Solomon in 1967.
-> 
-> Imagine a robotic turtle starting at (0, 0) in the x-y plane. [...] give it the command turtle.Forward(15), and it moves (on-screen!) 15 pixels in the direction it is facing, drawing a line as it moves. Give it the command turtle.Right(25), and it rotates in-place 25 degrees clockwise.
->
-> Turtle can draw intricate shapes using programs that repeat simple moves. By combining together these and similar commands, intricate shapes and pictures can easily be drawn
-
-This quote from the documentation of the [pyhton-Turtle-Graphics](https://docs.python.org/3/library/turtle.html#module-turtle) describes the advantages of turtle Graphics.
-
-Woopec-turtle is an attempt to make something similar available to C# developers as well. 
-
-The structure (methods and their names) was largely taken over from python. Some things have been adapted to C# (upper/lower case, properties). The range of functions does not come close to that of the great python library. But it's a first step.
+The structure of the Woopec Turtle commands was largely taken over from  [pyhton-Turtle-Graphics](https://docs.python.org/3/library/turtle.html#module-turtle). Some things have been adapted to C# (upper/lower case, properties). The range of functions does not come close to that of the great python library. But it's a first step.
 
 ## Examples
 
@@ -36,11 +26,10 @@ Let's start with a simple example:
 ```
 This code produces the following result:
 
-![Result of simple example](./FirstSample.png)
+![Woopec C# turtle graphics, esult of simple example](./FirstSample.png)
 
-The previous example used a predefined turtle `Turtle.Seymour()`. It is also possible to create several turtles.
-The following example creates two turtles, cynthia and wally. In this example at first cynthia will turn left and 
-move forward, and then wally will turn right and move forward:
+The previous example used a predefined turtle `Turtle.Seymour()`. It is also possible to create several turtles. The following example creates two turtles, cynthia and wally. In this example at first cynthia will turn left and move forward, and then wally will turn right and move forward:
+
 ```csharp
     var cynthia = new Turtle();
     cynthia.Speed = Speeds.Slowest;
@@ -53,8 +42,7 @@ move forward, and then wally will turn right and move forward:
     wally.Forward(200);
 ```
 
-But what can you do if you want him and her to move at the same time? In this case, *both* turtles must be created *before*
-the first move is performed. In this example cynthia and wally will move at the same time:
+But what can you do if you want him and her to move at the same time? In this case, *both* turtles must be created *before* the first move is performed. In this example cynthia and wally will move at the same time:
 ```csharp
     var cynthia = new Turtle();
     cynthia.Speed = Speeds.Slowest;
@@ -71,9 +59,8 @@ the first move is performed. In this example cynthia and wally will move at the 
 
 ## How to write your own program?
 
-You only have to install Visual Studio (Community Edition, or Visual Studio Code) and the [Woopec.Wpf-Library](https://www.nuget.org/packages/Woopec.Wpf). 
-All of these are free to use. For your program you create a Visual Studio Project of type 
-"WPF Application", add the Woopec-library and add the WoopecCanvas to your MainWindow. 
+You only have to install Visual Studio and download the Woopec package. [Getting started](GettingStarted.html) describes this in more detail.
+
 Then you can write your first turtle program. [Getting started](GettingStarted.html) describes this in more detail.
 
 
@@ -149,25 +136,6 @@ The IntelliSense-Feature of Visual Studio shows these comments when you move the
 | GetNames() [Type is `List<string>`]     | Get a list of all currently available turtle shape-names     |
 
 
-
-## More Examples
-
-The library contains a few demo programs. All of these programs are in the namespace
-`Woopec.Examples`. The following code calls the C# version of the [pyhton ByteDesignDemo](https://github.com/python/cpython/blob/main/Lib/turtledemo/bytedesign.py) 
-
-```csharp
-    public static void TurtleMain()
-    {
-        Woopec.Examples.TurtleDemoByteDesign.Run();
-    }
-```
-
-This example generates the following picture in just a few seconds:
-
-![Byte Design Demo](./ByteDesignDemo.png)
-
-
-**And now: Write your own programs and have fun.**
 
 ### Links
 
