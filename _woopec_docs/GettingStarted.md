@@ -2,12 +2,13 @@
 layout: page
 title: Woopec - Getting Started with Turtle Graphics in C#
 date: 2022-05-01
+last_modified_at: 2022-07-15 8:30:00 +0000
 ---
 To be honest: Getting started with Visual Studio and C# may be a little bit more difficult than getting started with - for instance - python.
 
 But: C# is a really great programming language, really big projects are implemented with C#. And once you've gained a foothold, you have a huge ecosystem at your disposal, for example for web development or game development with Unity.
 
-So give it a chance.
+So give it a chance (see also the [Intro Page](WoopecIntro.html) for an overview of Woopec's features).
 
 At first you have to prepare your computer for it:
 

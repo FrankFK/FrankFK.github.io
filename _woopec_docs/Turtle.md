@@ -1,9 +1,8 @@
 ---
 layout: page
-name: Turtle Class
-position: Developer
 title: Woopec - Turtle-Class
 date: 2022-05-02
+last_modified_at: 2022-07-17 8:30:00 +0000
 ---
 
 
@@ -41,21 +40,7 @@ The previous example used a predefined turtle `Turtle.Seymour()`. It is also pos
     wally.Right(90);
     wally.Forward(200);
 ```
-
-But what can you do if you want him and her to move at the same time? In this case, *both* turtles must be created *before* the first move is performed. In this example cynthia and wally will move at the same time:
-```csharp
-    var cynthia = new Turtle();
-    cynthia.Speed = Speeds.Slowest;
-
-    var wally = new Turtle();
-    wally.Speed = Speeds.Slowest;
-
-    cynthia.Left(90);
-    cynthia.Forward(200);
-
-    wally.Right(90);
-    wally.Forward(200);
-```
+More information on handling multiple Turtles can be found [here](MultipleTurtles.html).
 
 ## How to write your own program?
 
@@ -85,37 +70,38 @@ The IntelliSense-Feature of Visual Studio shows these comments when you move the
 
 ### Turtle class
 
-| Method                                           | Description                                             |
-| ------------------------------------------------ | ------------------------------------------------------- |
-| **Move, Draw and Position State:**               |                                                         |
-| Forward(double distance)                         | Move forward                                            |
-| Backward(double distance)                        | Move backward                                           |
-| Left(double angle)                               | Rotate left                                             |
-| Right(double angle)                              | Rotate right                                            |
-| SetPosition(Vec2D position) GoTo(Vec2D position) | Change position.                                        |
-| Position [Type is Vec2D]                         | Get or change position                                  |
-| SetHeading(double angle)                         | Change heading (rotate to this heading)                 |
-| Heading [Type is double]                         | Get or change heading                                   |
-| Speed [Type is Speed]                            | Get or change speed                                     |
-| **Drawing state:**                               |                                                         |
-| PenUp()                                          | Pull the pen down, drawing when moving                  |
-| PenDown()                                        | Pull the pen up, no drawing when moving                 |
-| IsDown [Type is bool]                            | Get or change state of pen                              |
-| **Color control:**                               |                                                         |
-| PenColor [Type is Color]                         | Pencolor                                                |
-| FillColor [Type is Color]                        | Fillcolor                                               |
-| Color [Type is Color]                            | Change pencolor and fillcolor                           |
-| **Visibility and appearance:**                   |                                                         |
-| HideTurtle()                                     | Make the turtle invisible                               |
-| ShowTurtle()                                     | Make the turtle visible                                 |
-| IsVisible (Type is bool)                         | True if turtle is shown, false if is hidden             |
-| Shape (Type is a Shape)                          | Get or change shape of the turtle                       |
-| **Filling:**                                     |                                                         |
-| BeginFill()                                      | Start the filling                                       |
-| EndFill()                                        | Fill the shape drawn after the last call of BeginFill() |
-| Filling (Type is bool)                           | Return fillstate (true if filling, false else)          |
-| **Other**                                        |                                                         |
-| Screen (Type is Screen)                          | The screen on which this turtle is drawn                |
+| Method                                           | Description                                                  |
+| ------------------------------------------------ | ------------------------------------------------------------ |
+| **Move, Draw and Position State:**               |                                                              |
+| Forward(double distance)                         | Move forward                                                 |
+| Backward(double distance)                        | Move backward                                                |
+| Left(double angle)                               | Rotate left                                                  |
+| Right(double angle)                              | Rotate right                                                 |
+| SetPosition(Vec2D position) GoTo(Vec2D position) | Change position.                                             |
+| Position [Type is Vec2D]                         | Get or change position                                       |
+| SetHeading(double angle)                         | Change heading (rotate to this heading)                      |
+| Heading [Type is double]                         | Get or change heading                                        |
+| Speed [Type is Speed]                            | Get or change speed                                          |
+| **Drawing state:**                               |                                                              |
+| PenUp()                                          | Pull the pen down, drawing when moving                       |
+| PenDown()                                        | Pull the pen up, no drawing when moving                      |
+| IsDown [Type is bool]                            | Get or change state of pen                                   |
+| **Color control:**                               |                                                              |
+| PenColor [Type is Color]                         | Pencolor                                                     |
+| FillColor [Type is Color]                        | Fillcolor                                                    |
+| Color [Type is Color]                            | Change pencolor and fillcolor                                |
+| **Visibility and appearance:**                   |                                                              |
+| HideTurtle()                                     | Make the turtle invisible                                    |
+| ShowTurtle()                                     | Make the turtle visible                                      |
+| IsVisible (Type is bool)                         | True if turtle is shown, false if is hidden                  |
+| Shape (Type is a Shape)                          | Get or change shape of the turtle                            |
+| **Filling:**                                     |                                                              |
+| BeginFill()                                      | Start the filling                                            |
+| EndFill()                                        | Fill the shape drawn after the last call of BeginFill()      |
+| Filling (Type is bool)                           | Return fillstate (true if filling, false else)               |
+| **Other**                                        |                                                              |
+| Screen (Type is Screen)                          | The screen on which this turtle is drawn                     |
+| WaitForCompletedMovementOf(Turtle otherTurtle)   | Wait with next movement for completed movement of the otherTurtle |
 
 ### Screen class
 
@@ -140,6 +126,7 @@ The IntelliSense-Feature of Visual Studio shows these comments when you move the
 ### Links
 
 * [Getting started](GettingStarted.html) describes the installation steps.
+* [Working with multiple t](MultipleTurtles.html) contains information on handling multiple turtles.
 
 ### A little test (for future use)
 

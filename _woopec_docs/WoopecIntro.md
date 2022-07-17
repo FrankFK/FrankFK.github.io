@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Woopec - Introduction
+title: Woopec - Introduction to C# Turtle Graphics
 date: 2022-04-30
+last_modified_at: 2022-07-17 8:30:00 +0000
 excerpt_separator: <!--more-->
 ---
 
@@ -69,7 +70,17 @@ This is the result:
 
 ![Woopec C# turtle graphics Filling Example](filldemo.jpg)
 
-It is possible to use different shapes (a turtle, a bird, an arrow) or to create own shapes. You can create multiple objects that move simultaneously on the screen. There are commands to ask the user for input. And you also can use Woopec without animations to draw things quickly. The following example calls the C# version of the [pyhton ByteDesignDemo](https://github.com/python/cpython/blob/main/Lib/turtledemo/bytedesign.py) 
+It is possible to use different shapes (a turtle, a bird, an arrow) or to create own shapes. 
+
+> I will add examples here
+
+You can create multiple objects that move simultaneously on the screen. You can also coordinate the movements of objects.
+
+> I will add examples hers
+
+There are commands to ask the user for input. 
+
+You also can use Woopec without animations to draw things quickly. The following example calls the C# version of the [pyhton ByteDesignDemo](https://github.com/python/cpython/blob/main/Lib/turtledemo/bytedesign.py) 
 
 ```csharp
     public static void TurtleMain()
