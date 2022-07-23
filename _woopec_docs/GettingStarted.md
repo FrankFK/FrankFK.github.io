@@ -2,7 +2,8 @@
 layout: page
 title: Woopec - Getting Started with Turtle Graphics in C#
 date: 2022-05-01
-last_modified_at: 2022-07-15 8:30:00 +0000
+last_modified_at: 2022-07-23 8:30:00 +0000
+typora-root-url: ..
 ---
 To be honest: Getting started with Visual Studio and C# may be a little bit more difficult than getting started with - for instance - python.
 
@@ -58,7 +59,7 @@ This program gets a turtle with name Seymour and moves this turtle a little bit.
 
 Now close the turtle window and try to change the program code such that it creates this graphic:
 
-![Woopec C# turtle graphics first program](./FirstSample.png)
+![Woopec C# turtle graphics first program](/assets/images/FirstSample.png)
 
 Start the program again to see if the result is OK. Your first turtle program is finished! 
 

@@ -2,7 +2,8 @@
 layout: page
 title: Woopec - Turtle-Class
 date: 2022-05-02
-last_modified_at: 2022-07-17 8:30:00 +0000
+last_modified_at: 2022-07-23 8:30:00 +0000
+typora-root-url: ..
 ---
 
 
@@ -25,7 +26,7 @@ Let's start with a simple example:
 ```
 This code produces the following result:
 
-![Woopec C# turtle graphics, esult of simple example](./FirstSample.png)
+![Woopec C# turtle graphics, result of simple example](/assets/images/FirstSample.png)
 
 The previous example used a predefined turtle `Turtle.Seymour()`. It is also possible to create several turtles. The following example creates two turtles, cynthia and wally. In this example at first cynthia will turn left and move forward, and then wally will turn right and move forward:
 
@@ -66,7 +67,7 @@ Because Woopec (currently) uses WPF, the code must run on a Windows Computer.
 The following table gives a short overview of all methods. The methods are described in more detail by code comments.
 The IntelliSense-Feature of Visual Studio shows these comments when you move the mouse over the name of the method:
 
-![IntelliSense](./IntelliSense.png)
+![IntelliSense](/assets/images/IntelliSense.png)
 
 ### Turtle class
 

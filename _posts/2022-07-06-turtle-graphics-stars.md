@@ -6,9 +6,10 @@ excerpt_separator: <!--more-->
 typora-root-url: ..
 ---
 
-![Woopc C# Turtle Graphics Star Animation](/assets/images/WoopecStarAnimation.gif)
+![Woopec: Drawing stars with C# turtle graphics](/assets/images/WoopecStarsDemo.png)
+<sup>([Link to Animation](/woopec_docs/WoopecAnimationExamples.html#starsdemo))</sup>
 
-Suppose you have a fixed number of vertices. How can you connect them to a regular polygon or a star? Here we need some math: prime factorization and GCD (Greatest Common Divisor). And with C# Turtle Graphics we can then calculate and draw that.
+Suppose you have a fixed number of vertices. How can you connect them to a regular polygon or a star? Here we need some math: prime factorization and GCD (Greatest Common Divisor). And with [Woopec](/woopec-docs-index.html) C# Turtle Graphics we can then calculate and draw that.
 
 <!--more-->
 
@@ -194,4 +195,6 @@ public static void DrawStar(int corners, int delta, double radius)
 ```
 
 So in the end, with a little bit of math, drawing a star is pretty easy. ;-)
+
+If you want to try more complicated objects, you can draw "stars" connecting the delta<sup>n</sup> corner to the delta<sup>n+1</sup> corner. Further information can be found on the website of [Simon Plouffe](http://plouffe.fr/Simon%20Plouffe.htm) ("The shape of b^n mod p") and in a [github-project](https://github.com/MathiasLengler/TimesTableWebGL) by Mathias Lengler. (I came across these objects through an [article](https://www.spektrum.de/magazin/erstaunliche-muster-das-einmaleins-im-kreis/2021599) by Christoph Pöppe.)
 

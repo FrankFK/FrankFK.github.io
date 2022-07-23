@@ -2,7 +2,8 @@
 layout: page
 title: Woopec - Working with multiple turtles (parallelism)
 date: 2022-05-04
-last_modified_at: 2022-07-17 8:30:00 +0000
+last_modified_at: 2022-07-23 8:30:00 +0000
+typora-root-url: ..
 ---
 
 It is possible to work with multiple turtles in a program. The following example creates two turtles, cynthia and wally. Both turtles will move at the same time.  
@@ -45,7 +46,7 @@ The rule for this is:
 
 The example below works with both options:
 
-![Woopec C# Turtle Graphics Animation Demo](WoopecAnimation.gif)
+![Woopec C# Turtle Graphics Animation Demo](/assets/images/WoopecAnimation.gif)
 
 * At first the green turtle (`seymour1`) is created and draws a "W". Then this turtle is hidden.
 * Then five bird-shaped turtles are created: woopec1, woopec2, ..., woopec5
