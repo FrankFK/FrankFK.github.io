@@ -10,7 +10,8 @@ typora-root-url: ..
 *Programming is fun. Programming with graphics is even more fun. C# is a great programming language. For beginners there should be an easy start to graphic programming with C#.  Woopec helps with easy to learn Turtle Graphics.*
 
 ![Woopec: Drawing the word Woopec with C# Turtle Graphics](/assets/images/WoopecDrawWoopec.png)
-<sup>([Link to Animation](/woopec_docs/WoopecAnimationExamples.html#drawwoopec))</sup>
+
+([Link to Animation](/woopec_docs/WoopecAnimationExamples.html#drawwoopec))
 
 <!--more-->
 
@@ -93,7 +94,7 @@ In the example below, a spirograph curve was first drawn using C# turtle command
 
 ![Woopec C# turtle graphics with transparent spirograph curves](/assets/images/WoopecSpiroDemo2.png)
 
-<sup>([Link to Animation](/woopec_docs/WoopecAnimationExamples.html#spirodemo2))</sup>
+([Link to Animation](/woopec_docs/WoopecAnimationExamples.html#spirodemo2))
 
 You can create multiple objects that move simultaneously on the screen. You can also coordinate the movements of objects. The example at the top of this page was created this way. You can find the animated version of this example [here](/woopec_docs/WoopecAnimationExamples.html#drawwoopec).
 

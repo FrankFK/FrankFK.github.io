@@ -1,0 +1,13 @@
+Artikel											Status				Plan für bzw. ist in google index
+------------------------------------------------------------------------------
+spirograph.md									fertig				24.07.2022
+MultipleTurtles.md								publiziert			< 05.08.		    
+Color, Speed, Vec2D, usw
+Pen
+Figure
+
+Hexa4 01 Einleitung								Entwurf
+Hexa4 02 Erstes Programm						Entwurf
+Hexa4 03 Basic Turtle Programs					Entwurf
+Hexa4 04 Variables Loop Dry						Entwurf
+Hexa4 05 Input and Conditions					Entwurf

@@ -7,7 +7,7 @@ typora-root-url: ..
 ---
 
 ![Woopec: Drawing stars with C# turtle graphics](/assets/images/WoopecStarsDemo.png)
-<sup>([Link to Animation](/woopec_docs/WoopecAnimationExamples.html#starsdemo))</sup>
+([Link to Animation](/woopec_docs/WoopecAnimationExamples.html#starsdemo))
 
 Suppose you have a fixed number of vertices. How can you connect them to a regular polygon or a star? Here we need some math: prime factorization and GCD (Greatest Common Divisor). And with [Woopec](/woopec-docs-index.html) C# Turtle Graphics we can then calculate and draw that.
 

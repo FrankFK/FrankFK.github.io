@@ -6,7 +6,7 @@ excerpt_separator: <!--more-->
 typora-root-url: ..
 ---
 ![Woopec: Drawing Spirograph Hypotrochoids with C# turtle](/assets/images/WoopecSpiroDemo1.png)
-<sup>([Link to Animation](/woopec_docs/WoopecAnimationExamples.html#spirodemo1))</sup>
+([Link to Animation](/woopec_docs/WoopecAnimationExamples.html#spirodemo1))
 
 A while back I owned a [Spirograph Set][SpirographWikipedia] that could be used to draw figures like the example above. Mathematicians also call such curves [Hypotrochoids][HypoWikipedia]. In [last post][StarsPost] we drew polygons and stars with turtle graphics, now we draw spirograph curves. We use some more advanced [Woopec](/woopec-docs-index.html) features (transparent filling, individual shapes and synchronized turtles).
 
@@ -123,7 +123,7 @@ Next, let's extend the program to simulate Spirograph behavior:
 
 <img src="/assets/images/WoopecSpiroWithWheels.png" alt="Woopec: drawing a spirograph curve with C# turtle graphics" style="zoom:67%;" />
 
-<sup>([Link to Animation](/woopec_docs/WoopecAnimationExamples.html#spirowithwheels))</sup>
+([Link to Animation](/woopec_docs/WoopecAnimationExamples.html#spirowithwheels))
 
 For this simulation we first need the large circle. Instead of a perfect circle, let's just draw a polygon with many corners (we'll use the procedure from the previous post for this)
 
@@ -225,7 +225,7 @@ Finally, an example that uses Spirograph curves to paint a nicer picture. The co
 
 ![Woopec C# turtle graphics with transparent spirograph curves](/assets/images/WoopecSpiroDemo2.png)
 
-<sup>([Link to Animation](/woopec_docs/WoopecAnimationExamples.html#spirodemo2))</sup>
+([Link to Animation](/woopec_docs/WoopecAnimationExamples.html#spirodemo2))
 
 
 
