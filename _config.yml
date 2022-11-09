@@ -10,6 +10,13 @@ description: "Enjoy learning to code with C# and Woopec-Graphics" # This will sh
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
 
+minima:
+  social_links:
+    mastodon:
+      - username: FrankKruse
+        instance: fosstodon.org
+    github: FrankFK
+
 #twitter_username: "twitteruser"
 github_username: "FrankFK"
 #linkedin_username: "linkedinuser"
