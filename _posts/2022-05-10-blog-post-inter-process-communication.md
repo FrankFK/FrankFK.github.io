@@ -10,8 +10,15 @@ The task: I have two processes. Process `A` creates graphical objects, process `
 <!--more-->
 
 ## Polymorphic serialization and deserialization
+*Update in November 2022: This article describes the solution with .NET 6. In .NET 7 it works much easier. See the new [post]({% post_url 2022-11-15-polymorpic-serialization-net7 %}) for this.*
+
 The classes to be transferred are polymorphic. `System.Text.Json` doesn't handle that very well. In addition, the base class contains further subclasses, which are also polymorphic. That makes it a little bit more difficult. In simplified terms, there are the following classes: The `ScreenObject` class is the base class with basic properties that every object to be drawn has. Derived from this are two classes `ScreenLine` (a line) and `ScreenFigure` (e.g. a polygon). `ScreenFigure` contains a `ShapeBase` property. `ShapeBase` is a base class with two derived classes, `PolygonShape` and `ImageShape`.
+
 ```csharp
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using Woopec.Core; // class Vec2D comes from here
+
 public class ScreenObject
 {
     public int ID { get; set; }
@@ -37,7 +44,7 @@ public abstract class ShapeBase
 
 public class PolygonShape : ShapeBase
 {
-    public List Polygon { get; set; }
+    public List<Vec2D> Polygon { get; set; }
 }
 
 public class ImageShape : ShapeBase
@@ -281,7 +288,6 @@ Overall, the transfer of the objects is implemented with relatively little code.
 
 In this example, the objects had to be transferred between processes. In case the objects should be passed between threads, `System.Threading.Channels` shoud be used (see [[5][5]]). The objects can thus be transferred directly without de/serialization.
 
-## Links
 
 [1]: https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-converters-how-to "How to write custom converters for JSON serialization - Microsoft Docs"
 [2]: https://stackoverflow.com/questions/58074304/is-polymorphic-deserialization-possible-in-system-text-json "c# - Is polymorphic deserialization possible in System.Text.Json?  - Stack Overflow"
