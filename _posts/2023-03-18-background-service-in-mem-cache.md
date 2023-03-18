@@ -23,7 +23,7 @@ Below I explain the example implementation from the outside in. First I explain 
 
 ## Create .NET Core Minimal API 
 
-In this example, I used .NET 6. First, using a tutorial on Microsoft Learn ([Tutorial: Create a minimal API with ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-7.0&tabs=visual-studio)), I created a REST service that displays "Hello World" and launched it once so that Visual Studio creates a certificate for it. Then I created the minimal APIs for the REST services I want. The tips from [Minimal APIs quick reference | Microsoft Learn](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0) were very helpful here.
+In this example, I used .NET 6. First, using a tutorial on Microsoft Learn ([Tutorial: Create a minimal API with ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-7.0&tabs=visual-studio)), I created a REST service that displays "Hello World" and launched it once so that Visual Studio creates a certificate for it. Then I created the minimal APIs for the REST services I want. The tips from [Minimal APIs quick reference](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0) were very helpful here.
 
 In the end `Program.cs` looks like this:
 
