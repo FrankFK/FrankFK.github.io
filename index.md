@@ -14,7 +14,7 @@ In my opinion, C# is a great programming language. But for novice programmers, g
 
 
 If there's anything new on it, I'll document it  in **[Woopec Docs](/woopec-docs-index.html)** or I post about it in my blog.
-![SmallImage](https://woopec.net//assets/images/FrankWoopecNet.png)
+
 
 
 

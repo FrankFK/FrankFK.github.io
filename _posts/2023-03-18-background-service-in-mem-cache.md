@@ -337,5 +337,3 @@ More details of this example can be found on [GitHub](https://github.com/FrankFK
 
 Currently, I still don't like the fact that my example has no automatic tests. That might be my next project...
 
-![SmallImage](https://woopec.net//assets/images/PostInMemCache.png)
-
