@@ -2,18 +2,20 @@
 layout: page
 title: Woopec - Introduction to C# Turtle Graphics
 date: 2022-04-30
-last_modified_at: 2022-07-23 8:30:00 +0000
+last_modified_at: 2023-03-28 8:30:00 +0000
 excerpt_separator: <!--more-->
 typora-root-url: ..
 ---
 
-*Programming is fun. Programming with graphics is even more fun. C# is a great programming language. For beginners there should be an easy start to graphic programming with C#.  Woopec helps with easy to learn Turtle Graphics.*
+In my opinion, C# is a great programming language. But for novice programmers, getting started is not that easy. It's very easy to write console programs, but this gets boring quickly. Programs that allow you to draw something on screen are much more fun. In python and many other languages, beginners can use [turtle graphics](https://docs.python.org/3/library/turtle.html). For C# there isn't that much yet. My current free time project is therefore the [Woopec library](https://www.nuget.org/packages/Woopec.wpf). This is a C# library that makes it easy (hopefully) for novice software developers to get started with C# and (turtle) graphics.
+
+<!--more-->
 
 ![Woopec: Drawing the word Woopec with C# Turtle Graphics](/assets/images/WoopecDrawWoopec.png)
 
 ([Link to Animation](/woopec_docs/WoopecAnimationExamples.html#drawwoopec))
 
-<!--more-->
+### How to start?
 
 Where do you start if you want to learn programming?
 
@@ -37,6 +39,8 @@ This quote from the documentation of the [pyhton-Turtle-Graphics](https://docs.p
 > Imagine a robotic turtle starting at (0, 0) in the x-y plane. [...] give it the command turtle.Forward(15), and it moves (on-screen!) 15 pixels in the direction it is facing, drawing a line as it moves. Give it the command turtle.Right(25), and it rotates in-place 25 degrees clockwise.
 >
 > Turtle can draw intricate shapes using programs that repeat simple moves. By combining together these and similar commands, intricate shapes and pictures can easily be drawn
+
+### Woopec library, first turtle steps
 
 With Woopec you can program turtle graphics with C#. Here you can see a small sample program:
 
@@ -90,7 +94,9 @@ This is the result:
 
 You can also draw more complicated things. 
 
-In the example below, a spirograph curve was first drawn using C# turtle commands. Then many turtles were created that have the shape of this spirograph curve. And finally, these were drawn on the screen with different rainbow colors. 
+### Woopec library, beyound turtles
+
+Woopec can do more than just Turtle commands. In the example below, a spirograph curve was first drawn using Woopec commands. Then many objects were created that have the shape of this spirograph curve. And finally, these were drawn on the screen with different rainbow colors. 
 
 ![Woopec C# turtle graphics with transparent spirograph curves](/assets/images/WoopecSpiroDemo2.png)
 
@@ -115,10 +121,14 @@ This example generates the following picture in just a few seconds:
 
 I'm still developing Woopec and there will be more.
 
+*Give it a try and have fun.*
+
+### Links
+
 You can find more information here
 
 * [Getting started](GettingStarted.html)
 * Features of [turtle graphics](Turtle.html)
+* Documentation of [Woopec](/woopec-docs-index.html)
 * My [blog](/blog.html) posts about turtle graphics
 
-**Give it a try and have fun.**

@@ -55,9 +55,18 @@ collections:
     output: true
 
 defaults:
-  - scope:
+  - 
+    scope:
       path: ""
       type: post
     values:
       tags: Other
+  - 
+    scope:
+      path: ""
+    values:
+      image:
+        path: /assets/images/LogoWithTextForLinkPreview.png
+        height: 192
+        width: 192
 
