@@ -35,6 +35,9 @@ show_excerpts: true
 theme: "minima"
 
 rss: rss
+
+# 02.04.2023: Diese url wird benoetigt, damit der jekyll-sitemap Generator eine sitemap.xml mit absoluten URLs generiert. Google moechte das so haben.
+url: "https://frank.woopec.net"
     
 plugins:
   - jekyll-feed
@@ -67,6 +70,6 @@ defaults:
     values:
       image:
         path: /assets/images/LogoWithTextForLinkPreview.png
-        height: 192
-        width: 192
+        height: 405
+        width: 858
 
