@@ -36,7 +36,7 @@ If the anchor position is free (case a), the token remains on the anchor positio
 
 The winner is the player who first has four of her tokens in a horizontal or diagonal line. In this example, blue has won on the next move:
 
-![A game board with red and blue hexagons. The movement of the hexagons is indicated with arrows. After the movement is completed, four blue hexagons will be in a diagonal row.](/assets/images/hexafour/GameIdeaBlueWillWin.png)
+<img src="/assets/images/hexafour/GameIdeaBlueWillWin.png" alt="A game board with red and blue hexagons. The movement of the hexagons is indicated with arrows. After the movement is completed, four blue hexagons will be in a diagonal row." style="zoom:70%;" />
 
 The sequence of the next move of blue is marked with blue arrows. The new token thrown in will move the blue token below it. This token will move down one position diagonally and then form a row of four with three other tokens. Thus blue has won.
 
