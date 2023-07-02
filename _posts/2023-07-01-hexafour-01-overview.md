@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Learn to fly with C#
-tags: .NET
+tags: LearnToCode C# HexaFour
 excerpt_separator: <!--more-->
 typora-root-url: ..
 ---
@@ -12,83 +12,86 @@ Is it easy to develop software? Sure: I can quickly learn to write a few small c
 
 <!--more-->
 
-### Software entwickeln ist genau so leicht wir Flugzeuge bauen
+### Developing software is just as easy as building airplanes
 
-Programmieren ist super einfach. Als erstes besorge ich mir eine Programmiersprache, beispielsweise python oder C#. Dann sehe ich mir ein paar Videos an und schon kann ich erste Programme schreiben. Das geht nach wenigen Minuten oder Stunden. Oder ist Programmieren doch nicht ganz so einfach? An Projekten bei Microsoft sind zum Beispiel manchmal mehrere 1.000 Entwickler beteiligt (siehe ["Welcome to the Engineering@Microsoft Blog"](https://devblogs.microsoft.com/engineering-at-microsoft/welcome-to-the-engineering-at-microsoft-blog/)). Und in der Regel haben diese Entwickler eine jahrelange Ausbildung hinter sich.
+Programming is super easy. First, I get a programming language, for example python or C#. Then I have a look at some videos and I am ready to write my first programs. It takes just a few minutes or hours. Or is programming not quite so easy after all? At Microsoft, for example, sometimes several 1,000 developers are involved in a project (see  ["Welcome to the Engineering@Microsoft Blog"](https://devblogs.microsoft.com/engineering-at-microsoft/welcome-to-the-engineering-at-microsoft-blog/)). And usually these developers have years of training behind them.
 
-Angenommen ich möchte lernen, wie ich etwas bauen kann, das fliegt. Dann ist das auch erst mal super einfach. Ich nehme mir ein Blatt Papier, sehe mir ein  paar Videos an, und nach wenigen Minuten habe ich einen Papierflieger gebaut, der fliegt. Aber das ist nur der allererste Schritt. Denn es gibt natürlich viel komplexere Flugzeuge, für deren Bau man sehr viel mehr wissen muss: Segelflugzeuge, Propeller-Flugzeuge, Jets, Passagier-Flugzeuge, ...
+Suppose I want to learn how to build something that flies. Then it's also super simple at first. I take a piece of paper, watch a few videos, and after a few minutes I've built a paper airplane that flies. But that's only the very first step. Because, of course, there are much more complex aircraft: gliders, propeller planes, jets, passenger planes. And if you want to design such aircraft, you have to know much, much more.
 
-Wenn man bei der Entwicklung eines echten Flugzeug mitmachen will, benötigt man sehr viel mehr Wissen als für den Bau des Papierfliegers. Aber wie mache ich weiter, wenn ich schon ein paar gute Papierflieger gebaut habe und mehr lernen möchte? Ich kann ja nicht als nächstes versuchen, eine zweisitzige Propellermaschine zu bauen. Dieser Schritt wäre viel zu groß. Eine gute Möglichkeit ist: Ich baue ein ferngesteuerte Modellflugzeug. Dabei kann ich viel lernen, was auch für größere Flugzeuge relevant ist. Und wenn ich etwas falsch mache, kommt niemand zu schaden - außer mein Portemonnaie, weil ich mein Flugzeug reparieren muss.
+So if you want to participate in the development of a real airplane, you need a lot more knowledge than for building a paper airplane. But how do you go on if you've already built a few good paper airplanes and want to learn more? You can't try to build a two-seat propeller plane next. That step would be much too big. A good option is: You build a remote controlled model airplane. Thereby you can learn a lot, which is also relevant for bigger airplanes. And if you do something wrong, nobody gets hurt - except your wallet, because you have to repair your plane.
 
-Bei Software Entwicklung ist es ähnlich. Es ist leicht, ein paar Konsolen-Programme zu schreiben und dabei erste Dinge zu lernen. Aber dann ist der nächste Schritt nicht einfach. Es ist sehr schwer als nächstes eine App oder Game schreiben. Man muss dann so viele Dinge gleichzeitig lernen, dass man einfach nicht richtig klarkommt.  Man braucht etwas, das schwieriger ist als ein Konsolen-Programm aber leichter als eine echtes, vollwertiges Spiel. Mein Vorschlag: In der folgenden Artikelserie erkläre ich, wie man ein kleines grafisches Computer-Spiel programmiert. Das Spiel ist etwas komplizierter und ich erkläre dabei Schritt für Schritt die Programmiersprache C# und einige weitere Dinge, die bei der Software Entwicklung wichtig sind.
+It's similar with software development. It's easy to write a few console programs and learn some first things. But then the next step is not easy. It's very hard to write an app or game next. You then have to learn so many things at the same time that you just can't get a handle on it.  You need something that is harder than a console program but easier than a real, full-fledged game. 
+
+My suggestion: In the following series of articles I explain how to program a small graphical computer game. The game is a bit more complicated and I explain step by step the programming language C# and some other things that are important in software development. I'll try this approach in the following articles of this blog: I'll explain how to program a small graphical computer game. This will not be an app to publish yet, that would be too difficult to start. But the game is already a bit complex, so this way I can explain step by step C# and some other tools and concepts that are important in software development.
+
+So I'm doing something similar here for software development as an RC aircraft for airplane design
 
 ![image-20230628204937752](/assets/images/hexafour/AircraftSoftwareDev.png)
 
-### Spielidee
+### Game idea
 
-Erst mal habe ich nur eine grobe Idee für das Spiel, das ich programmieren möchte: Zwei Personen sollen es spielen können. Die Spieler können abwechselnd sechs-eckige Steine von oben in ein Spielbrett einwerfen. Ein Spielstein fällt solange herunter, bis er auf Lagerposition trifft. Er gibt zwei Möglichkeiten:
+First of all, I only have a rough idea for the game I want to program: Two people should be able to play it. Players can take turns dropping hexagonal tiles from the top into a game board. A tile drops down until it hits an anchor position. There are two possibilities:
 
 ![image-20230701191857281](/assets/images/hexafour/GameIdeaAnchors.png)
 
-Wenn die Ankerposition frei ist (Fall a), bleibt der Spielstein auf der Ankerposition stehen. Wenn die Ankerposition von einem anderen Spielstein belegt ist (Fall b), bewegt sich der andere Spielstein weiter und der von oben kommende Spielstein nimmt die Ankerposition ein.
+If the anchor position is free (case a), the token remains on the anchor position. If the anchor position is occupied by another token (case b), the other token moves on and the token coming from above takes the anchor position.
 
-Gewonnen hat der Spieler, der zuerst vier seiner Steine in einer horizontalen oder schrägen Linie hat. In diesem Beispiel hat blau im nächsten Zug gewonnen:
+The winner is the player who first has four of his tokens in a horizontal or diagonal line. In this example, blue has won on the next move:
 
 ![image-20230701193340443](/assets/images/hexafour/GameIdeaBlueWillWin.png)
 
-Der Ablauf des nächsten  Zugs von blau ist mit blauen Pfeilen markiert. Der neu eingeworfene Spielstein wird den darunter liegenden blauen Spielstein verschieben. Dieser Spielstein wird sie eine Position weiter schräg nach unten bewegen und dann mit drei anderen Spielsteinen eine Viererreihe bilden. Damit hat blau gewonnen.
+The sequence of the next move of blue is marked with blue arrows. The new token thrown in will move the blue token below it. This token will move down one position diagonally and then form a row of four with three other tokens. Thus blue has won.
 
-Einen Namen für das Spiel habe ich auch schon: "HexaFour". "Hexa", weil die Spielsteine  Hexagons sind und "Four", weil man vier in einer Reihe benötigt, um zu gewinnen.
+I already have a name for the game: **HexaFour**. "Hexa" because the tiles are hexagons and "Four" because you need four in a row to win.
 
-Außer dem Namen und der groben Spielidee sind noch viele Dinge unklar. Es lohnt sich aber nicht, zunächst für alles und jedes ein Konzept zu machen und erst dann mit dem Programmieren anzufangen. Man kommt viel besser voran (und hat mehr Spaß), wenn man die ersten Dinge schnell umsetzt, das dann ausprobiert und von da aus weiterüberlegt, wie es am besten weitergeht. In echten Software-Projekten wird das oft genauso gemacht, man nennt das Agile Softwareentwicklung.
+Besides the name and the rough idea of the game, many things are still unclear. But it is not worth to make a concept for everything and only then to start programming. You can make much better progress (and have more fun) if you implement the first things quickly, then try them out and think about how best to proceed from there. In real software projects, this is often done in the same way; it's called agile software development.
 
-### Werkzeuge
+### Tools
 
-Ich verwende hier die  **Programmiersprache C#**. C# ist für Einsteiger vielleicht ein kleines bisschen schwieriger als beispielsweise python. Wenn die Programme größer werden, ist man meiner Ansicht nach aber mit C# optimal unterwegs. Es gibt viele kommerzielle Programme, die mit C# entwickelt werden.
+I use the **programming language C#** here. C# is perhaps a little bit more difficult for beginners than python, for example. However, when the programs get bigger, I think C# is an optimal way to go. There are many commercial programs that are developed with C#.
 
-Für echte Spiele benötigt man eigentlich eine **Gaming-Engine** - wir könnten beispielsweise Unity benutzen. Als Anfänger muss man dann aber sehr viele Dinge gleichzeitig lernen: Die Programmiersprache C#, Werkzeuge für diese Programmiersprache, die Gaming-Engine, Werkzeuge für die Gaming Engine, usw.. Das ist sehr viel für den Anfang.  Daher starte ich hier ohne Gaming-Engine und nutze stattdessen die **Grafik-Bibliothek Woopec** . Ich bin da nicht ganz unparteiisch, weil ich [Woopec](https://frank.woopec.net/woopec_docs/WoopecIntro.html) selbst entwickelt habe :-)
+For real games, you actually need a **gaming engine** - we could use Unity, for example. But then, as a beginner, you have to learn a lot of things at the same time: the C# programming language, tools for that programming language, the gaming engine, tools for the gaming engine, and so on. That's a lot for the beginning.  Therefore I start here without a gaming engine and use the **graphics library Woopec** instead. I'm not completely impartial there, because I developed [Woopec](https://frank.woopec.net/woopec_docs/WoopecIntro.html) myself :-)
 
-Das Spiel in diesem Kurs wird nicht so cool aussehen wie ein Unity-Spiel, aber dafür kannst du hier mit ganz wenig Voraussetzungen anfangen. Du lernst, wie man C# ein Spiel mit grafischer Benutzeroberfläche programmiert und kannst dann für das nächste Spiel mit Unity weitermachen. Als Programmiersprache wird in Unity auch C# benutzt, Du lernst also nichts umsonst.
+The game in this course won't look as cool as a Unity game, but for that you can get started here with very little prerequisites. You'll first learn how to develop software with C# and then you can move on to Unity for the next game. C# is also used as the programming language in Unity, so you'll learn a lot here that you'll also need later in Unity.
 
-Für Software-Entwicklung muss man sich nicht nur mit einer Programmiersprache und Tools auskennen. Wenn ein Programm größer wird, werden noch andere Dinge wichtig. Die erste Version eines Programms ist schnell zusammengebaut. Man nagelt sinngemäß ein paar Bretter zusammen und schon hat man ein Haus mit einem Dach, in dem man trocken sitzen kann. Aber dann braucht das Haus mehr Räume und zusätzliche Stockwerke. Dann soll das Haus zu einer kleinen Stadt ausgebaut werden. Man braucht mehr Häuser, dann Straßen, dann größere Straßen, ein Krankenhaus, ein Theater, einen Flugplatz, ... Irgendwann ist ein Punkt erreicht, wo das sehr kompliziert werden kann. Ab einer gewissen Größe verliert man die Übersicht wenn das Ganze nicht gut organisiert und strukturiert ist. Darum werde ich hier bei der Entwicklung unseres Programms auch Schritt für Schritt immer stärker darauf achten, dass das Programm gut organisiert und strukturiert ist. Im seinem Buch "Clean Code. A Handbook of Agile Software Craftsmanship" nennt Robert C. Martin das **Clean Code**. 
+For software development, you need to know more than just a programming language and tools. When a program gets bigger, other things become more important. The first version of a program is quickly assembled. You nail a few boards together and you have a house with a roof where you can sit dry. But then the house needs more rooms and additional floors. Then the house is to be expanded into a small city. You need more houses, then streets, then bigger streets, a hospital, a theater, an airport, ... At some point you reach a point where this can get very complicated. At a certain size you lose the overview if the whole thing is not well organized and structured. That's why, as we develop our program here, I'm also going to pay more and more attention to making sure that the program is well organized and structured. In his book "Clean Code. A Handbook of Agile Software Craftsmanship" Robert C. Martin calls this **clean code**:
 
 > [...] writing clean code ist a lot like painting a picture [...] a programmer who writes clean code is an artist who can take a blank screen throug a series of transformations until it is an elegantly coded system.
 
-Mal sehen, wie gut uns das hier gelingen wird.
+Let's see how well we will succeed in writing clean code here.
 
-### Überblick über die folgenden Artikel
+There is one point I must make at the end: While I will explain many things here, the following blog posts are **most definitely not a complete introduction** to C#, programming practices, or clean code.  Many others have already done that much better than I ever can do. I only explain a few necessary or interesting things here and give you links to more detailed information. Based on this, you can search for the websites, videos or books that best fit your needs.
 
-In den folgenden Artikeln werde ich beschreiben, wie man mit C# und Woopec-Grafik ein etwas kompliziertes Spiel programmieren kann. Dabei werde ich auch auf Werkzeuge, Programmier-Praktiken und Clean-Code-Prinzipien eingehen. Die folgenden Artikel sind aber ganz bestimmt **keine vollständige Einführung** in C#, Programmierpraktiken oder Clean Code. An einigen Stellen wird es Links auf nähere Informationen geben. An vielen Stellen hilft es aber auch, im Internet nach weiteren Informationen zu suchen.
+### Overview of the posts in this series
 
-Hier geht es nur darum anhand eines größeren Beispiels kennenzulernen, wie Software-Entwicklung funktioniert und worauf man dabei achten muss. Ich werde versuchen, ganz klein anzufangen und dann schrittweise immer neue Dinge hinzuzunehmen, so dass am Ende ein fertiges, größeres Programm entsteht. 
+The following list contains the posts of this series published so far.
 
-Die folgende Liste enthält die bisher erschienen Artikel dieser Serie:
-
-**Artikelliste**:
+**Chronological overview**:
 
 * 01 - 
 * 02 - 
 
-Wenn du nach bestimmten Themen suchst, helfen dir diese Listen:
+If you are looking for specific topics, these lists can help you:
 
 **C#**:
 
-* Methode, Parameter, Statement: 02
+* Method, parameter, statement: 02
 
 **Visual Studio**:
 
-* Installation, Debugger starten, Debugger beenden: 02
+* Installation, debugger start, debugger stop: 02
 
-**Woopec-Grafik-Bibliothek**:
+**Woopec graphics library**:
 
-* Woopec Projekt erzeugen, erste Turtle Kommandos: 02
+* Create a new Woopec project: 02
+* First turtle commands: 02
 
 **Clean Code**:
 
-* xxx
+* Meaning: 01
 
-**Hexa Four Spiel**
+**HexaFour game**
 
-* Spielidee: 01
+* Game idea: 01
 * 
 

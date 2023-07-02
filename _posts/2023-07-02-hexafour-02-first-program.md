@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: The first C# program with graphics
-tags: .NET
+tags: LearnToCode C# HexaFour
 excerpt_separator: <!--more-->
 typora-root-url: ..
 ---
@@ -75,10 +75,10 @@ Zum Beenden des Programm rufst du im Visual Studio Menü den Punkt Debug - Stop 
 
 Der wichtigste Teil des Programm sind diese vier Zeilen
 ```csharp
-        seymour.Left(45);
-        seymour.Forward(100);
-        seymour.Right(45);
-        seymour.Forward(50);
+seymour.Left(45);
+seymour.Forward(100);
+seymour.Right(45);
+seymour.Forward(50);
 ```
 
 `seymour` ist eine Grafik-Turtle, die mit diesen vier Zeilen auf dem Bildschirm bewegt wird.  `Left`,  `Right` und `Forward` sind sogenannte **Methoden**. Mit diesen kann man die Turtle links oder rechts herum drehen und nach vorne laufen lassen. Die Zahlen in Klammern sind sogenannte **Parameter**. Diese geben an, wieweit sich die Turtle drehen oder wieweit sie gehen soll. Ein einzelner Schritt, beispielsweise `seymour.Left(45)` wird **Statement** genannt. Wichtig ist, dass man am Ende eines Statements das Semikolon `;` nicht vergisst. Dies wird von C# benötigt, um zu erkennen, wo das Statement zu Ende ist. 
