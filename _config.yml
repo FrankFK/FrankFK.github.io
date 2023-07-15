@@ -71,5 +71,5 @@ defaults:
       image:
         path: /assets/images/LogoWithTextForLinkPreview.png
         height: 405
-        width: 858
+        width: 650
 

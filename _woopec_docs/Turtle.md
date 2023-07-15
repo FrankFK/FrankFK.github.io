@@ -128,11 +128,3 @@ The IntelliSense-Feature of Visual Studio shows these comments when you move the
 
 * [Getting started](GettingStarted.html) describes the installation steps.
 * [Working with multiple turtles](MultipleTurtles.html) contains information on handling multiple turtles.
-
-### A little test (for future use)
-
-Badgen
-![Code: Variables, for and while Loops](https://badgen.net/badge/Code/Variables,%20for%20and%20while%20Loops?labelColor=blue&color=grey) ![Practices: Variable-Debugging](https://badgen.net/badge/Practices/Variable-Debugging?labelColor=green&color=grey)  ![Principles: Coding Conventions, DRY](https://badgen.net/badge/Principles/Codinge%20Conventions,%20DRY-Principle?labelColor=yellow&color=grey)
-
-Shield io dynamic
-![Code: Variables, for and while Loops](https://img.shields.io/static/v1?labelColor=blue&color=lightgrey&label=Code&message=Variables,%20for%20and%20while%20Loops) ![Practices: Variable-Debugging](https://img.shields.io/static/v1?labelColor=brightgreen&color=lightgrey&label=Practices&message=Variable-Debugging) ![Principles: Coding Conventions, DRY-Principle](https://img.shields.io/static/v1?labelColor=yellow&color=lightgrey&label=Principles&message=Codinge%20Conventions,%20DRY-Principle)

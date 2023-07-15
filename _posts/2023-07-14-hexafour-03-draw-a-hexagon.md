@@ -55,7 +55,11 @@ public static void TurtleMain()
     seymour.Color = Colors.Red;
 ```
 
-The statement `seymour.Color = Colors.Red;` changes the color of the turtle to red and all the lines that this turtle draws also become red. 
+The statement `seymour.Color = Colors.Red;` changes the color of the turtle to red and all the lines that this turtle draws also become red. The Woopec library contains many such predefined colors. But you can also define your own colors using so-called RGB values. Transparent colors are also possible. And if you prefer to specify colors using the so-called HSV color model, that is also possible. In the following example, the outer circle shows all "rainbow-colors" and the square in the middle shows different variants of the color red:
+
+![Woopec colors. An outer circle shows all "rainbow-colors". A square inside of the circle shows variants of the color red with different values for saturation and color value.](/assets/images/WoopecHSVColorSample.png)
+
+For more information on using colors, see the [Woopec documentation][woopec-doc-helper-classes].
 
 ### Visual Studio IntelliSense helps us understand the available commands
 
@@ -127,7 +131,7 @@ In this program we used a few other of the Turtle commands discussed. This is th
 
 ![A blue hexagon with an orange turtle](/assets/images/hexafour/TurtleWithFilledHexagon.png)
 
-Further documentation on Turtle's methods and properties can be found in the [Woopec documentation][Woopec Docs].
+Further documentation on Turtle's methods and properties can be found in the [Woopec turtle class documentation][Woopec-doc-turtle-class].
 
 ### C# class properties
 
@@ -138,8 +142,8 @@ Maybe you haven't noticed, but in the code examples above we used not only metho
 
 * The Turtle class has more methods: *`ShowTurtle, HideTurtle, PenUp, PenDown, BeginFill, EndFill`*.
 * A C# class can also have *properties*. With the '=' character you can change the value of a property.
-* The Turtle properties *`Color`*  and *`Speed`* can be used to change the color and speed of the turtle.
-* For information about Turtle methods and properties see the [Woopec Documentation][Woopec Docs] or use Visual Studio *IntelliSense*.
+* The Turtle properties *`Color`*  and *`Speed`* can be used to change the color and speed of the turtle. See the [Woopec helper classes documentation][Woopec-doc-helper-classes] for more information.
+* For information about Turtle methods and properties see the [Woopec turtle class documentation][Woopec-doc-turtle-class] or use Visual Studio *IntelliSense*.
 
 ### How to go on
 
@@ -149,5 +153,6 @@ In the next post I will explain how to run the program step by step in the debug
 
 
 
-[Woopec Docs]: https://frank.woopec.net/woopec_docs/Turtle.html
+[Woopec-doc-turtle-class]: https://frank.woopec.net/woopec_docs/Turtle.html
 
+[Woopec-doc-helper-classes]: https://frank.woopec.net/woopec_docs/HelperClasses.html
