@@ -66,29 +66,41 @@ The following list contains the posts of this series published so far.
 
 *Chronological overview*:
 
-* [Learn to fly with C#]({% post_url 2023-07-01-hexafour-01-overview %})
-* [The first C# program with graphics]({% post_url 2023-07-02-hexafour-02-first-program %})
+* [Learn to fly with C#][hexafour-01]
+* [The first C# program with graphics][hexafour-02]
+* [Draw a hexagon with C#][hexafour-03]
 
 If you are looking for specific topics, these lists can help you:
 
 *C#*:
 
-* Method, parameter, statement:  [The first C# program with graphics]({% post_url 2023-07-02-hexafour-02-first-program %})
+* [Statement][hexafour-02]
+* Methods: [Using a method and setting parameters][hexafour-02]
+* Properties: [Using a property][hexafour-03]
 
 *Visual Studio*:
 
-* Installation, intellisense, debugger start, debugger stop:  [The first C# program with graphics]({% post_url 2023-07-02-hexafour-02-first-program %})
+* [Installation, debugger start, debugger stop][hexafour-02]
+* [IntelliSense][hexafour-03]
 
 *Woopec graphics library*:
 
-* Create a new Woopec project: [The first C# program with graphics]({% post_url 2023-07-02-hexafour-02-first-program %})
-* First turtle commands: [The first C# program with graphics]({% post_url 2023-07-02-hexafour-02-first-program %})
+* [Create a new Visual Studio project with Woopec graphics][hexafour-02]
+* Turtle methods: [Left, Right, Forward][hexafour-02],  [ShowTurtle, HideTurtle, PenUp, PenDown, BeginFill, EndFill][hexafour-03]
+* Turtle properties: [Color, Speed][hexafour-03]
 
 *Clean Code*:
 
-* Meaning: [Learn to fly with C#]({% post_url 2023-07-01-hexafour-01-overview %})
+* [Meaning][hexafour-01]
 
 *HexaFour game*:
 
-* Game idea: [Learn to fly with C#]({% post_url 2023-07-01-hexafour-01-overview %})
+* [Game idea][hexafour-01]
 
+
+
+[hexafour-01]: {% post_url 2023-07-01-hexafour-01-overview %}
+
+[hexafour-02]: {% post_url 2023-07-02-hexafour-02-first-program %}
+
+[hexafour-03]: {% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}

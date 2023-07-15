@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: The first C# program with graphics
+title: How to easily write your first C# program with graphics
 tags: LearnToCode C# HexaFour
 excerpt_separator: <!--more-->
 typora-root-url: ..
@@ -92,11 +92,9 @@ The very first line of the program (`using Woopec.Core;`) ensures that we can us
 
 We can ignore the other parts of the program for now. They are necessary for the program to work, but we can understand them later.
 
-### Visual Studio editor and intellisense
-
-We use **Visual Studio** here. Visual Studio is an IDE ([Integrated development environment](https://en.wikipedia.org/wiki/Integrated_development_environment)). In such an IDE many useful tools are integrated. The first tool is the *editor*. This editor is currently showing us the contents of the `Program.cs` file. One of its many useful features is **intellisense**. For example, if you move the mouse to the method `Left`, a small description of the method and a small example will be displayed.
-
 ### Compile and run the program with Visual Studio
+
+We use **Visual Studio** here. Visual Studio is an IDE ([Integrated development environment](https://en.wikipedia.org/wiki/Integrated_development_environment)). In such an IDE many useful tools are integrated. The first tool is the *editor*. This editor is currently showing us the contents of the `Program.cs` file. 
 
 When we select the `Debug - Start Debugging` menu item or press the **F5** key in Visual Studio, several things happen:
 
@@ -123,7 +121,7 @@ On the one hand a snaked red line in `Program.cs` shows where something is wrong
 
 ### How to go on
 
-That's enough for now. In the next post I will explain more Woopec commands and how to run the program step by step in the debugger.
+That's enough for now. In the [next posts]({% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}) I will explain more Woopec commands and how to run the program step by step in the debugger.
 
 Maybe you already want to change the program so that it draws a hexagon?
 
