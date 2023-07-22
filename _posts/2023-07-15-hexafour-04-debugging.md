@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: H4.04 Why is this simple C# Program not working? Fixing Compiler Errors and using the Visual Studio Debugger
+title: Why is this simple C# Program not working? Fixing Compiler Errors and using the Visual Studio Debugger (h4-04)
 tags: LearnToCode C# HexaFour
 excerpt_separator: <!--more-->
 typora-root-url: ..
@@ -63,7 +63,7 @@ For one thing, you can put the cursor behind the last bracket. Then Visual Studi
 
 On the other hand, you can also make the cursor **jump to the corresponding opening parenthesis**. For this you use the keyboard shortcut **Ctrl+]**.
 
-### When the faulty spot is difficult to find.
+### When the faulty spot is difficult to find
 
 If your program is missing an *opening* parenthesis, the C# compiler has more trouble giving you a good error message. Because the opening bracket is missing, the compiler does not understand the code behind it correctly and displays many error messages:
 
@@ -91,71 +91,81 @@ Four different Quick Actions are suggested here. The first one is exactly what i
 
 These were a few tips for fixing compiler errors. Before I give a few tips on debugging, I would also like to briefly mention the Visual Studio Keyboard Shortcuts. I have already mentioned the shortcut *Ctrl+]* above, with which you can jump back and forth between corresponding brackets. This is just the tip of the iceberg. Visual Studio's text editor has over 100 shortcuts. You can find the complete list [here](https://learn.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2022#bkmk_text-editor-context-specific-shortcuts).
 
-### Hier weiter
+### Watch the program at work: The debugger
 
-Zum Debuggen gibt es viele gute Artikel. Google zeigt mir als bestes Suchergebnis beispielsweise diesen an: [First look at the debugger - Visual Studio (Windows) | Microsoft Learn](https://learn.microsoft.com/en-us/visualstudio/debugger/debugger-feature-tour?view=vs-2022)  
+Your program no longer has compiler errors, but when you run it, it doesn't do the right thing. Then the best thing to do is to use the Visual Studio debugger to find out what is wrong. There are many good tutorials about the Visual Studio debugger. However, most of the time it is assumed that you have already written some more C# code. But I find that the debugger is super helpful right from the start. That's why I show a few basics here. For this I take this example from the beginning of the last [post][hexafour-03]:
 
-.NET Core 101 [.NET: Grundlegendes Debuggen [4 von 8\] | Microsoft Learn](https://learn.microsoft.com/de-de/shows/net-core-101/net-basic-debugging) ist gut, setzt aber schon viel zu viel voraus und geht schon viel zu weit.
+```csharp
+public static void WoopecMain()
+{
+    var seymour = Turtle.Seymour();
+    
+    seymour.Left(60);
+    seymour.Forward(100);
+    // ...
+    seymour.Left(60);
+    seymour.Forward(100);
+}  
+```
 
-[Debugging | C# 101 [15 of 19\] - YouTube](https://www.youtube.com/watch?v=pm_pv0Eb7Fw) ist mehr für Einsteiger. Das, was über den Debugger erzählt wird, ist für Anfänger passend. Man versteht den  Code als Anfänger aber nicht, weil er schon relativ viel Konzepte enthält. Ich fange hier viel früher mit dem Debugger an.
+All necessary commands can be found in the Debug menu of Visual Studio:
 
-Es ist nicht sonderlich sinnvoll, hier den besten Artikel zum Debuggen schreiben zu wollen. Eher: Versuchen es einfacher zu machen für Leute, denen der Artikel von MS zu schwierig ist? 
+![Screenshot showing where you can find the debug commands in the Visual Studio menu](/_posts/VisualStudioStartDebugging.png)
 
-Eher in die Richtung gehen:  Diese Debugger Befehle musst du kennen, wenn du mit der Programmierung von C# beginnst.
+With the debugger you can run the program step by step and check what it does. Each command can also be executed via a function key. If possible, you should set up your computer so that you can work with the function keys. If this is not possible, you can use the menu items or click on the appropriate icons that Visual Studio displays below the menu.
 
+### Start Debugging
 
+Before you start the program (and also while the program is running), you can place the cursor on a line in the program and select the **F9 key** (or the "Toggle Breakpoint" entry in the debug menu). The statement will then be highlighted in red and the line marked with a dot:
 
+This means that a **breakpoint** is now set there. 
 
+![image-20220527191547448](/assets/images/hexafour/DebuggerBreakpoint.png)
 
-### Das Programm schrittweise im Debugger ausführen
+Then you **start debugging** (F5). The debugger stops at the first breakpoint and indicates this by marking the position in yellow:
 
-Wenn es keine Build Errors mehr gibt, macht das Programm aber vielleicht trotzdem nicht was es soll. Bei der Fehlersuche hilft der Debugger.
+![image-20220527192109091](/assets/images/hexafour/DebuggerActiveLine.png)
 
-Bevor du das Programm startest (und auch während das Programm läuft), kannst du den Cursor in eine Zeile im Programm setzen und dort die **F9 Taste** (oder im Debug-Menü den Eintrag "Toggle Breakpoint") auswählen. Das Statement wird dann rot markiert und die Zeile mit einem Punkt markiert:
+Before you continue, you should place the Visual Studio window and the Turtle program window side by side. In Windows 11, this is easily done by moving the mouse to the Resize icon and then selecting the option to display Visual Studio on the right side of the screen:
 
-![image-20220527191547448](image-20220527191547448.png)
+![image-20220527192636178](/assets/images/hexafour/DebuggingWindowPositions.png)
 
-Das bedeutet, dass dort jetzt ein **Breakpoint** gesetzt ist. Wenn das Programm jetzt im Debugger (mit F5) gestartet wird, hält es am ersten Breakpoint an, und zeigt das dadurch an, dass die Stelle gelb markiert wird:
+After you click on the blue rectangle, Visual Studio shrinks to the right half of the screen and a list of windows is displayed to the left of it, from which you can select the window for the left half. Here you choose the Turtle program window. After that your screen should look like this:
 
-![image-20220527192109091](image-20220527192109091.png)
+<img src="/assets/images/hexafour/DebuggingExampleScreen.png" alt="image-20220527193450946" style="zoom:40%;" />
 
-Bevor du weitermachst, musst du das Visual Studio Fenster und das Turtle-Programm-Fenster nebeneinander stellen. Dazu musst du das Visual Studio Fenster über das Icon rechts oben verkleinern, so dass es nicht den ganzen Bildschirm einnimmt und dann das Turtle-Programm-Fenster daneben schieben. In Windows 11 geht das ganz einfach, indem du die Maus auf das Resize-Icon bewegst und dann in dem Auswahlfenster auswählst, dass Visual Studio auf der rechten Seite des Bildschirms angezeigt werden soll:
+Now the editor window of Visual Studio is relatively small. We can improve this by changing the **window layout**. How this works is described in [Microsoft Learn]((https://learn.microsoft.com/en-us/visualstudio/ide/customizing-window-layouts-in-visual-studio?view=vs-2022)). The best way is to save the current layout via "Save Window Layout" under a meaningful name (for example "DebuggingDefault"). After that we clean up the windows a bit: First, we close the "Diagnostic Tools" window. This allows the editor window to use the whole width. We can also move all windows from the bottom right to the bottom left window, so that there are only two windows left. Then we can save this Window layout under a different name, for example "DebuggingSmall". Now Visual Studio looks like this:
 
-![image-20220527192636178](image-20220527192636178.png)
+<img src="/assets/images/hexafour/DebuggingExampleScreen2.png" alt="image-20230722215322956" style="zoom:80%;" />
 
-!!! Mal ausprobieren, ob man mit unterschiedlichen Windows Layouts arbeiten kann: [Customize window layouts and personalize document tabs - Visual Studio (Windows) | Microsoft Learn](https://learn.microsoft.com/en-us/visualstudio/ide/customizing-window-layouts-in-visual-studio?view=vs-2022) !!!
+In this screenshot you can see the **Autos Window** in the lower part. This window shows the variables of your program. In this example the variable `seymour` is shown. You can expand and collapse it to see the values of the individual properties of `seymour`. For example, in the highlighted line you can see that the value of the property `IsDown` has the value `true`.
 
+Now you click once in the code editor of Visual Studio, so that the focus is in Visual Studio. Then you can execute the program step by step: By pressing **key F10** (function "Step Over" in the Debug Menu) the next statement of the program will be executed. So in the example above, the Turtle rotates 60 degrees to the right. In the Visual Studio window the yellow marker moves to the next statement:
 
+![image-20220527194042041](/assets/images/hexafour/DebuggingNextStep.png)
 
-Wenn du auf das blaue Rechteck geklickt hast, wird Visual Studio auf die rechte Bildschirmhälfte verkleinert und es wird links daneben eine Liste der Fenster angezeigt, aus denen du das Fenster für die linke Hälfte auswählen kannst. Hier wählst du das Turtle-Programm-Fenster. Danach sollte es so ungefähr aussehen:
+The next click of F10 will execute the next statement. You can also set another breakpoint, for example in the line further down:
 
-![image-20220527193450946](image-20220527193450946.png)
+![image-20220527194258839](/assets/images/hexafour/DebuggingNextBreakpoint.png)
 
-Jetzt klickst du einmal in den Code-Editor vom Visual Studio, damit du dich sicher im Visual Studio befindest. Und dann kannst du das Programm Schritt für Schritt ausführen: Durch drücken der **Taste F10** (oder im Debug-Menü die Funktion "Step Over") wird das nächste Statement des Programm ausgeführt. Im obigen Beispiel dreht sich die Turtle also um 60 Grad nach rechts. Im Visual Studio Fenster wandert die gelbe Markierung auf das nächste Statement:
+If you then select the **F5** key (or "Continue" in Debug menu), the program continues to run normally and only stops again when it has reached this breakpoint.
 
-![image-20220527194042041](image-20220527194042041.png)
+With the **Shift-F5** key (or "Stop Debugging" in Debug menu) you can stop debugging at any point. 
 
-Mit dem nächsten F10 wird das nächste Statement ausgeführt. Du kannst auch einen weiteren Breakpoint setzen, zum Beispiel in die weiter unten liegende Zeile:
+**Debugging is extremely helpful** because this way you can watch your code at work. If something doesn't work as desired, you can quickly find the error. When I changed something in my program, I always do it like this: I set a breakpoint on the first statement I changed, then start the debugger and check step by step if the program does exactly what I thought it would.
 
-![image-20220527194258839](image-20220527194258839.png)
+Note: If you want to change the code of your program, you should stop debugging before.
 
-Wenn du dann die **Taste F5** (oder im Debug-Menü die Funktion "Continue") auswählst, läuft das Programm normal weiter und hält erst wieder an, wenn es diesen Breakpoint erreicht hat.
-
-Wenn du an einer Stelle angekommen bist, die falsch programmiert ist, kannst mit der **Taste Shift-F5** (oder im Debug-Menü die Funktion "Stop Debugging") das Debugging sofort stoppen. 
-
-Du kannst den Code deines Programms erst dann ändern, wenn das Debugging gestoppt wurde.
-
-Dieses **Debugging ist extrem hilfreich**, weil man auf diesem Weg seinem Code bei der Arbeit zusehen kann. Wenn etwas nicht wie gewünscht funktionert, findet damit schnell den Fehler. Wenn ich an einer Stelle in meinem Programm etwas geändert habe, mache ich es eigentlich immer so: Ich setze einen Breakpoint auf das erste Statement, das ich geändert habe, starte dann den Debugger und prüfe schrittweise nach, ob das Programm genau das tut, was ich mir gedacht habe.
-
-### Kurze Zusammenfassung
+### Summary
 
 * This post is part of a series. You can find the previous post [here][hexafour-03] and an overview [here][hexafour-overview].
 * Debugger nutzen: Starten mit *F5*, Breakpoint setzen mit *F9*, Step over mit *F10*, zum nächsten Breakpoint mit *F5*, Debuggen beenden mit *Shift F5*.
-* Dieser Artikel hat weitere Tipps: [Fix program errors and improve code - Visual Studio (Windows) | Microsoft Learn](https://learn.microsoft.com/en-us/visualstudio/ide/find-and-fix-code-errors?view=vs-2022)
+* For more information on fixing errors, see [Fix program errors and improve code](https://learn.microsoft.com/en-us/visualstudio/ide/find-and-fix-code-errors?view=vs-2022) on Microsoft Lean.
+* For more information on debugging, see the videos [C# 101 Debugging](https://www.youtube.com/watch?v=pm_pv0Eb7Fw) and [.NET Core 101  Basic Debugging](https://learn.microsoft.com/de-de/shows/net-core-101/net-basic-debugging) or the article [First look at the debugger](https://learn.microsoft.com/en-us/visualstudio/debugger/debugger-feature-tour?view=vs-2022) on Microsoft Learn.
 
-### Übung
+### How to go on
 
-Denk dir ein Bild aus und versuche es mit Turtle-Kommandos zu programmieren. Nutze dabei den Debugger und lerne die Tasten für den Debugger am besten auswendig - Du wirst sie noch oft benötigen.
+In the next post, we'll continue with our HexaFour game. Until then you can play around with the Turtle commands, write your own programs and debug them. For example, you could try to draw a hexagonal star.
 
 
 

@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Draw a filled hexagon using simple C# commands
+title: Draw a filled hexagon using simple C# commands (h4-03)
 tags: LearnToCode C# HexaFour
 excerpt_separator: <!--more-->
 typora-root-url: ..
@@ -147,7 +147,7 @@ Maybe you haven't noticed, but in the code examples above we used not only metho
 
 ### How to go on
 
-In the next post I will explain how to run the program step by step in the debugger. Until then, you may want to program your own image with Turtle commands.
+In the next post I will explain how to fix compiler errors and howrun the program step by step in the debugger. Until then, you may want to program your own image with Turtle commands.
 
 
 

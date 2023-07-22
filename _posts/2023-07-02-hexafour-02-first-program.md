@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: How to easily write your first C# program with graphics
+title: How to easily write your first C# program with graphics (h4-02)
 tags: LearnToCode C# HexaFour
 excerpt_separator: <!--more-->
 typora-root-url: ..
