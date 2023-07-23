@@ -69,6 +69,7 @@ The following list contains the posts of this series published so far.
 * [Learn to fly with C#][hexafour-01]
 * [The first C# program with graphics][hexafour-02]
 * [Draw a hexagon with C#][hexafour-03]
+* [Why is this simple C# Program not working? Fixing Compiler Errors and using the Visual Studio Debugger][hexafour-04]
 
 If you are looking for specific topics, these lists can help you:
 
@@ -82,6 +83,9 @@ If you are looking for specific topics, these lists can help you:
 
 * [Installation, debugger start, debugger stop][hexafour-02]
 * [IntelliSense][hexafour-03]
+* Keyboard shortcuts: [jump to corresponding brace, and more][hexafour-04]
+* Compiler errors: [tips and tricks to fix them][hexafour-04]
+* Debugging: [start, stop, breakpoints, step over, step into][hexafour-04], [window placement][hexafour-04]
 
 *Woopec graphics library*:
 
@@ -104,3 +108,5 @@ If you are looking for specific topics, these lists can help you:
 [hexafour-02]: {% post_url 2023-07-02-hexafour-02-first-program %}
 
 [hexafour-03]: {% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}
+
+[hexafour-04]: {% post_url 2023-07-23-hexafour-04-debugging %}

@@ -147,7 +147,7 @@ Maybe you haven't noticed, but in the code examples above we used not only metho
 
 ### How to go on
 
-In the next post I will explain how to fix compiler errors and howrun the program step by step in the debugger. Until then, you may want to program your own image with Turtle commands.
+In the [next post][hexafour-04] I will explain how to fix compiler errors and howrun the program step by step in the debugger. Until then, you may want to program your own image with Turtle commands.
 
 
 
@@ -156,3 +156,5 @@ In the next post I will explain how to fix compiler errors and howrun the progra
 [Woopec-doc-turtle-class]: https://frank.woopec.net/woopec_docs/Turtle.html
 
 [Woopec-doc-helper-classes]: https://frank.woopec.net/woopec_docs/HelperClasses.html
+
+[hexafour-04]: {% post_url 2023-07-23-hexafour-04-debugging %}
