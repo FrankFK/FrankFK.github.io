@@ -2,7 +2,7 @@
 layout: page
 title: Woopec - Turtle-Class
 date: 2022-05-02
-last_modified_at: 2022-07-23 8:30:00 +0000
+last_modified_at: 2023-07-29 8:30:00 +0000
 typora-root-url: ..
 ---
 
@@ -64,7 +64,7 @@ Because Woopec (currently) uses WPF, the code must run on a Windows Computer.
 
 ## Overview of Methods
 
-The following table gives a short overview of all methods. The methods are described in more detail by code comments.
+The following table gives a short overview of all Turtle methods. The methods are described in more detail by code comments.
 The IntelliSense-Feature of Visual Studio shows these comments when you move the mouse over the name of the method:
 
 ![IntelliSense](/assets/images/IntelliSense.png)
@@ -100,31 +100,15 @@ The IntelliSense-Feature of Visual Studio shows these comments when you move the
 | BeginFill()                                      | Start the filling                                            |
 | EndFill()                                        | Fill the shape drawn after the last call of BeginFill()      |
 | Filling (Type is bool)                           | Return fillstate (true if filling, false else)               |
+| BeginPoly()                                                  | Start recording the vertices of a polygon.                   |
+| EndPoly()                                                    | Stop recording the vertices of a polygon and returns it as a List of Vec2D |
 | **Other**                                        |                                                              |
 | Screen (Type is Screen)                          | The screen on which this turtle is drawn                     |
 | WaitForCompletedMovementOf(Turtle otherTurtle)   | Wait with next movement for completed movement of the otherTurtle |
-
-### Screen class
-
-| Method                                                  | Description                                                  |
-| ------------------------------------------------------- | ------------------------------------------------------------ |
-| TextInput(string title, string prompt) [Type is string] | Pop up a dialog window for input of a string. Returns the user-input |
-| NumInput(string title, string prompt) [Type is int]     | Pop up a dialog window for input of an integer number. Returns the user-input |
-| DoubleInput(string title, string prompt) [Type is double] | Pop up a dialog window for input of a double number. Returns the user-input |
-| Bye()                                                   | Shut the window |
-
-### Shapes  class
-
-| Method                                  | Description                                                  |
-| --------------------------------------- | ------------------------------------------------------------ |
-| Add(string name, `List<Vec2D>` polygon) | Add a polygon to the shapelist                               |
-| Add(string name, Shape shape)           | Add a compound shape to the sapelist. A compound shape contains several polygons |
-| Get(string name) [Type is Shape]        | Get the shape of the given name                              |
-| GetNames() [Type is `List<string>`]     | Get a list of all currently available turtle shape-names     |
-
 
 
 ### Links
 
 * [Getting started](GettingStarted.html) describes the installation steps.
-* [Working with multiple turtles](MultipleTurtles.html) contains information on handling multiple turtles.
+* [Main Classes][MainClasses.html] contains information about all other Woope
+* [Working with multiple objects](MultipleTurtles.html) contains information on handling multiple turtles.

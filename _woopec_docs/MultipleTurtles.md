@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Woopec - Working with multiple turtles (parallelism)
+title: Woopec - Working with multiple objects (parallelism)
 date: 2022-05-04
-last_modified_at: 2022-07-23 8:30:00 +0000
+last_modified_at: 2023-07-29 8:30:00 +0000
 typora-root-url: ..
 ---
 
-It is possible to work with multiple turtles in a program. The following example creates two turtles, cynthia and wally. Both turtles will move at the same time.  
+It is possible to work with multiple `Turtle` or `Figure` objects in a program. The following example creates two turtles, cynthia and wally. Both turtles will move at the same time.  
 
 ```csharp
     var cynthia = new Turtle();
@@ -24,9 +24,9 @@ It is possible to work with multiple turtles in a program. The following example
 
 The default rule is:
 
-> Normally the turtles behave like in this example. All turtles move independently of each other. 
+> Normally the objects behave like in this example. All objects move independently of each other. 
 
-But sometimes you want that turtles to move sequentially.  In this example at first cynthia will turn left and move forward, and then wally will turn right and move forward:
+But sometimes you want that objects to move sequentially.  In this example at first cynthia will turn left and move forward, and then wally will turn right and move forward:
 
 ```csharp
     var cynthia = new Turtle();
@@ -42,16 +42,16 @@ But sometimes you want that turtles to move sequentially.  In this example at fi
 
 The rule for this is: 
 
-> If a turtle is created (wally in this example) the moves of this turtle (wally.Right) only start when all previous movements have ended. 
+> If an object is created (wally in this example) the moves of this object (wally.Right) only start when all previous movements have ended. 
 
 The example below works with both options:
 
 ![Woopec C# Turtle Graphics Animation Demo](/assets/images/WoopecAnimation.gif)
 
-* At first the green turtle (`seymour1`) is created and draws a "W". Then this turtle is hidden.
-* Then five bird-shaped turtles are created: woopec1, woopec2, ..., woopec5
+* At first the green object (`seymour1`) is created and draws a "W". Then this object is hidden.
+* Then five bird-shaped objects are created: woopec1, woopec2, ..., woopec5
 * The five woopecs draw the two "o"s, the "p", "e" and "c".
-* After that a *new* green turtle (`seymour2`) is created (at the same position as the first green turtle) and this turtle moves right and draws the stars.
+* After that a *new* green object (`seymour2`) is created (at the same position as the first green object) and this object moves right and draws the stars.
 * Parallel to the movement of seymour2, the five woopecs turn around a little bit and move forward to the right.
 
 The code for this roughly looks like this:
@@ -109,7 +109,7 @@ woopec5.Right(360);
 
 First, the command is used to make seymour1 wait with the Forward(160) movement until woopec5 has finished drawing the letter. Second, the command is used for each woopec so that it does the Right(360) rotation only after seymour1 is finished with the DrawStar command.
 
-Remark: A turtle can only wait for the completed movement of *one* other turtle. In the above example `seymour1` waits until the movement of `woopec5` is finished. If you call `WaitForCompletedMovementOf(t)` with different turtles `t` only the last one counts. The following example will not work as you might expected:
+Remark: An object can only wait for the completed movement of *one* other object. In the above example `seymour1` waits until the movement of `woopec5` is finished. If you call `WaitForCompletedMovementOf(t)` with different objects `t` only the last one counts. The following example will not work as you might expected:
 
 ```c#
 seymour1.WaitForCompletedMovementOf(woopec1);
@@ -124,9 +124,9 @@ Here `seymour1` will wait until `woopec5` has finished its movement. Regardless 
 
 So the rule for `WaitForCompletedMovement` is:
 
-> Calling `turtle1.WaitForCompletedMovementOf(turtle2)` ensures that the subsequent movement of `turtle1` is not executed until the previous movement of `turtle2` has finished.
+> Calling `object1.WaitForCompletedMovementOf(object2)` ensures that the subsequent movement of `object1` is not executed until the previous movement of `object2` has finished.
 >
-> If you call `WaitForCompletedMovementOf(t)` with different turtles `t` only the last one counts.
+> If you call `WaitForCompletedMovementOf(t)` with different objects `t` only the last one counts.
 
 
 

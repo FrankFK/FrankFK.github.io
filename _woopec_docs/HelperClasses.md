@@ -2,7 +2,7 @@
 layout: page
 title: Woopec - Helper classes Color, Speed and Vec2D
 date: 2023-07-15
-last_modified_at: 2023-07-15 8:30:00 +0000
+last_modified_at: 2023-07-30 8:30:00 +0000
 typora-root-url: ..
 ---
 
@@ -11,13 +11,13 @@ typora-root-url: ..
 The easiest way is to use one of the predefined colors. For example:
 
 ```c#
-turtle.Color = Colors.Green;
+seymour.Color = Colors.Green;
 ```
 
 A color is defined based on the [RGB color model](https://en.wikipedia.org/wiki/RGB_color_model) by its red, green and blue values. If you want to create a color based on its red, green and blue values, it works like this:
 
 ```c#
-turtle.Color = new Color(redValue, greenValue, blueValue);
+seymour.Color = new Color(redValue, greenValue, blueValue);
 ```
 
 The values for `redValue`, `greenValue` and `blueValue` must be between 0 and 255.
@@ -25,13 +25,13 @@ The values for `redValue`, `greenValue` and `blueValue` must be between 0 and 25
 Sometimes you want a shape to be translucent so that what is behind a shape can still be seen. In this case, you can create a transparent color. This can be achieved like this:
 
 ```c#
-turtle.Color = Colors.Green.Transparent(0.5);
+seymour.Color = Colors.Green.Transparent(0.5);
 ```
 
 In this example, a semi-transparent green is created. The value for transparency is called *alpha channel*, its value can be between 0.0 (fully opaque) and 1.0 (fully transparent). Any color can be created as follows:
 
 ```c#
-turtle.Color = new Color(redValue, greenValue, blueValue, alphaChannelValue);
+seymour.Color = new Color(redValue, greenValue, blueValue, alphaChannelValue);
 ```
 
 So actually quite simple. You can have any color you want using the correct three values for red, green and blue. Then a quick question: Which r, g, b values do you have to specify if you want the color yellow? You have to specify r = 255 and g = 255 - this is neither plausible nor simple. In reality, color perception is very complex and r, g, b values are not always the best model. Alternatively, colors can also be specified using the [HSL and HSV  color model](https://en.wikipedia.org/wiki/HSL_and_HSV). Here, too, you specify three values:
@@ -42,13 +42,30 @@ So actually quite simple. You can have any color you want using the correct thre
 
 In the following example, the outer circle shows all colors with maximum Saturation and Value. In the east (Hue = 0) is red, following the circle on the left are the rainbow colors up to blue (Hue = 240), then the colors of the purple line. The color square in the middle shows the color red for different values of Saturation and Value:
 
-![image-20230715194733267](/assets/images/WoopecHSVColorSample.png)
+![An image with an outer color circle and an inner square. The inner square is composed of 10 by 10 small quadrants. The outer circle shows all colors with maximum Saturation and Value. In the east (Hue = 0) is red, following the circle on the left are the rainbow colors up to blue (Hue = 240), then the colors of the purple line. The color square in the middle shows the color red for different values of saturation and value](/assets/images/WoopecHSVColorSample.png)
 
-To set an HSV color the `FromHSV` method is used:
+To set an HSV color, the `FromHSV` method is used:
 
 ```csharp
-turtle.Color = Color.FromHSV(hue, saturation, value);
+var newColor = Color.FromHSV(hue, saturation, value);
 ```
+
+To determine the HSV values of a color, the `ToHSV` method is used:
+
+```csharp
+var red = Colors.Red;
+var (hue, saturation, value) = red.ToHSV();
+```
+
+You can also "rotate" a color with a give hue delta:
+
+```csharp
+var red = Colors.Red;
+var newColor = red.RotateHue(120); 
+// The new color is a shade of green
+```
+
+
 
 If you want to try some things with colors, you can use the examples from `Woopec.Core.Examples.ColorDemo`.  The image above is created by this example:
 

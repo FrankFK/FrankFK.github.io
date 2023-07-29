@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Woopec - Introduction to C# Turtle Graphics
+title: Woopec - Introduction to C# Graphics and Woopec
 date: 2022-04-30
-last_modified_at: 2023-03-28 8:30:00 +0000
+last_modified_at: 2023-07-29 8:30:00 +0000
 excerpt_separator: <!--more-->
 typora-root-url: ..
 ---

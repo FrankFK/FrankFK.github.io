@@ -6,7 +6,9 @@ excerpt_separator: <!--more-->
 typora-root-url: ..
 ---
 
-!!! Fällt mir hier noch ein Bild ein !!!
+
+
+![An image created with the Pen class of the Woopec library. On the left, a hexagonal figure drawn with green lines. On the right, a pentagonal figure drawn with blue lines.](/assets/images/hexafour/HexaFour05Title.png)
 
 Mit Variablen und Schleifen können wir unser Programm flexibler gestalten und vermeiden, dass wir denselben Code mehrfach schreiben. Das hilft uns dem DRY-Prinzip zu folgen
 
@@ -48,8 +50,6 @@ Der `Pen` folgt demselben Konzept wie die `Turtle`:
 * Alternativ zu `Rotate` und `Move` kann man auch die Pen-Methode `SetPosition` zum Zeichnen nutzen. Wir bleiben aber erstmal bei Rotate und Move
 
 
-
-**TODO: Im folgenden überall von Turtle auf Pen umsteigen...!!!**
 
 ### Variablen
 
@@ -208,5 +208,4 @@ Beispielsweise könntest du folgendes versuchen: Ändere den Code so, dass er st
 [hexafour-04]: {% post_url 2023-07-23-hexafour-04-debugging %}
 
 [hexafour-overview]: {% post_url 2023-07-01-hexafour-01-overview %}#overview-of-the-posts-in-this-series
-
 

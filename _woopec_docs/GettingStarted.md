@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Woopec - Getting Started with Turtle Graphics in C#
+title: Woopec - Getting Started with Graphics in C#
 date: 2022-05-01
-last_modified_at: 2022-07-23 8:30:00 +0000
+last_modified_at: 2023-07-29 8:30:00 +0000
 typora-root-url: ..
 ---
 To be honest: Getting started with Visual Studio and C# may be a little bit more difficult than getting started with - for instance - python.
