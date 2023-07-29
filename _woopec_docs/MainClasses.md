@@ -93,7 +93,7 @@ Shapes.Arrow, Shapes.Circle, Shapes.Square, Shapes.Triangle, Shapes.Classic, Sha
 
 ### Links
 
-* [Helper classes][HelperClasses.html] describes the value objects `Color`, `Speed` and `Vec2D` which can be used for some properties.
+* [Helper classes](HelperClasses.html) describes the value objects `Color`, `Speed` and `Vec2D` which can be used for some properties.
 * [Working with multiple objects](MultipleTurtles.html) contains information on handling multiple `Figure` or `Turtle` objects.
 * [Turtle class](Turtle.html) describes the turtle class (which is a combination of a pen and a figure).
 * [Getting started](GettingStarted.html) describes the installation steps.

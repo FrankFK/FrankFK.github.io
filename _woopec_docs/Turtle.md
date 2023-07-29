@@ -110,5 +110,5 @@ The IntelliSense-Feature of Visual Studio shows these comments when you move the
 ### Links
 
 * [Getting started](GettingStarted.html) describes the installation steps.
-* [Main Classes][MainClasses.html] contains information about all other Woope
+* [Main Classes](MainClasses.html) contains information about all other Woopec classes.
 * [Working with multiple objects](MultipleTurtles.html) contains information on handling multiple turtles.
