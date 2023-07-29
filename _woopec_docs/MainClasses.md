@@ -71,7 +71,10 @@ An instance of this class represents the screen to which screen objects (lines, 
 | TextInput(string title, string prompt) [Type is string] | Pop up a dialog window for input of a string. Returns the user-input |
 | NumInput(string title, string prompt) [Type is int]     | Pop up a dialog window for input of an integer number. Returns the user-input |
 | DoubleInput(string title, string prompt) [Type is double] | Pop up a dialog window for input of a double number. Returns the user-input |
+| WriteText(string text, Vec2D pos, ...)  | Write a text to a give position, additional parameters for style etc. |
 | Bye()                                                   | Shut the window |
+| SwitchToUnitTestDefaultScreen()         | For unit tests                                               |
+| SwitchToNormalDefaultScreen()           | For unit tests                                               |
 
 ### Shapes  class
 
