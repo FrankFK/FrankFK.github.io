@@ -169,13 +169,15 @@ One last note: If you want to change the code of your program, you should stop d
 
 ### How to go on
 
-In the next post, we'll continue with our HexaFour game. Until then you can play around with the Turtle commands, write your own programs and debug them. For example, you could try to draw a hexagonal star.
+In the [next post][hexafour-05], we'll continue with our HexaFour game. Until then you can play around with the Turtle commands, write your own programs and debug them. For example, you could try to draw a hexagonal star.
 
 
 
 [Woopec Docs]: https://frank.woopec.net/woopec_docs/Turtle.html
 
 [hexafour-03]: {% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}
+
+[hexafour-05]: {% post_url 2023-08-13-hexafour-05-variables-loops-dry %}
 
 [hexafour-overview]: {% post_url 2023-07-01-hexafour-01-overview %}#overview-of-the-posts-in-this-series
 

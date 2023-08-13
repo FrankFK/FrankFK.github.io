@@ -1,7 +1,7 @@
 ---
 layout: posts
-title: It is never to early to write clean code (h4-05)
-tags: LearnToCode C# HexaFour
+title: It is never to early to write Clean Code (h4-05)
+tags: LearnToCode C# HexaFour CleanCode
 excerpt_separator: <!--more-->
 typora-root-url: ..
 ---
@@ -10,7 +10,7 @@ typora-root-url: ..
 
 ![An image created with the Pen class of the Woopec library. On the left, a hexagonal figure drawn with green lines. On the right, a pentagonal figure drawn with blue lines.](/assets/images/hexafour/HexaFour05Title.png)
 
-Mit Variablen und Schleifen können wir unser Programm flexibler gestalten und vermeiden, dass wir denselben Code mehrfach schreiben. Das hilft uns dem DRY-Prinzip zu folgen
+It is not enough for your code to do what it is supposed to do. You should strive to write clean code from the start. Even as a beginner, you can use code conventions and follow the DRY principle. This will help you write code that is easier to understand and extend. In the example in this article, we use C# variables and loops to write clean code.
 
 <!--more-->
 
@@ -48,11 +48,13 @@ The `Pen` class follows similar concepts as the`Turtle` class from this previous
 * If the pen should draw during its movement, its `IsDown` property must be set to `true`.
 * The Pen always draws in a certain direction. For changing this direction there is the method **`Rotate`**. A value greater than 0 rotates to the left (thus corresponding to `Turtle.Left`) and a value less than 0 rotates to the right (thus corresponding to `Turtle.Right`).
 * The **`Move`** method changes the position of the pen. A positive value moves the pen forward, a negative value moves it backward.
-* As an alternative to `Rotate` and `Move` you can also use the pen method `SetPosition` for drawing. But for now we stay with Rotate and Move
+* As an alternative to `Rotate` and `Move` you can also use the pen method `SetPosition` for drawing. But for now we stay with Rotate and Move.
+
+For more information on the Pen class, see the [Woopec documentation][WoopecDocsMainClasses].
 
 ### Clean Code
 
-The above code draws a hexagon. So it does exactly what it is supposed to do. But that is not the only criterion for good code. Code should also be easy to understand when you read it. And code should be easy to change. There is a book on this called "Clean Code.  A Handbook of Agile Software Craftsmanship" by Robert C. Martin. It starts with this sentence:
+The above code draws a hexagon. So it does exactly what it is supposed to do. But that is not the only criterion for good code. Code should also be easy to understand when you read it. And code should be easy to change. There is a book on this called "Clean Code.  A Handbook of Agile Software Craftsmanship" by [Robert C. Martin][RobertCMartin]. It starts with this sentence:
 
 > Writing clean code is what you must do in order to call yourself a professional. There is no reasonable excuse for doing anything less than your best.
 
@@ -83,7 +85,7 @@ The **`var` keyword** tells the C# compiler that a variable should be defined he
     // ...
 ```
 
-### Coding-Conventions
+### Coding Conventions
 
 In principle you can name a variable as you like. However, programming is easier if you follow a few rules, so-called **Coding Conventions**. For the names of variables there are these conventions:
 
@@ -185,33 +187,47 @@ This single change causes the code to draw a 17-corner instead of a 6-corner.
 
 From this example, you can see how important it is to write clean code.
 
-### Debugging von Variablen
+### Debugging of variables
 
 When using variables, errors can happen. But also here the debugger helps. If you put the cursor on the check `edgeCounter < numberOfEdges` in the code above, you can create a breakpoint there with F9 (see [previous article][hexafour-04]). When you then start the program in the debugger (with F5), it stops at this breakpoint. You can then see in the debugger what values the variables have:
 
-![](/assets/images/hexafour/VSBreakpointWithWatchWindow.png)
+![Screenshot showing Visual Studio with two windows. The upper window shows source code, including a for loop. A breakpoint is set on the condition of the for loop. The lower "Auto" window shows the current values of the two variables used in the condition.](/assets/images/hexafour/VSBreakpointWithWatchWindow.png)
 
 Below the code window, Visual Studio displays an Autos window. This window displays the values of the variables that are currently playing a role. You can see in this example that `edgeCounter` has the value 0 and `numberOfEdges` has the value 6. You can then run the code step by step (with F10) or until the next breakpoint (with F5) and always see the current value of the variable.
 
 The debugger has many more features for variables. For example, moving the mouse cursor over a variable in the code will automatically display its value. You can find more information about debugging variables in the [Microsoft documentation][MSDocsInspectVariables].
 
-### Kurze Zusammenfassung
+### Summary
 
-* *Variablen* definieren (`var edgeCounter = 0`), ändern (`edgeCounter = edgeCounter + 1;`), prüfen (`edgeCounter < 6`), verwenden (`Right(360-0 / edgeNumber`).
-* *Schleifen* (`for`  oder `while`) benutzen. Es gibt weitere Möglichkeiten, siehe [Microsoft Tutorial][MSDocsLoops]
-* *Bedingungen* definieren, z. B. `(edgeCounter < 6)`, Es gibt aber noch viel mehr Möglichkeiten, siehe  [Microsoft Tutorial][MSDocsLoops]
-* *Coding Conventions* für Variablen-Namen und für Einrückung im Code benutzen. Siehe dazu auch [Microsoft Naming Conventions][MsNamingConventions]
-* Möglichst das *DRY-Prinzip* nutzen.
+* This post is part of a series. You can find the previous post [here][hexafour-04] and an overview [here][hexafour-overview].
+* Clean Code
+  * Clean code makes your code more readable and maintainable.
+  * Follow *coding conventions* for indentation and variable names, seee [Microsoft Naming Conventions][MsNamingConventions].
+  * Don't repeat yourself (*DRY principle*).
 
-### Übung
+* C#
+  * *Variable* definition (`var edgeCounter = 0`), change (`edgeCounter = edgeCounter + 1;`), check (`edgeCounter < 6`) and usage  (`Right(360-0 / edgeNumber`).
+  * *Loops* (`for`  oder `while`). There are more possibilities, see [Microsoft Tutorial][MSDocsLoops].
+  * Definition of *conditions*, for example `(edgeCounter < 6)`. There are many more possibilities, see [Microsoft Tutorial][MSDocsLoops].
+* Debugging
+  * The debugger has many features for variables, see [Microsoft documentation][MSDocsInspectVariables].
+* Woopec library
+  * Advanced users can use the *Pen class* instead of the Turtle class. 
+  * In this article the methods `Rotate` and `Move`, as well as the property `IsDown` were used. For more information, see the [Woopec documentation][WoopecDocsMainClasses].
 
-Beispielsweise könntest du folgendes versuchen: Ändere den Code so, dass er statt einer `for`-Schleife wieder eine `while`-Schleife benutzt. Dann ändere den Code so, dass in jedem Schleifendurchlauf die Kantenlänge (`edgeLength`) um eins verringert wird. Und dann ändere die Bedingung für die Schleife so, dass die Schleife erst dann beendet wird, wenn die edgeLength den Wert 1 hat. Was ist das Ergebnis?
+
+
+### How to go on
+
+For example, you could try the following: Change the code to use a `while` loop again instead of a `for` loop. Then change the code to decrease the edge length by one in each loop pass. And then change the condition for the loop so that the loop is not terminated until the edge length has the value 1. What is the result?
 
 [WikiNamingConventions]: https://en.wikipedia.org/wiki/Naming_convention_(programming)
 [MsNamingConventions]: https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
 [MSDocsLoops]: https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/tutorials/branches-and-loops-local
 [MSDocsInspectVariables]: https://docs.microsoft.com/en-us/visualstudio/debugger/autos-and-locals-windows?view=vs-2022
-[Woopec Docs]: https://frank.woopec.net/woopec_docs/Turtle.html
+[WoopecDocsMainClasses]: https://frank.woopec.net/woopec_docs/MainClasses.html
+
+[RobertCMartin]: https://en.wikipedia.org/wiki/Robert_C._Martin
 
 [hexafour-03]: {% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}
 

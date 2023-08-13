@@ -70,6 +70,7 @@ The following list contains the posts of this series published so far.
 * [The first C# program with graphics][hexafour-02]
 * [Draw a hexagon with C#][hexafour-03]
 * [Why is this simple C# Program not working? Fixing Compiler Errors and using the Visual Studio Debugger][hexafour-04]
+* [It is never to early to write clean code][hexafour-05]
 
 If you are looking for specific topics, these lists can help you:
 
@@ -78,6 +79,9 @@ If you are looking for specific topics, these lists can help you:
 * [Statement][hexafour-02]
 * Methods: [Using a method and setting parameters][hexafour-02]
 * Properties: [Using a property][hexafour-03]
+* Variables: [Definition, change, check, usage][hexafour-05]
+* Loops: [for, while, others][hexafour-05]
+* Conditions: [in loops][hexafour-05]
 
 *Visual Studio*:
 
@@ -85,21 +89,25 @@ If you are looking for specific topics, these lists can help you:
 * [IntelliSense][hexafour-03]
 * Keyboard shortcuts: [jump to corresponding brace, and more][hexafour-04]
 * Compiler errors: [tips and tricks to fix them][hexafour-04]
-* Debugging: [start, stop, breakpoints, step over, step into][hexafour-04], [window placement][hexafour-04]
+* Debugging: [start, stop, breakpoints, step over, step into][hexafour-04], [window placement][hexafour-04], [variables][hexafour-05]
 
 *Woopec graphics library*:
 
 * [Create a new Visual Studio project with Woopec graphics][hexafour-02]
 * Turtle methods: [Left, Right, Forward][hexafour-02],  [ShowTurtle, HideTurtle, PenUp, PenDown, BeginFill, EndFill][hexafour-03]
 * Turtle properties: [Color, Speed][hexafour-03]
+* Pen methods and properties: [Rotate, Move, IsDown][hexafour-05]
 
 *Clean Code*:
 
-* [Meaning][hexafour-01]
+* [Meaning][hexafour-01], [Example][hexafour-05]
+* Principles: [coding conventions][hexafour-05], [DRY principle][hexafour-05]
 
 *HexaFour game*:
 
 * [Game idea][hexafour-01]
+
+
 
 
 
@@ -110,3 +118,6 @@ If you are looking for specific topics, these lists can help you:
 [hexafour-03]: {% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}
 
 [hexafour-04]: {% post_url 2023-07-23-hexafour-04-debugging %}
+
+[hexafour-05]: {% post_url 2023-08-13-hexafour-05-variables-loops-dry %}
+
