@@ -154,18 +154,19 @@ One last note: If you want to change the code of your program, you should stop d
 
 ### Summary
 
-* This post is part of a series. You can find the previous post [here][hexafour-03] and an overview [here][hexafour-overview].
-* Compiler errors:
-  * The compiler does not see spaces, indentations or line breaks. It needs semicolons and matching brackets to understand the code correctly. Finding errors is helped by the *Error-List Window*, *Quick Actions*, *commenting out* code, and the *[keyboard shortcut](https://learn.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2022#bkmk_text-editor-context-specific-shortcuts)* Ctrl+], you can also *rewrite the code in small pieces*.
-  * For more information on fixing errors, see for example [Fix program errors and improve code](https://learn.microsoft.com/en-us/visualstudio/ide/find-and-fix-code-errors?view=vs-2022) on Microsoft Lean.
+This post is part of a series. You can find the previous post [here][hexafour-03] and an overview [here][hexafour-overview].
 
-* Debugging: 
-  * Start debugging with *F5*, set breakpoint with *F9*, step over with *F10*, to next breakpoint with *F5*, end debugging with *Shift F5*. 
-  * The *Autos Window* shows the values of variables. 
-  * If you have little space on the screen: change the [Visual Studio Windows Layout](https://learn.microsoft.com/en-us/visualstudio/ide/customizing-window-layouts-in-visual-studio?view=vs-2022). 
-  * For more information on debugging, see for example the videos [C# 101 Debugging](https://www.youtube.com/watch?v=pm_pv0Eb7Fw) and [.NET Core 101  Basic Debugging](https://learn.microsoft.com/de-de/shows/net-core-101/net-basic-debugging) or the article [First look at the debugger](https://learn.microsoft.com/en-us/visualstudio/debugger/debugger-feature-tour?view=vs-2022) on Microsoft Learn.
+Compiler errors:
+* The compiler does not see spaces, indentations or line breaks. It needs semicolons and matching brackets to understand the code correctly. Finding errors is helped by the *Error-List Window*, *Quick Actions*, *commenting out* code, and the *[keyboard shortcut](https://learn.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2022#bkmk_text-editor-context-specific-shortcuts)* Ctrl+], you can also *rewrite the code in small pieces*.
+* For more information on fixing errors, see for example [Fix program errors and improve code](https://learn.microsoft.com/en-us/visualstudio/ide/find-and-fix-code-errors?view=vs-2022) on Microsoft Lean.
 
-*  If you want to change the code of your program, you should stop debugging before.
+Debugging: 
+* Start debugging with *F5*, set breakpoint with *F9*, step over with *F10*, to next breakpoint with *F5*, end debugging with *Shift F5*. 
+* The *Autos Window* shows the values of variables. 
+* If you have little space on the screen: change the [Visual Studio Windows Layout](https://learn.microsoft.com/en-us/visualstudio/ide/customizing-window-layouts-in-visual-studio?view=vs-2022). 
+* For more information on debugging, see for example the videos [C# 101 Debugging](https://www.youtube.com/watch?v=pm_pv0Eb7Fw) and [.NET Core 101  Basic Debugging](https://learn.microsoft.com/de-de/shows/net-core-101/net-basic-debugging) or the article [First look at the debugger](https://learn.microsoft.com/en-us/visualstudio/debugger/debugger-feature-tour?view=vs-2022) on Microsoft Learn.
+
+If you want to change the code of your program, you should stop debugging before.
 
 ### How to go on
 

@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Draw a filled hexagon using simple C# commands (h4-03)
-tags: LearnToCode C# HexaFour
+tags: LearnToCode C# HexaFour Woopec.Graphics
 excerpt_separator: <!--more-->
 typora-root-url: ..
 ---

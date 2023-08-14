@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: How to easily write your first C# program with graphics (h4-02)
-tags: LearnToCode C# HexaFour
+tags: LearnToCode C# HexaFour Woopec.Graphics
 excerpt_separator: <!--more-->
 typora-root-url: ..
 ---
