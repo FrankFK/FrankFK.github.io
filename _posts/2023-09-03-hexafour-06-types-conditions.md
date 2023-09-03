@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: 0 is not equal to null. Explicitly define C# Types for Clarity (h4-06)
+title: 0 is not equal to null. Definition and Use of the appropriate C# Types (h4-06)
 tags: LearnToCode C# HexaFour Woopec.Graphics
 excerpt_separator: <!--more-->
 typora-root-url: ..
@@ -8,7 +8,7 @@ typora-root-url: ..
 
 ![An input window for numerical input. Values between 0 and 7 are allowed. The mouse arrow is on the Cancel button.](/assets/images/hexafour/WoopecNumInputCancel.png)
 
-For simple values there are the data types int, double and string in C#. But a variable can also have the value null. What exactly is this? You can use the type int or int?, what is the difference? And how can you use if and else to execute different parts of the program?
+C# provides many data types. For example double, int and string. A string variable can have the value null. This null value has a few pitfalls to be aware of. Value types like int and double cannot be null, but you can define nullable value types. This post explains that in more detail with simple examples. At the end it will be explained how to use if and else statements to execute different parts of the program.
 
 <!--more-->
 
@@ -136,7 +136,7 @@ Let's change the program so that it adds the number 50 to `userInput`:
 
 We run the program in the debugger and click the Cancel button in the number input. After that inputValue has the value null. Then we execute the line with the assignment to variable movement. What value does the variable movement have then? You might think the value 50. But this is not so, the value of movement is null. This shows that it makes a difference if the variable inputValue has the value null or the value 0. These are two completely different things. You cannot calculate with the value null. 
 
-### The type `int?` and how to make it an `int` again
+### The nullable value type `int?` and how to make it an `int` again
 
 The previous example becomes clearer if we do not use `var` but try to write the type of the variable explicitly. You might think that's the way it is::
 

@@ -71,7 +71,7 @@ The following list contains the posts of this series published so far.
 * [Draw a hexagon with C#][hexafour-03]
 * [Why is this simple C# Program not working? Fixing Compiler Errors and using the Visual Studio Debugger][hexafour-04]
 * [It is never to early to write clean code][hexafour-05]
-* [0 is not equal to null. Explicitly define C# Types for Clarity][hexafour-06]
+* [0 is not equal to null. Definition and Use of the appropriate C# Types][hexafour-06]
 
 If you are looking for specific topics, these lists can help you:
 
