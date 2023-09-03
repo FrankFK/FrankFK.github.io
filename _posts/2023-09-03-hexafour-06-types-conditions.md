@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: 0 is not equal to null? Explicitly define C# Types for Clarity (h4-06)
+title: 0 is not equal to null. Explicitly define C# Types for Clarity (h4-06)
 tags: LearnToCode C# HexaFour Woopec.Graphics
 excerpt_separator: <!--more-->
 typora-root-url: ..
@@ -8,7 +8,9 @@ typora-root-url: ..
 
 ![An input window for numerical input. Values between 0 and 7 are allowed. The mouse arrow is on the Cancel button.](/assets/images/hexafour/WoopecNumInputCancel.png)
 
-For simple values there are the data types `int`, `double` and `string` in C#. But a variable can also have the value `null`. What exactly is this? You can use the type `int` or `int?`, what is the difference? And how can you use `if` and `else` to execute different parts of the program?
+For simple values there are the data types int, double and string in C#. But a variable can also have the value null. What exactly is this? You can use the type int or int?, what is the difference? And how can you use if and else to execute different parts of the program?
+
+<!--more-->
 
 ### Starting point for this article
 
@@ -75,11 +77,11 @@ Suppose we want to ask the user what color our hexagon should have. We can use t
     var color = pen.Screen.TextInput("Choose color", "Enter a color-name (for instance: red)");
 ```
 
-Calling the `TextInput` method displays a small dialog window where the user can enter a text:
+Calling the TextInput method displays a small dialog window where the user can enter a text:
 
 ![An input window for text input. Color names are allowed.](/assets/images/hexafour/WoopecTextInput.png)
 
-The result of the input is assigned to the variable `color`. What type is the variable `color`? Is it really a color? Here it is better to write the type explicitly. The method `TextInput` returns a C# **string** and we write this type in front of the name of our variable:
+The result of the input is assigned to the variable `color`. What type is the variable color? Is it really a color? Here it is better to write the type explicitly. The method TextInput returns a C# **string** and we write this type in front of the name of our variable:
 
 ```csharp
     string colorName = pen.Screen.TextInput("Choose color", "Enter a color-name (for instance: red)");
@@ -87,11 +89,11 @@ The result of the input is assigned to the variable `color`. What type is the va
 
 ### C# string type
 
-In programs you often have to deal with texts. That's why the type 'string' is very important. You'd better have a look at some things about it on the internet now. For example the video [The Basics of Strings | C# 101](https://www.youtube.com/watch?v=JSpC7Cz64h0) in Microsoft Learn. For the Hexafour program we want to write here, we don't need much more than what is described in this video. That's why I won't go much deeper into strings here.
+In programs you often have to deal with texts. That's why the type 'string' is very important. You'd better have a look at some things about it on the internet now. For example the video [The Basics of Strings , C# 101](https://www.youtube.com/watch?v=JSpC7Cz64h0) in Microsoft Learn. For the Hexafour program we want to write here, we don't need much more than what is described in this video. That's why I won't go much deeper into strings here.
 
 ### With null-strings there can be problems
 
-We can use the value of `colorName` to fill our hexagon with this color:
+We can use the value of variable colorName to fill our hexagon with this color:
 
 ```csharp
     pen.EndFill(colorName);
@@ -101,11 +103,11 @@ The hexagon is thus filled with the desired color. With one exception: What happ
 
 ![The Visual Studio Debugger displays a window titled "Exception User-Unhandled". The window contains the text: System.ArgumentNullException Value cannot be null.](/assets/images/hexafour/VsNullException.png)
 
-The program somehow can't handle the case when the user clicked the Cancel button. Restart the program again, put a breakpoint in the line with `pen.EndFill(colorName)`, and look at the value of the variable `colorName` (see [previous post][hexafour-05]). The variable has the value `null`:
+The program somehow can't handle the case when the user clicked the Cancel button. Restart the program again, put a breakpoint in the line with `pen.EndFill(colorName)`, and look at the value of the variable colorName (see [previous post][hexafour-05]). The variable has the value null:
 
 ![](/assets/images/hexafour/VSColorNameIsNull.png)
 
-The parameter of `pen.EndFill` must be a color, but the value `null` is not a color. The program cannot handle it and that is why an exception is thrown. We have to handle the case when a variable has the value `null` specially. We will see how to do this below. But first, let's take a closer look at this strange `null` value. In the example above we asked the user for a text, if we ask for a number it gets even more interesting.
+The parameter of `pen.EndFill` must be a color, but the value null is not a color. The program cannot handle it and that is why an exception is thrown. We have to handle the case when a variable has the value null specially. We will see how to do this below. But first, let's take a closer look at this strange null value. In the example above we asked the user for a text, if we ask for a number it gets even more interesting.
 
 ### Query a number from the user
 
@@ -115,13 +117,13 @@ In our planned game, the user should be able to specify in which "slot" she want
     var userInput = pen.Screen.NumInput("Choose slot", "Enter a slot-number in the range 1..7", 4, 1, 7);
 ```
 
-We already know the first two parameters from the `TextInput` method. The third parameter is a default value. The fourth value specifies a minimum value for the input, and the fifth value a maximum value. 
+We already know the first two parameters from the TextInput method. The third parameter is a default value. The fourth value specifies a minimum value for the input, and the fifth value a maximum value. 
 
 If the user enters a text that is not a number, or he enters a number that is not in the range of minimum and maximum value, the error is displayed and the user must correct the input:
 
 ![Two windows of the Woopec Libraray. In the background the window for a number input. The user has entered the number 9 there. In the foreground a second window with the message: The allowed maximal value is 7, try again.](/assets/images/hexafour/WoopecNumInput.png)
 
-So we can rely in our program code that the `NumInput` method returns an integer between 1 and 7. Except for one exception: if the user has selected the Cancel button, the value `null` is returned.  And this is also a problem here:
+So we can rely in our program code that the NumInput method returns an integer between 1 and 7. Except for one exception: if the user has selected the Cancel button, the value null is returned.  And this is also a problem here:
 
 ### The value null is not the same as the value 0
 
@@ -132,7 +134,7 @@ Let's change the program so that it adds the number 50 to `userInput`:
     var movement = userInput + 50;
 ```
 
-We run the program in the debugger and click the Cancel button in the number input. After that `inputValue` has the value `null`. Then we execute the line with the assignment to `movement`. What value does the variable `movement` have then? You might think the value `50`. But this is not so, the value of `movement` is `null`. This shows that it makes a difference if the variable `inputValue` has the value `null` or the value `0`. These are two completely different things. You cannot calculate with the value `null`. 
+We run the program in the debugger and click the Cancel button in the number input. After that inputValue has the value null. Then we execute the line with the assignment to variable movement. What value does the variable movement have then? You might think the value 50. But this is not so, the value of movement is null. This shows that it makes a difference if the variable inputValue has the value null or the value 0. These are two completely different things. You cannot calculate with the value null. 
 
 ### The type `int?` and how to make it an `int` again
 
@@ -142,13 +144,17 @@ The previous example becomes clearer if we do not use `var` but try to write the
     int userInput = pen.Screen.NumInput("Choose slot", "Enter a slot-number in the range 1..7", 4, 1, 7);
 ```
 
-However, Visual Studio gives the following error for this line of code: `Cannot implicitly convert type 'int?' to 'int'`.  What does it mean? The `NumInput` method does not return a result of type `int`, but a result of type **`int?`** and this type does not match the type of the variable `userInput`. The type `int?` is a so-called **[nullable value type](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types)**. The question mark after a variable of type `int?` indicates that such a variable may contain a number (i.e. an `int`) or the value `null`.  On the contrary, a variable of type `int` may contain only a number and not `null`.  Because `NumInput` returns a result of type `int?`, our variable `userInput` must also have this type:
+However, Visual Studio gives the following error for this line of code:
+
+> Cannot implicitly convert type 'int?' to 'int'. 
+
+What does it mean? The NumInput method does not return a result of type int, but a result of type **`int?`** and this type does not match the type of the variable userInput. The type `int?` is a so-called **nullable value type** (see [Microsoft documentation](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types)). The question mark after a variable of type `int?` indicates that such a variable may contain a number (i.e. an `int`) or the value null.  On the contrary, a variable of type `int` may contain only a number and not null.  Because the method NumInput returns a result of type `int?`, our variable userInput must also have this type:
 
 ```csharp
     int? userInput = pen.Screen.NumInput("Choose slot", "Enter a slot-number in the range 1..7", 4, 1, 7);
 ```
 
-We cannot simply assign the value of `userInput` to another variable of type `int`. The following line of code is incorrect because `userInput` has a different type than `movement`:
+We cannot simply assign the value of variable userInput to another variable of type `int`. The following line of code is incorrect because userInput has a different type than movement:
 
 ```csharp
     int movement = userInput;
@@ -160,7 +166,7 @@ But this is how it goes:
     int movement = userInput.GetValueOrDefault();
 ```
 
-The **`GetValueOrDefault()`** method always returns a value of type `int`. In case of a real number it returns the number itself, and in case of `null` the number 0. 
+The **`GetValueOrDefault()`** method always returns a value of type int. In case of a real number it returns the number itself, and in case of null the number 0. 
 
 ### Define C# conditions with `if`
 
@@ -178,7 +184,7 @@ In our program we must now somehow deal with the special case that the user has 
 The `if` command is as important as loops (see previous [post][hexafour-05]). An `if` statement consists of the following parts:
 
 * First comes the `if` keyword.
-* Then comes the `if` condition. This must always be enclosed in round brackets. In our example the if-condition is `colorName == null`. The two characters `==` mean "is equal to". That means in our example: The if-condition is fulfilled, if the value of `colorName` is equal to `null`.
+* Then comes the `if` condition. This must always be enclosed in round brackets. In our example the if-condition is `colorName == null`. The two characters `==` mean "is equal to". That means in our example: The if-condition is fulfilled, if the value of variable colorName is equal to null.
 * After that comes a code block with any number of lines. This code block starts and ends with curly brackets `{` and `}`.  All lines of code between these two brackets belong to this code block and will be executed if the `if` condition is fulfilled.
 * To make it easier to see where the code block starts and ends, the brackets are written on separate lines and the contents of the code block are indented. (We do this for `if` code blocks just as we do for loops).
 
@@ -200,9 +206,9 @@ We can also tell the program what to do in the case when the if-condition is not
 
 The **`else` command** forms a unit with the previous if command. The code effectively says: If the userInput is `null` execute the first code block, else execute the second code block. In the above example:
 
-* The `if` block is executed when `userInput` has the value `null` (because the user had clicked the Cancel button). In this case, the program is simply terminated. The `Bye()` Woopec method is used for this purpose. 
+* The `if` block is executed when variable userInput has the value null (because the user had clicked the Cancel button). In this case, the program is simply terminated. The `Bye()` Woopec method is used for this purpose. 
 
-* The `else` block is executed if `userInput` is not equal to `null`. We have to convert the value of `userInput` to an `int` type with `GetValueOrDefault`, otherwise we could not assign it to `slotNumber`.
+* The `else` block is executed if variable userInput is not equal to null. We have to convert the value of userInput to an `int` type with `GetValueOrDefault`, otherwise we could not assign it to the variable slotNumber.
 
 For more information on the `if` and `else` commands, see [C# if statements and loops - conditional logic tutorial][MSDocsLoops]. You should have a look at this tutorial, because many things are explained there.
 
@@ -250,8 +256,8 @@ This post is part of a series. You can find the previous post [here][hexafour-05
 
 
 C#
-* *Data types* `int`, `double` and `string`.
-* More about strings:  [The Basics of Strings | C# 101](https://www.youtube.com/watch?v=JSpC7Cz64h0) and [Strings - C# Programming Guide | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/).
+* *Data types* int, double and string.
+* More about strings:  [The Basics of Strings, C# 101](https://www.youtube.com/watch?v=JSpC7Cz64h0) and [Strings - C# Programming Guide, Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/).
 * The value `null` is something special. Method `GetValueOrDefault` is helpful.
 * [Nullable value types](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types), e.g. `int?`
 * Program errors can generate *exceptions*. The cause can be found with the debugger.
@@ -261,9 +267,9 @@ Clean Code
 * Use `var` only if it is crystal clear what type the variable is.
 
 Woopec library
-* Methods *`BeginFill`* and *`EndFill`* to draw a filled hexagon
-* Methods *`TextInput`* and *`NumInput`* to query values from the user
-* Method *`Bye`* to terminate the program
+* Methods *BeginFill* and *EndFill* to draw a filled hexagon
+* Methods *TextInput* and *NumInput* to query values from the user
+* Method *Bye* to terminate the program
 * For more information, see the [Woopec documentation][WoopecDocsMainClasses].
 
 
