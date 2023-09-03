@@ -71,6 +71,7 @@ The following list contains the posts of this series published so far.
 * [Draw a hexagon with C#][hexafour-03]
 * [Why is this simple C# Program not working? Fixing Compiler Errors and using the Visual Studio Debugger][hexafour-04]
 * [It is never to early to write clean code][hexafour-05]
+* [0 is not equal to null? Explicitly define C# Types for Clarity][hexafour-06]
 
 If you are looking for specific topics, these lists can help you:
 
@@ -79,8 +80,9 @@ If you are looking for specific topics, these lists can help you:
 * [Statement][hexafour-02]
 * Methods: [Using a method and setting parameters][hexafour-02]
 * Properties: [Using a property][hexafour-03]
-* Variables: [Definition, change, check, usage][hexafour-05]
-* Loops: [for, while, others][hexafour-05]
+* Variables: [Definition, change, check, usage][hexafour-05]. [Definition with var keyword][hexafour-06]
+* Data types: [int, double, string][hexafour-06], [null and nullable value types][hexafour-06]
+* Control: [for, while and other loops][hexafour-05], [if and else commands][hexafour-06]
 * Conditions: [in loops][hexafour-05]
 
 *Visual Studio*:
@@ -89,25 +91,25 @@ If you are looking for specific topics, these lists can help you:
 * [IntelliSense][hexafour-03]
 * Keyboard shortcuts: [jump to corresponding brace, and more][hexafour-04]
 * Compiler errors: [tips and tricks to fix them][hexafour-04]
-* Debugging: [start, stop, breakpoints, step over, step into][hexafour-04], [window placement][hexafour-04], [variables][hexafour-05]
+* Debugging: [start, stop, breakpoints, step over, step into][hexafour-04], [window placement][hexafour-04], [variables][hexafour-05], [exceptions][hexafour-06]
 
 *Woopec graphics library*:
 
 * [Create a new Visual Studio project with Woopec graphics][hexafour-02]
 * Turtle methods: [Left, Right, Forward][hexafour-02],  [ShowTurtle, HideTurtle, PenUp, PenDown, BeginFill, EndFill][hexafour-03]
 * Turtle properties: [Color, Speed][hexafour-03]
-* Pen methods and properties: [Rotate, Move, IsDown][hexafour-05]
+* Pen methods and properties: [Rotate, Move, IsDown][hexafour-05] [BeginFill, EndFill, Screen][hexafour-06]
+* Screen methods: [TextInput, NumInput, Bye][hexafour-06]
 
 *Clean Code*:
 
 * [Meaning][hexafour-01], [Example][hexafour-05]
 * Principles: [coding conventions][hexafour-05], [DRY principle][hexafour-05]
+* Tips: [Usage of var][hexafour-06]
 
 *HexaFour game*:
 
 * [Game idea][hexafour-01]
-
-
 
 
 
@@ -120,4 +122,6 @@ If you are looking for specific topics, these lists can help you:
 [hexafour-04]: {% post_url 2023-07-23-hexafour-04-debugging %}
 
 [hexafour-05]: {% post_url 2023-08-13-hexafour-05-variables-loops-dry %}
+
+[hexafour-06]: {% post_url 2023-09-03-hexafour-06-types-conditions %}
 

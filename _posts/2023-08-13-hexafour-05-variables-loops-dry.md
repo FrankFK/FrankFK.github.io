@@ -194,7 +194,7 @@ The debugger has many more features for variables. For example, moving the mouse
 
 ### Summary
 
-This post is part of a series. You can find the previous post [here][hexafour-04] and an overview [here][hexafour-overview].
+This post is part of a series. You can find the previous post [here][hexafour-04], an overview [here][hexafour-overview] and the next post [here][hexafour-06].
 
 Clean Code
 * Clean code makes your code more readable and maintainable.
@@ -228,6 +228,8 @@ For example, you could try the following: Change the code to use a `while` loop 
 [hexafour-03]: {% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}
 
 [hexafour-04]: {% post_url 2023-07-23-hexafour-04-debugging %}
+
+[hexafour-06]: {% post_url 2023-09-03-hexafour-06-types-conditions %}
 
 [hexafour-overview]: {% post_url 2023-07-01-hexafour-01-overview %}#overview-of-the-posts-in-this-series
 
