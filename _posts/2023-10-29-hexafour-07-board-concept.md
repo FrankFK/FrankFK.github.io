@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: First design a Concept and then program it (h4-07)
+title: First think about a Concept, then take the next Coding Step (h4-07)       
 tags: CodeQuality 
 excerpt_separator: <!--more-->
 typora-root-url: ..
@@ -12,50 +12,50 @@ Software development has a lot to do with finding good solutions. Sometimes this
 
 <!--more-->
 
-In my [previous post]({% post_url 2023-10-16-plea-for-concept %}) I wrote that conceptual work is important in professional software development. But the same is true for the HexaFour game, which we want to program step by step here. In the [fifth article of the HexaFour][hexafour-05] series we already wrote code that draws a hexagon. For this we didn't need a concept. But next we need code that draws the game board. This is not as easy as it looks at first. Here it is definitely worth making a concept first.
+In my [previous post]({% post_url 2023-10-16-plea-for-concept %}) I wrote that conceptual work is important in professional software development. But the same is true for the HexaFour game, which we want to program step by step here. In the [fifth article][hexafour-05] of the HexaFour series we already wrote code that draws a hexagon. For this we didn't need a concept. But next we need code that draws the game board. This is not as easy as it looks at first. Here it is definitely worth making a concept first.
 
-### Konzept für das Spielbrett
+### Concept for the game board
 
-Wir wissen jetzt, wie wir eine Spieltoken zeichnen können. Als nächstes wollen wir das Spielbrett zeichnen. In der ersten Skizze aus Artikel 1 sah das Spielbrett so aus:
+One of the first sketches of my game idea from the [first post][hexafour-01] of this series looked like this:
 
-![image-20221109205551362](ConceptFirstIdea.png)
+<img src="/assets/images/hexafour/UiConceptBoardIdea1.png" alt="Drawing of the first game idea with lots of lines and hexagons." style="zoom:60%;" />
 
-Das war nur eine erste Skizze. Für das Programm müssen wir genauer überlegen, wie sich das Spielbrett zeichnen lässt. Es wäre keine gute Idee sofort mit dem Programmieren loszulegen und über Try and Error zu einer Lösung zu kommen. Wir kommen viel besser zum Ziel, wenn wir uns vor dem Programmieren einen Plan machen. Wir brauchen ein **Konzept**. Auf jeden Fall benötigen wir für das Spielbrett Rhomben-förmige Gebilde (eins davon habe ich oben im Bild grau gekennzeichnet). Wie groß müssen diese Rhomben sein und wo genau müssen sie platziert werden? Dazu muss man etwas auf dem Papier herumprobieren und überlegen. Am Ende stellt sich heraus, dass folgende Größe gut funktioniert:
+That was perfectly sufficient as a first sketch. But as a basis for a program it was still too imprecise, many important details were not clarified: The hexagons must move through the board, there must be no places that are too narrow. What width and height must the rhombus-shaped structures have then? What are the horizontal and vertical distances between the rhombuses? Which objects on the board are necessary, which are superfluous and can be omitted in the first step? It would not have been a good idea to start programming right away and to clarify these questions during the process. It was much better to make a more detailed design first.
 
-![image-20221109212931926](ConceptFinalIdea.png)
+To do this, I had to think for some time and try a few things with paper and pen (and with shapes in PowerPoint). In the end I had a good feeling that it should work like this:
 
-Der Rhombus ist hier genauso breit wie die Spielmarke (rot markiert) und die Seiten des Rhombus sind so lang sein wie die Breite der Spielmarke. Der Abstand zwischen Rhomben in der gleichen Zeile ist damit auch klar. Die Höhe des Rhombus (grün markiert) kann man mit etwas Mathematik ausrechnen. Wenn eine Zeile fertig gezeichnet ist, liegen die Rhomben der nächsten Zeile eine Rhombus-Höhe tiefer und sind um eine Rhombus-Breite versetzt. Den Rand des Spielfelds können wir mit halben Rhomben begrenzen (dunkelgrau markiert). 
+<img src="/assets/images/hexafour/UiConceptBoardIdea2.png" alt="Drawing that only contains the really essential things and emphasizes equal lengths." style="zoom:65%;" />
 
-Die obige Skizze ist nicht ganz perfekt, aber als Konzept reicht uns das. Wir haben alle Informationen, die wir für das Zeichnen des Spielbretts benötigen. Am Ende wird es vom Programm gezeichnet so aussehen:
+This picture answers all questions: All sizes are derived from the width (marked in red) of a token. A rhombus (marked in light gray) is as wide as the token. The sides of the rhombus are as long as the width of the token. The height (marked green) of the rhombus can then be easily calculated with a little math. The horizontal distances of the rhombuses correspond to the width of a token. The positions of the rhombuses of the next row are one rhombus height lower in relation to the current row and are offset by one rhombus width. We can border the edge of the board with half rhombuses (marked in dark gray). 
 
-![image-20221109215810393](ConceptInProgram.png)
-
-
-
-```csharp
-
-```
+This design was not 100 percent perfect. But it didn't have to be, because it was perfectly adequate as a concept for programming. I had all the information needed to draw the game board.
 
 
+### Concept for the coordinate system
 
-### Konzept für das Koordinatensystem 
+You can view the objects on the board from two perspectives. For *drawing the objects* the exact screen coordinates, widths and sizes of the objects must be known. But for *playing with the objects* this is not relevant. There one would rather speak of rows, columns and slots. And one would mark these with letters or numbers. So there are two different coordinate systems. Which of these two coordinate systems do we use as a basis? I decided to use the player coordinate system. I use numbers to indicate a specific row, column or slot. And I start the count within the program with 0. The following picture illustrates this:
 
-Man kann die Objekte auf dem Spielbrett aus zwei Perspektive betrachten. Zum *Zeichnen der Objekte* müssen die genauen Bildschirmkoordinaten, Breiten und Größen der Objekte bekannt sein. Für das *Spielen mit den Objekten* ist das aber nicht relevant. Da würde man eher von Zeilen, Spalten und Slots sprechen. Und man würde diese mit Buchstaben oder Zahlen kennzeichnen. Es gibt also zwei Belange mit unterschiedlichen Koordinatensystemen. Welches dieser beiden Koordinatensysteme verwenden wir als Grundlage? Ich habe mich für das Spieler-Koordinatensystem entschieden. Als Kennzeichen für eine spezielle Zeilen, Spalte oder Slot verwende ich Zahlen. Und die Zählung beginne ich innerhalb des Programms mit 0. Das folgende Bild veranschaulicht das:
+<img src="/assets/images/hexafour/ConceptCoorSystem.png" alt="A picture with the board in the background. In the foreground, a green grid with integers at the edge. At the top, a row of hexagons whose positions are marked with slot numbers." style="zoom:60%;" />
 
-![image-20221221223517229](CoorSystemConcept.png)
+I also needed a bit of time for this concept. There are many decisions in this concept that I could have made differently. For example, I could have made the columns twice as dense. This might have had the advantage of using the same coordinates for slots and columns. I could also have started the numbering of rows and columns with 1 instead of 0. But in the end I had the feeling that exactly this concept is a good basis for my program code.
 
-Ich habe ein bisschen Zeit für dieses Konzept benötigt. In diesem Konzept stecken viele Entscheidungen, die ich auch anders hätte treffen können. Ich hätte die columns beispielsweise doppelt so dicht machen können. Das hätte vielleicht den Vorteil, dass man für slots und columns die gleichen Koordinaten verwenden kann. Die Zählung könnte mit 1 anstelle von 0 beginnen. Usw. Am Ende hatte ich bei diesem Konzept das Gefühl, dass der Code so relativ einfach wird. 
+### Define names for the important things
 
+While working on the concepts, names for the objects of the game have also emerged: There are *game tokens* and a *game board*. The game board consists of *rhombuses* and *half-rhombuses*. These are arranged in *columns* and *rows*. Game tokens can be placed in *slots*. 
 
+If we always use these names in the program code, the code and concept will fit well together and explain each other.
 
-### Kurze Zusammenfassung
+If you want to delve deeper into this aspect, I recommend you take a look at the article on [Domain-driven design](https://en.wikipedia.org/wiki/Domain-driven_design) on Wikipedia.
 
-* Man benötigt kein großes Konzept für alles von 0 bis zum fertigen Programm, aber man braucht immer mal wieder ein *Konzept* für die nächsten Schritte. Ein Konzept muss keine große Dokument mit Schaubildern und viel Text sein, es reicht aus eine klare Vorstellung zu haben, wie wir weiter vorgehen wollen. Aber es lohnt sich, etwas länger über alternative Lösungen und das Konzept nachdenken. Mit einem schlechten Konzept verliert man am Ende Zeit, weil man öfter Dinge verwerfen und von vorne anfangen muss.
-* 
+### Summary
 
-### Übung
+You don't need a big concept for everything from zero to the finished program, that would be much too difficult. But it often makes sense to create a concept for the *next steps*. In professional software development this is also done, for example in the "Dual Track Agile" approach, this means roughly: There is a development track, in which the program code is written. And in parallel, there is a second track, in which the concept for the next coding steps is developed.
 
-Wir haben ein Konzept, mit dem wir jetzt hier weitermachen werden. Das ist gut. Aber es gibt immer mehr als eine Möglichkeit. Muss das Spielbrett rechteckig sein? Muss man die Tokens von oben "einwerfen"? Müssen die Tokens sechseckig sein? Kann man die Rhomben kleiner oder größer machen? Müssen es Rhomben sein oder sind auch andere Formen sinnvoll? Wie würde dein Konzept aussehen?
+A concept doesn't have to be a big document with lots of text, it's enough to have a clear idea of how we want to proceed. But it's worth investing enough time in the concept, thinking a little longer about alternative solution approaches and discussing them with other people. With a bad concept, you end up losing time because you have to discard things and start over more often.
+
+Therefore, at the end, I have a few questions about the concepts presented here. There is always more than one possibility. Does the board have to be rectangular? Do the tokens have to be "thrown in" from above? Do the tokens have to be hexagonal? Can the rhombuses be made smaller or larger? Do they have to be rhombuses or are other shapes useful? What would your concept look like?
+
+Unfortunately, I don't know your ideas, so I'll continue with my concept in the next post. 
 
 [hexafour-01]: {% post_url 2023-07-01-hexafour-01-overview %}
 

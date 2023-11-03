@@ -72,6 +72,7 @@ The following list contains the posts of this series published so far.
 * [Why is this simple C# Program not working? Fixing Compiler Errors and using the Visual Studio Debugger][hexafour-04]
 * [It is never to early to write clean code][hexafour-05]
 * [0 is not equal to null. Definition and Use of the appropriate C# Types][hexafour-06]
+* [First thing about a Concept, then take the next Coding Step][hexafour-07]
 
 If you are looking for specific topics, these lists can help you:
 
@@ -104,12 +105,13 @@ If you are looking for specific topics, these lists can help you:
 *Clean Code*:
 
 * [Meaning][hexafour-01], [Example][hexafour-05]
-* Principles: [coding conventions][hexafour-05], [DRY principle][hexafour-05]
+* Principles: [coding conventions][hexafour-05], [DRY principle][hexafour-05], [concepts][hexafour-07]
 * Tips: [Usage of var][hexafour-06]
 
 *HexaFour game*:
 
 * [Game idea][hexafour-01]
+* [Board concept][hexafour-07]
 
 
 
@@ -124,4 +126,6 @@ If you are looking for specific topics, these lists can help you:
 [hexafour-05]: {% post_url 2023-08-13-hexafour-05-variables-loops-dry %}
 
 [hexafour-06]: {% post_url 2023-09-03-hexafour-06-types-conditions %}
+
+[hexafour-07]: {% post_url 2023-10-29-hexafour-07-board-concept %}
 
