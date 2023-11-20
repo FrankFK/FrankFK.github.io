@@ -248,7 +248,7 @@ public static void WoopecMain()
 }
 ```
 
-The program can already do a few things: It can ask the user for a slot and can draw a hexagon at the corresponding position depending on which slot the user has entered. For the full game we will have to write much more code. And the code is already starting to get messy again - it's not really clean code anymore. We should change that soon, but first we have to get to know some more C# elements in the next post..
+The program can already do a few things: It can ask the user for a slot and can draw a hexagon at the corresponding position depending on which slot the user has entered. For the full game we will have to write much more code. And the code is already starting to get messy again - it's not really clean code anymore. We should change that soon, but first we need a better [concept][hexafour-07].
 
 ### Summary
 
@@ -283,5 +283,7 @@ If you want to play around a bit: The code currently always draws a hexagon. How
 [hexafour-04]: {% post_url 2023-07-23-hexafour-04-debugging %}
 
 [hexafour-05]: {% post_url 2023-08-13-hexafour-05-variables-loops-dry %}
+
+[hexafour-07]: {% post_url 2023-10-29-hexafour-07-board-concept %}
 
 [hexafour-overview]: {% post_url 2023-07-01-hexafour-01-overview %}#overview-of-the-posts-in-this-series

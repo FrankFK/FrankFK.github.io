@@ -2,6 +2,7 @@
 layout: posts
 title: First think about a Concept, then take the next Coding Step (h4-07)       
 tags: CodeQuality 
+image: /assets/images/hexafour/UiConceptTitle.png
 excerpt_separator: <!--more-->
 typora-root-url: ..
 ---
@@ -55,7 +56,15 @@ A concept doesn't have to be a big document with lots of text, it's enough to ha
 
 Therefore, at the end, I have a few questions about the concepts presented here. There is always more than one possibility. Does the board have to be rectangular? Do the tokens have to be "thrown in" from above? Do the tokens have to be hexagonal? Can the rhombuses be made smaller or larger? Do they have to be rhombuses or are other shapes useful? What would your concept look like?
 
-Unfortunately, I don't know your ideas, so I'll continue with my concept in the next post. 
+Unfortunately, I don't know your ideas, so I'll continue with my concept in the [next post][hexafour-08]. 
+
+### Comment on this post ❤️
+
+I am very interested in what readers think of this post and what ideas or questions they have. The easiest way to do this is to respond to my [anonymous survey](https://forms.office.com/r/RifQwq7FNE).
+
+
+
+
 
 [hexafour-01]: {% post_url 2023-07-01-hexafour-01-overview %}
 
@@ -69,5 +78,5 @@ Unfortunately, I don't know your ideas, so I'll continue with my concept in the 
 
 [hexafour-06]: {% post_url 2023-09-03-hexafour-06-types-conditions %}
 
-
+[hexafour-08]: {% post_url 2023-11-19-hexafour-08-using-classes %}
 

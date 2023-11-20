@@ -73,6 +73,7 @@ The following list contains the posts of this series published so far.
 * [It is never to early to write clean code][hexafour-05]
 * [0 is not equal to null. Definition and Use of the appropriate C# Types][hexafour-06]
 * [First thing about a Concept, then take the next Coding Step][hexafour-07]
+* [Create Instances of a C# Class and store them in a List][hexafour-08]
 
 If you are looking for specific topics, these lists can help you:
 
@@ -80,9 +81,11 @@ If you are looking for specific topics, these lists can help you:
 
 * [Statement][hexafour-02]
 * Methods: [Using a method and setting parameters][hexafour-02]
+* Classes: [Creating and initializing][hexafour-08]
 * Properties: [Using a property][hexafour-03]
 * Variables: [Definition, change, check, usage][hexafour-05]. [Definition with var keyword][hexafour-06]
-* Data types: [int, double, string][hexafour-06], [null and nullable value types][hexafour-06]
+* Simple data types: [int, double, string][hexafour-06], [null and nullable value types][hexafour-06]
+* Complex data types: [lists][hexafour-08]
 * Control: [for, while and other loops][hexafour-05], [if and else commands][hexafour-06]
 * Conditions: [in loops][hexafour-05]
 
@@ -97,9 +100,11 @@ If you are looking for specific topics, these lists can help you:
 *Woopec graphics library*:
 
 * [Create a new Visual Studio project with Woopec graphics][hexafour-02]
-* Turtle methods: [Left, Right, Forward][hexafour-02],  [ShowTurtle, HideTurtle, PenUp, PenDown, BeginFill, EndFill][hexafour-03]
-* Turtle properties: [Color, Speed][hexafour-03]
-* Pen methods and properties: [Rotate, Move, IsDown][hexafour-05] [BeginFill, EndFill, Screen][hexafour-06]
+* Turtle methods und properties: [Left, Right, Forward][hexafour-02],  [ShowTurtle, HideTurtle, PenUp, PenDown, BeginFill, EndFill][hexafour-03], [Color, Speed][hexafour-03]
+* Pen methods and properties: [Rotate, Move, IsDown][hexafour-05] [BeginFill, EndFill, Screen][hexafour-06], [BeginPoly, EndPoly][hexafour-08]
+* Figure methods and properties: [Rotate, Move, IsVisible, Heading][hexafour-08]
+* Shapes: [Shapes.Add, Shapes.Get][hexafour-08]
+* Colors: [Colors.FromHSV][hexafour-08]
 * Screen methods: [TextInput, NumInput, Bye][hexafour-06]
 
 *Clean Code*:
@@ -116,16 +121,10 @@ If you are looking for specific topics, these lists can help you:
 
 
 [hexafour-01]: {% post_url 2023-07-01-hexafour-01-overview %}
-
 [hexafour-02]: {% post_url 2023-07-02-hexafour-02-first-program %}
-
 [hexafour-03]: {% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}
-
 [hexafour-04]: {% post_url 2023-07-23-hexafour-04-debugging %}
-
 [hexafour-05]: {% post_url 2023-08-13-hexafour-05-variables-loops-dry %}
-
 [hexafour-06]: {% post_url 2023-09-03-hexafour-06-types-conditions %}
-
 [hexafour-07]: {% post_url 2023-10-29-hexafour-07-board-concept %}
-
+[hexafour-08]: {% post_url 2023-11-19-hexafour-08-using-classes %}
