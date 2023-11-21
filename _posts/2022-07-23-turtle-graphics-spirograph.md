@@ -234,6 +234,10 @@ Finally, an example that uses Spirograph curves to paint a nicer picture. The co
 * On Jürgen Köller's website [Mathematische Basteleien][KoellerStartseite] you will find over a hundred articles with information on polygons, stars, spirograph curves, other curves and many other interesting mathematical objects. If you want to draw other mathematical objects with C# graphics, you will definitely find something there.
 * While writing this post, I came across the [Spiro Project](https://wjschne.github.io/spiro/articles/HowToUse/spiro.html). It's written in a completely different programming language, but what impressed me was what you can do with Spirograph curves.
 
+### Comment on this post ❤️
+
+I am very interested in what readers think of this post and what ideas or questions they have. The easiest way to do this is to respond to my [anonymous survey](https://forms.office.com/r/jAPs4jM0iu).
+
 <!-- Links -->
 
 [SpirographWikipedia]: https://en.wikipedia.org/wiki/Spirograph "Spirograph - Wikipedia"

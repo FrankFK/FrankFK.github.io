@@ -192,7 +192,14 @@ Below the code window, Visual Studio displays an Autos window. This window displ
 
 The debugger has many more features for variables. For example, moving the mouse cursor over a variable in the code will automatically display its value. You can find more information about debugging variables in the [Microsoft documentation][MSDocsInspectVariables].
 
-### Summary
+### The bottom line
+
+You can make the code much cleaner if you use variables and follow coding conventions and the DRY principle.
+
+If you want to try out a few things yourself: For example, you could try the following: Change the code to use a `while` loop again instead of a `for` loop. Then change the code to decrease the edge length by one in each loop pass. And then change the condition for the loop so that the loop is not terminated until the edge length has the value 1. What is the result?
+
+
+### TL;DR
 
 This post is part of a series. You can find the previous post [here][hexafour-04], an overview [here][hexafour-overview] and the next post [here][hexafour-06].
 
@@ -213,9 +220,13 @@ Woopec library
 * Advanced users can use the *Pen class* instead of the Turtle class. 
 * In this article the methods `Rotate` and `Move`, as well as the property `IsDown` were used. For more information, see the [Woopec documentation][WoopecDocsMainClasses].
 
-### How to go on
 
-For example, you could try the following: Change the code to use a `while` loop again instead of a `for` loop. Then change the code to decrease the edge length by one in each loop pass. And then change the condition for the loop so that the loop is not terminated until the edge length has the value 1. What is the result?
+
+### Comment on this post ❤️
+
+I am very interested in what readers think of this post and what ideas or questions they have. The easiest way to do this is to respond to my [anonymous survey](https://forms.office.com/r/RCwGbcJP2e).
+
+
 
 [WikiNamingConventions]: https://en.wikipedia.org/wiki/Naming_convention_(programming)
 [MsNamingConventions]: https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions

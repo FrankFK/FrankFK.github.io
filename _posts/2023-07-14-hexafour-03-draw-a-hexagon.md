@@ -10,8 +10,6 @@ The previous post showed how to write your first C# program. Now we will extend 
 
 <!--more-->
 
-(This post is part of a series. You can find the previous post [here]({% post_url 2023-07-02-hexafour-02-first-program %}) and an overview [here]({% post_url 2023-07-01-hexafour-01-overview %}#overview-of-the-posts-in-this-series).)
-
 ### Draw a hexagon
 
 In the last post we drew some lines using Woopec Turtle graphics. Now we want to draw a hexagon. Later we will do it differently, but the easiest way for now is like this:
@@ -137,19 +135,26 @@ Further documentation on Turtle's methods and properties can be found in the [Wo
 
 Maybe you haven't noticed, but in the code examples above we used not only methods (`Left, Forward, BeginFill` etc.), but also something new, which is called a **class property**. A class can have several properties, for example `Color` and `Speed`. You change a property by assigning a different value to it with the `=` character. For example, `seymour.Color = Colors.Red;` 
 
+### The bottom line
 
-### Summary
+We have managed to draw a hexagon. We could even choose any color we wanted for the filling.
+
+In the [next post][hexafour-04] I will explain how to fix compiler errors and how to run the program step by step in the debugger. Until then, you may want to program your own image with Turtle commands.
+
+### TL;DR
+
+This post is part of a series. You can find the previous post [here]({% post_url 2023-07-02-hexafour-02-first-program %}) and an overview [here]({% post_url 2023-07-01-hexafour-01-overview %}#overview-of-the-posts-in-this-series).
 
 * The Turtle class has more methods: *`ShowTurtle, HideTurtle, PenUp, PenDown, BeginFill, EndFill`*.
 * A C# class can also have *properties*. With the '=' character you can change the value of a property.
 * The Turtle properties *`Color`*  and *`Speed`* can be used to change the color and speed of the turtle. See the [Woopec helper classes documentation][Woopec-doc-helper-classes] for more information.
 * For information about Turtle methods and properties see the [Woopec turtle class documentation][Woopec-doc-turtle-class] or use Visual Studio *IntelliSense*.
 
-### How to go on
-
-In the [next post][hexafour-04] I will explain how to fix compiler errors and howrun the program step by step in the debugger. Until then, you may want to program your own image with Turtle commands.
 
 
+### Comment on this post ❤️
+
+I am very interested in what readers think of this post and what ideas or questions they have. The easiest way to do this is to respond to my [anonymous survey](https://forms.office.com/r/75J71v6eg5).
 
 
 

@@ -248,9 +248,13 @@ public static void WoopecMain()
 }
 ```
 
+### The bottom line
+
 The program can already do a few things: It can ask the user for a slot and can draw a hexagon at the corresponding position depending on which slot the user has entered. For the full game we will have to write much more code. And the code is already starting to get messy again - it's not really clean code anymore. We should change that soon, but first we need a better [concept][hexafour-07].
 
-### Summary
+If you want to play around a bit: The code currently always draws a hexagon. How to change the code to allow the user to specify how many edges to draw? Do you always have to connect corners that are directly adjacent? If no, how can the user specify that?
+
+### TL;DR
 
 This post is part of a series. You can find the previous post [here][hexafour-05] and an overview [here][hexafour-overview].
 
@@ -272,10 +276,11 @@ Woopec library
 * Method *Bye* to terminate the program
 * For more information, see the [Woopec documentation][WoopecDocsMainClasses].
 
+### Comment on this post ❤️
 
-### How to go on
+I am very interested in what readers think of this post and what ideas or questions they have. The easiest way to do this is to respond to my [anonymous survey](https://forms.office.com/r/mxBBSgZ9Vj).
 
-If you want to play around a bit: The code currently always draws a hexagon. How to change the code to allow the user to specify how many edges to draw? Do you always have to connect corners that are directly adjacent? If no, how can the user specify that?
+
 
 [MSDocsLoops]: https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/tutorials/branches-and-loops-local
 [WoopecDocsMainClasses]: https://frank.woopec.net/woopec_docs/MainClasses.html

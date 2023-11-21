@@ -45,7 +45,7 @@ An instance of this class is a figure (for instance the image of a turtle or a b
 | Method                                                       | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **Move, Draw and Position State:**                           |                                                              |
-| Move(double distance)                                        | Move the pen by the specified distance, in the direction the pen is headed. |
+| Move(double distance)                                        | Move the figure by the specified distance, in the direction the figure is headed. |
 | Rotate(double angle)                                         | Change the heading (drawing direction)                       |
 | SetPosition(Vec2D position) or SetPosition(double x, double y) | Change position.                                             |
 | Position [Type is Vec2D]                                     | Get or change position                                       |
@@ -53,14 +53,14 @@ An instance of this class is a figure (for instance the image of a turtle or a b
 | Speed [Type is Speed]                                        | Get or change speed                                          |
 | **Visibility and appearance:**                               |                                                              |
 | IsVisible (Type is bool)                                     | True if figure is shown, false if is hidden                  |
-| Shape (Type is a Shape)                                      | Get or change the shape of the turtle                        |
+| Shape (Type is a Shape)                                      | Get or change the shape of the figure                        |
 | **Color control:**                                           |                                                              |
 | OutlineColor [Type is Color]                                 | Get or change the outline color                              |
 | FillColor [Type is Color]                                    | Get or change the fill color                                 |
 | Color [Type is Color]                                        | Change outline color and fill color                          |
 | **Other**                                                    |                                                              |
-| Screen (Type is Screen)                                      | The screen on which this turtle is drawn                     |
-| WaitForCompletedMovementOf(Turtle otherTurtle)               | Wait with next movement for completed movement of the otherTurtle |
+| Screen (Type is Screen)                                      | The screen on which this figure is drawn                     |
+| WaitForCompletedMovementOf(Figure otherFigure)               | Wait with next movement for completed movement of the otherFigure |
 
 ### Screen class
 

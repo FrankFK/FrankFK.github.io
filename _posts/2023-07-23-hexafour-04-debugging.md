@@ -152,7 +152,13 @@ Debugging is *extremely helpful* because this way you can watch your code at wor
 
 One last note: If you want to change the code of your program, you should stop debugging before.
 
-### Summary
+### The bottom line
+
+That was a lot of technology. But the debugger is very useful if you are looking for errors and want to understand how the program works. 
+
+In the [next post][hexafour-05], we'll continue with our HexaFour game. Until then you can play around with the Turtle commands, write your own programs and debug them. For example, you could try to draw a hexagonal star.
+
+### TL;DR
 
 This post is part of a series. You can find the previous post [here][hexafour-03] and an overview [here][hexafour-overview].
 
@@ -168,9 +174,9 @@ Debugging:
 
 If you want to change the code of your program, you should stop debugging before.
 
-### How to go on
+### Comment on this post ❤️
 
-In the [next post][hexafour-05], we'll continue with our HexaFour game. Until then you can play around with the Turtle commands, write your own programs and debug them. For example, you could try to draw a hexagonal star.
+I am very interested in what readers think of this post and what ideas or questions they have. The easiest way to do this is to respond to my [anonymous survey](https://forms.office.com/r/cTw9mbVj9t).
 
 
 

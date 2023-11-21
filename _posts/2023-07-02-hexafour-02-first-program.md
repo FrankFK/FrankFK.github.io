@@ -12,8 +12,6 @@ I'll start from the beginning and explain what you need to install on your compu
 
 If you already know something about programming with C#, you can skim this and the next posts. We'll soon be leaving turtle graphics behind and doing more complicated things. 
 
-(This post is the second part of a series, you can find the first post [here]({% post_url 2023-07-01-hexafour-01-overview %}).)
-
 ### Getting started
 
 Before we can get started, we first need to install the right tools on our computer, and we need to know a few basic things about these tools. We need: a Windows computer, Visual Studio and Woopec.
@@ -112,20 +110,26 @@ Programming languages are picky. A misspelled method name or a missing character
 
 On the one hand a snaked red line in `Program.cs` shows where something is wrong. And additionally the Error List window shows a list of all errors with additional explanations. With a double click on a line of the error list the editor jumps exactly to the erroneous place and you can correct the error.
 
-### Summary
+### The bottom line
+
+We have written our first program. That's enough for now. In the [next posts]({% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}) I will explain more Woopec commands and how to run the program step by step in the debugger.
+
+Maybe you already want to change the program so that it draws a hexagon?
+
+### TL;DR
+
+This post is the second part of a series, you can find the first post [here]({% post_url 2023-07-01-hexafour-01-overview %}).
 
 * A C# program consists of *statements*. Within a statement a *method* can be called. Via *parameters* you can specify what the method should do. Do not forget: There must always be a semicolon (`;`) at the end of a statement.
 * We use *Visual Studio* as IDE. In Visual Studio we can use *intellisense* to get help on how methods work. Before we can *debug* a program, a *build* must be created. If there are any problems with this, they will be displayed as *build errors*.
 * Pressing *F5* (or the menu item Debug-Start Debugging) will first create a build and then - if there were no build errors - run the program in the debugger.
 * Pressing the *Shift-F5* key (or the menu item Debug - Stop Debugging) terminates the program and the debugger.
 
-### How to go on
-
-That's enough for now. In the [next posts]({% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}) I will explain more Woopec commands and how to run the program step by step in the debugger.
-
-Maybe you already want to change the program so that it draws a hexagon?
 
 
+### Comment on this post ❤️
+
+I am very interested in what readers think of this post and what ideas or questions they have. The easiest way to do this is to respond to my [anonymous survey](https://forms.office.com/r/q7w3bYu1QZ).
 
 
 

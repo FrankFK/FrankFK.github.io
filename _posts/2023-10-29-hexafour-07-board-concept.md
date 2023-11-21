@@ -48,7 +48,7 @@ If we always use these names in the program code, the code and concept will fit 
 
 If you want to delve deeper into this aspect, I recommend you take a look at the article on [Domain-driven design](https://en.wikipedia.org/wiki/Domain-driven_design) on Wikipedia.
 
-### Summary
+### The bottom line
 
 You don't need a big concept for everything from zero to the finished program, that would be much too difficult. But it often makes sense to create a concept for the *next steps*. In professional software development this is also done, for example in the "Dual Track Agile" approach, this means roughly: There is a development track, in which the program code is written. And in parallel, there is a second track, in which the concept for the next coding steps is developed.
 

@@ -73,7 +73,7 @@ The following list contains the posts of this series published so far.
 * [It is never to early to write clean code][hexafour-05]
 * [0 is not equal to null. Definition and Use of the appropriate C# Types][hexafour-06]
 * [First thing about a Concept, then take the next Coding Step][hexafour-07]
-* [Create Instances of a C# Class and store them in a List][hexafour-08]
+* [Create new Instances of a C# Class and store them in a List][hexafour-08]
 
 If you are looking for specific topics, these lists can help you:
 
@@ -86,8 +86,9 @@ If you are looking for specific topics, these lists can help you:
 * Variables: [Definition, change, check, usage][hexafour-05]. [Definition with var keyword][hexafour-06]
 * Simple data types: [int, double, string][hexafour-06], [null and nullable value types][hexafour-06]
 * Complex data types: [lists][hexafour-08]
-* Control: [for, while and other loops][hexafour-05], [if and else commands][hexafour-06]
+* Control: [for, while and other loops][hexafour-05], [foreach loops][hexafour-08], [if and else commands][hexafour-06]
 * Conditions: [in loops][hexafour-05]
+* Math: [modulo][hexafour-08]
 
 *Visual Studio*:
 
@@ -117,6 +118,10 @@ If you are looking for specific topics, these lists can help you:
 
 * [Game idea][hexafour-01]
 * [Board concept][hexafour-07]
+
+### Comment on this post ❤️
+
+I am very interested in what readers think of this post and what ideas or questions they have. The easiest way to do this is to respond to my [anonymous survey](https://forms.office.com/r/4xGs0YzmyH).
 
 
 

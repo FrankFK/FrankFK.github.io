@@ -265,3 +265,8 @@ internal class Program
 Although this Game of Life Kata looks so simple at first, you can spend a lot of time on it. Actually, at the beginning of this post, I thought that the code was good and done. But even while writing this post, I still changed a few things. And even now I still notice parts of the code that could be changed. For example, I could change the `IRenderer` interface to have only one method (instead of two) with a parameter that contains all visible cells of the next iteration. This would have advantages and disadvantages... 
 
 But at some point you have to say: I have done and learned enough for today. That's why I leave it at that. I think I practiced a few things and did them well. There is always room for improvement. But this is (for now) good enough for me.
+
+### Comment on this post ❤️
+
+I am very interested in what readers think of this post and what ideas or questions they have. The easiest way to do this is to respond to my [anonymous survey](https://forms.office.com/r/dr995EatLQ).
+
