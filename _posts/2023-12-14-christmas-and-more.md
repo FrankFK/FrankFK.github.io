@@ -1,12 +1,12 @@
 ---
 layout: posts
-title: Why are the winter solstice, Christmas and New Year not on the same day?
+title: Why are the Winter Solstice, Christmas and New Year not on the same Day?
 tags: Astronomy History
 image: /assets/images/christmas/logo1b.png
 excerpt_separator: <!--more-->
 typora-root-url: ..
 ---
-<img src="/assets/images/christmas/logo1b.png" alt="xxx." style="zoom:78%;" />
+<img src="/assets/images/christmas/logo1b.png" alt="Graphic showing the days on which the winter solstice, Western European Christmas, Eastern European Christmas and New Year fall today" style="zoom:78%;" />
 
 Winter solstice, Christmas, New Year. All close together, but not on the same day. What's more, Christmas is celebrated on different days in different parts of the world. Why is it all like this?
 
@@ -16,7 +16,7 @@ Winter solstice, Christmas, New Year. All close together, but not on the same da
 
 ### It all began in Rome
 
-The origins of our calendar lie in Rome. In the [Republican calender](https://en.wikipedia.org/wiki/Roman_calendar) used in the centuries before Julius Caesar, the year began on March 1st. Unlike today, the Romans wanted their year to start with the beginning of spring. In other words, on the day when day and night are of equal length. 
+The origins of our calendar lie in Rome. In the [Republican calender](https://en.wikipedia.org/wiki/Roman_calendar) used in the centuries before Julius Caesar, the year began on March 1st. Unlike today, the Romans wanted their year to begin on the day of [Spring equinox](https://en.wikipedia.org/wiki/March_equinox). This is the day on which day and night are the same length and [(astronomical) spring](https://en.wikipedia.org/wiki/Spring_(season)) begins in the northern hemisphere.
 
 ![Republican calendar used in the centuries before 45 BC](/assets/images/christmas/ancient.png)
 
@@ -26,17 +26,21 @@ The Romans thought it made sense for a month to correspond to the time between o
 
 Scholars are somewhat divided as to when and why, but one thing is certain: At some point, the Romans decided to start the year in January rather than March. This had the somewhat illogical effect that the month of December, which means the tenth month in Latin, was then the twelfth month of the year. But what the heck. There were probably good political reasons, and in such situations logic has to take a back seat.
 
-![At some point, perhaps in 153 BC, the beginning of the year was set for the first of January.](/assets/images/christmas/ancient2.png)
+![At some point, perhaps in 153 BC, the beginning of the year was set for the first of January](/assets/images/christmas/ancient2.png)
 
 ### Times change, and unfortunately so does the beginning of the year
 
-The first Roman calendars assumed that a year was exactly 365 days long. In reality, however, the earth takes about a quarter of a day longer to orbit the sun. If this is not taken into account, the beginning of spring shifts further and further towards the end of the year. However, this shift did not seem to be so important to the Romans at first. 
+The first Roman calendars assumed that a year was exactly 365 days long. In reality, however, the earth takes about a quarter of a day longer to orbit the sun. If this is not taken into account, the spring equinox shifts further and further towards the end of the year. However, this shift did not seem to be so important to the Romans at first. 
 
 But then came Julius Caesar. Of course, someone like Caeser had to clean up the calendar thoroughly. He introduced the [Julian calendar](https://en.wikipedia.org/wiki/Julian_calendar) in 45 BC. He added a few days to a few months so that they had the number of days we know today. And he defined every fourth year as a leap year, which had an additional leap day. Because people were so used to it, this leap day was placed in February - even though February was no longer the last month of the year. This brings us to the calendar we know today. Only two month names have changed since then: Quintilis became Iulius (in honor of Julius Caesar) and Sextilis became Augustus (in honor of Emperor Augustus).
 
 ### Julius Caesar reorganizes everything, the winter solstice gets a new date
 
-The beginning of spring in the old Roman calendar had shifted to May. That's why Caesar had to insert a few special months and extra days to bring the beginning of spring back into March. But on which day should the new year begin with the new calendar? Caesar could have made it so that the beginning of spring was again on the first of March. But instead he decided that the new year should begin with the [first new moon](https://astropixels.com/ephemeris/phasescat/phases-0099.html) after the winter solstice. It is not entirely clear why he made this decision. Presumably because he was first and foremost a politician and adapted the calendar so that there was as little resistance as possible in his state. As a result, the winter solstice was on [December 23](https://www.beda.cz/~jirkaj/seasons/seasons.pdf) in the new calendar. But somehow in Caesar's time, or a few years later, December 25 was considered the day of the winter solstice. The [Kiwi Hellenist blog](https://kiwihellenist.blogspot.com/2022/05/julian-calendar.html) assumes that the Romans reckoned with the day that the Greek astronomer [Callippus](https://en.wikipedia.org/wiki/Callippus) had researched around 330 BC as the day of the winter solstice.
+The spring equinox in the old Roman calendar had shifted to May. That's why Caesar had to insert a few special months and extra days to bring the spring equinox back into March. But on which day should the new year begin with the new calendar? Caesar could have made it so that the spring equinox was again on the first of March. But instead he decided that the new year should begin with the [first new moon](https://astropixels.com/ephemeris/phasescat/phases-0099.html) after the winter solstice. 
+
+The [Winter solstice](https://en.wikipedia.org/wiki/Winter_solstice) is the day on which the night is longest and the day is shortest in the northern hemisphere. Today we also regard this day as the (astronomical) beginning of [Winter](https://en.wikipedia.org/wiki/Winter) in the northern hemisphere.
+
+It is not entirely clear why Caesar decided to start the new year on the first new moon after the winter solstice. Presumably because he was first and foremost a politician and adapted the calendar so that there was as little resistance as possible in his state. As a result, the winter solstice was on [December 23](https://www.beda.cz/~jirkaj/seasons/seasons.pdf) in the new calendar. But somehow in Caesar's time, or a few years later, December 25 was considered the day of the winter solstice. The [Kiwi Hellenist blog](https://kiwihellenist.blogspot.com/2022/05/julian-calendar.html) assumes that the Romans reckoned with the day that the Greek astronomer [Callippus](https://en.wikipedia.org/wiki/Callippus) had researched around 330 BC as the day of the winter solstice.
 
 ![Julian calendar around the birth of Christ: winter solstice on December 25.](/assets/images/christmas/julian45bc.png)
 
@@ -50,9 +54,9 @@ From the winter solstice, the days become longer again. The sun gains power. Emp
 
 Christianity became increasingly influential in the following decades and sometime in the fourth century, December 25 was no longer celebrated as the birthday of the sun god, but as the birthday of Jesus. Since then, [Christmas](https://en.wikipedia.org/wiki/Christmas) has been on December 25.
 
-![Christmas has been on December 25 since the fourth century.](/assets/images/christmas/4thcentury.png)
-
 So Christmas took place on the (imaginary) day of the winter solstice for quite some time.
+
+![Christmas has been on December 25 since the fourth century.](/assets/images/christmas/4thcentury.png)
 
 ### Times change, and unfortunately so does the day of the winter solstice
 
@@ -72,7 +76,7 @@ Which day should the church choose? Quite simply, the church went back to the ye
 
 Because spring equinox was on March 11 in the Julian calendar, ten days had to be omitted for the gregorian calendar in 1582 in order to get the spring equinox on March 21. Christmas was left unchanged on December 25. Because the spring equinox is on March 21, the winter solstice is on December 21
 
-![clip_image00119](/assets/images/christmas/1582gregorian.png)
+![Gregorian calendar in 1583, winter solstice on December 21 and spring equinox on March 21](/assets/images/christmas/1582gregorian.png)
 
 ### Happy New Year
 
@@ -80,23 +84,23 @@ Soon all the winter calendar days will be here. The only thing missing is New Ye
 
 When should people celebrate the start of the new year? On the day of the winter solstice, at Christmas, on the first of January? With this confusion in the calendar, it's not so easy to decide. In the end, however, most countries have sooner or later settled on the first of January. That's why [New Year's Day](https://en.wikipedia.org/wiki/New_Year's_Day) is now a public holiday in many countries.
 
-![clip_image00121](/assets/images/christmas/15xx-new-year.png)
+![Graphic representation of the calendar with New Year's Eve fireworks on the first of January](/assets/images/christmas/15xx-new-year.png)
 
 ### Christmas on January 7
 
-We can make it a little more complicated. In Russia, Christmas is not celebrated on December 25, but on January 7.
+We can make it a little more complicated. In Russia and other Eastern European countries, Christmas is not celebrated on December 25, but on January 7.
 
 This is because at the time of the Gregorian calendar reform, the Orthodox Church ruled in Russia and not the Catholic Church. The Orthodox Church had no interest in switching from the Julian calendar to the Catholic Gregorian calendar. Russia switched to the Gregorian calendar much later, in 1918. In the years between 1582 and 1918, however, the calendars were three days further apart and shifted by thirteen days. December 25 in the Julian calendar was on January 7 in the Gregorian calendar:
 
-![image](/assets/images/christmas/1917.png)
+![In 1917: Above, the Gregorian calendar with Christmas on December 25. Below, the Julian calendar used in Russia, offset by 13 days](/assets/images/christmas/1917.png)
 
 To align the calendars, [thirteen days were omitted](https://en.wikipedia.org/wiki/Soviet_calendar) in 1918. As a result, Christmas in Soviet Russia was postponed to January 7. And that's where it stayed in Russia and other Eastern European countries to this day.
 
-![clip_image00123](/assets/images/christmas/1918.png)
+![The calendar since 1918, with two Christmas days, one on December 25, the other on January 7](/assets/images/christmas/1918.png)
 
 ### Summary
 
-Today's calendar is the result of more than 2000 years of European history. Ancient Greeks and Romans, the Catholic and Orthodox churches, the Soviet Russia. They all had their share. It will be interesting to see what happens next.
+Today's calendar is the result of more than 2000 years of European history. Ancient Greeks and Romans, the Catholic and Orthodox churches, and Soviet Russia, they all had their share. It will be interesting to see what happens next.
 
 ### Comment on this post ❤️
 
