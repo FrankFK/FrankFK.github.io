@@ -98,6 +98,10 @@ To align the calendars, [thirteen days were omitted](https://en.wikipedia.org/wi
 
 ![The calendar since 1918, with two Christmas days, one on December 25, the other on January 7](/assets/images/christmas/1918.png)
 
+### But wait, this year the winter solstice is on December 22nd and not December 21st
+
+To make it a little easier to describe, I have referred to the winter solstice on December 21. In reality, however, the winter solstice takes place every few years on December 22. If you look in this [table](https://www.beda.cz/~jirkaj/seasons/seasons.pdf), you can see that this can happen before a leap year. As explained above, this is because the 365 days of our calendar are slightly shorter than the real astronomical year. This is corrected in the leap year, and the winter solstice is brought back to December 21. For similar reasons, the winter solstice sometimes even takes place on December 20 (next in 2080) or December 23 (next in 2303).
+
 ### Summary
 
 Today's calendar is the result of more than 2000 years of European history. Ancient Greeks and Romans, the Catholic and Orthodox churches, and Soviet Russia, they all had their share. It will be interesting to see what happens next.
