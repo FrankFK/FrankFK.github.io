@@ -1,13 +1,13 @@
 ---
 layout: posts
-title: Why is this simple C# Program not working? Fixing Compiler Errors and using the Visual Studio Debugger (h4-04)
+title: Why is this simple C# Program not working? Fixing Compiler Errors (h4-04)
 tags: LearnToCode C# HexaFour
 excerpt_separator: <!--more-->
 typora-root-url: ..
 ---
 ![Image with Visual Studio compiler errors: CS1002 ; expected. CS1003 , expected. CS1022 Type or namespace definition, or end-of-file expected. CS7036 There is no argument given that corresponds to the required parameter. And more.](/assets/images/hexafour/CompilerErrors.png)
 
-You have written your first C# program and it compiles with errors? This is quite normal in the beginning. Don't let that stop you from learning C#. Here I explain some of the most common errors and how to fix them. Your program runs, but doesn't do what it's supposed to do? This is also quite normal. With the Visual Studio Debugger, you can see step-by-step what your program is doing and quickly find out what is wrong.
+You have written your first C# program and it compiles with errors? This is quite normal in the beginning. Don't let that stop you from learning C#. Here I explain some of the most common errors and how to fix them. 
 
 <!--more-->
 
@@ -89,74 +89,7 @@ These were a few tips for fixing compiler errors. Before I give a few tips on de
 
 ### Watch the program at work: The debugger
 
-Your program no longer has compiler errors, but when you run it, it doesn't do the right thing. Then the best thing to do is to use the Visual Studio debugger to find out what is wrong. There are many good tutorials about the Visual Studio debugger. However, most of the time it is assumed that you have already written some more C# code. But I find that the debugger is super helpful right from the start. That's why I show a few basics here. For this I take the example from the beginning of the last [post][hexafour-03]:
-
-```csharp
-public static void WoopecMain()
-{
-    var seymour = Turtle.Seymour();
-    
-    seymour.Left(60);
-    seymour.Forward(100);
-    // ...
-    seymour.Left(60);
-    seymour.Forward(100);
-}  
-```
-
-All necessary commands can be found in the Debug menu of Visual Studio:
-
-![Screenshot showing where you can find the debug commands in the Visual Studio menu](/assets/images/hexafour/VisualStudioStartDebugging.png)
-
-With the debugger you can run the program step by step and check what it does. Each command can also be executed via a function key. If possible, you should set up your computer so that you can work with the function keys. If this is not possible, you can use the menu items or click on the appropriate icons that Visual Studio displays below the menu.
-
-### Start Debugging
-
-Before you start the program (and also while the program is running), you can place the cursor on a line in the program and select the **F9 key** (or the "Toggle Breakpoint" entry in the debug menu). The statement will then be highlighted in red and the line marked with a dot:
-
-This means that a **breakpoint** is now set there. 
-
-![Screenshot of Visual Studio with a breakpoint](/assets/images/hexafour/DebuggerBreakpoint.png)
-
-Then you **start debugging** (**F5 key**). The debugger stops at the first breakpoint and indicates this by marking the position in yellow:
-
-![Screenshot of Visual Studio with Debugger stopped at a breakpoint](/assets/images/hexafour/DebuggerActiveLine.png)
-
-Before you continue, you should place the Visual Studio window and the Turtle program window side by side. In Windows 11, this is easily done by moving the mouse to the Resize icon and then selecting the option to display Visual Studio on the right side of the screen:
-
-![Screenshot with Windows Group options. The first option shows to boxes of same size side by side. The left box is gray, the right box is blue.](/assets/images/hexafour/DebuggingWindowPositions.png)
-
-After you click on the blue rectangle, Visual Studio shrinks to the right half of the screen and a list of windows is displayed to the left of it, from which you can select the window for the left half. Here you choose the Turtle program window. After that your screen should look like this:
-
-<img src="/assets/images/hexafour/DebuggingExampleScreen.png" alt="Screenshot of the complete Windows screen. Left half contains a Window with a small green turtle in it. Right half contains Visual Studio in Debug mode." style="zoom:40%;" />
-
-Now the editor window of Visual Studio is relatively small. We can improve this by changing the **window layout**. How this works is described in [Microsoft Learn]((https://learn.microsoft.com/en-us/visualstudio/ide/customizing-window-layouts-in-visual-studio?view=vs-2022)). The best way is to save the current layout via "Save Window Layout" under a meaningful name (for example "DebuggingDefault"). After that we clean up the windows a bit: First, we close the "Diagnostic Tools" window. This allows the editor window to use the whole width. We can also move all windows from the bottom right to the bottom left window, so that there are only two windows left. Then we can save this Window layout under a different name, for example "DebuggingSmall". Now Visual Studio looks like this:
-
-<img src="/assets/images/hexafour/DebuggingExampleScreen2.png" alt="Screenshot ov Visual Studio in Debug mode. The upper half contains the editor window. The lower half contains multiple stacked windows, where the 'Auto' window is visible and shows the contents of a variable named 'seymour'" style="zoom:80%;" />
-
-In this screenshot you can see the **Autos Window** in the lower part. This window shows the variables of your program. In this example the variable `seymour` is shown. You can expand and collapse it to see the values of the individual properties of `seymour`. For example, in the highlighted line you can see that the value of the property `IsDown` has the value `true`.
-
-Now you click once in the code editor of Visual Studio, so that the focus is in Visual Studio. Then you can execute the program step by step: By pressing **key F10** (function "Step Over" in the Debug Menu) the next statement of the program will be executed. So in the example above, the Turtle rotates 60 degrees to the right. In the Visual Studio window the yellow marker moves to the next statement:
-
-![Screenshot of Visual Studio. Line 9 contains a breakpoint, line 10 is marked with a yellow arrow at the beginning and the text has a yellow background.](/assets/images/hexafour/DebuggingNextStep.png)
-
-The next click of F10 will execute the next statement. You can also set another breakpoint, for example in the line further down:
-
-![Screenshot similar to the last one, but more lines are visible. Line 18 contains an additional breakpoint.](/assets/images/hexafour/DebuggingNextBreakpoint.png)
-
-If you then select the **F5** key (or "Continue" in Debug menu), the program continues to run normally and only stops again when it has reached this breakpoint.
-
-With the **Shift-F5** key (or "Stop Debugging" in Debug menu) you can stop debugging at any point. 
-
-Debugging is *extremely helpful* because this way you can watch your code at work. If something doesn't work as desired, you can quickly find the error. When I changed something in my program, I always do it like this: I set a breakpoint on the first statement I changed, then start the debugger and check step by step if the program does exactly what I thought it would.
-
-One last note: If you want to change the code of your program, you should stop debugging before.
-
-### The bottom line
-
-That was a lot of technology. But the debugger is very useful if you are looking for errors and want to understand how the program works. 
-
-In the [next post][hexafour-05], we'll continue with our HexaFour game. Until then you can play around with the Turtle commands, write your own programs and debug them. For example, you could try to draw a hexagonal star.
+Your program no longer has compiler errors, but when you run it, it doesn't do the right thing. Then the best thing to do is to use the Visual Studio debugger to find out what is wrong. I will describe this in detail in the next [post][hexafour-04b].
 
 ### TL;DR
 
@@ -166,13 +99,9 @@ Compiler errors:
 * The compiler does not see spaces, indentations or line breaks. It needs semicolons and matching brackets to understand the code correctly. Finding errors is helped by the *Error-List Window*, *Quick Actions*, *commenting out* code, and the *[keyboard shortcut](https://learn.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2022#bkmk_text-editor-context-specific-shortcuts)* Ctrl+], you can also *rewrite the code in small pieces*.
 * For more information on fixing errors, see for example [Fix program errors and improve code](https://learn.microsoft.com/en-us/visualstudio/ide/find-and-fix-code-errors?view=vs-2022) on Microsoft Lean.
 
-Debugging: 
-* Start debugging with *F5*, set breakpoint with *F9*, step over with *F10*, to next breakpoint with *F5*, end debugging with *Shift F5*. 
-* The *Autos Window* shows the values of variables. 
-* If you have little space on the screen: change the [Visual Studio Windows Layout](https://learn.microsoft.com/en-us/visualstudio/ide/customizing-window-layouts-in-visual-studio?view=vs-2022). 
-* For more information on debugging, see for example the videos [C# 101 Debugging](https://www.youtube.com/watch?v=pm_pv0Eb7Fw) and [.NET Core 101  Basic Debugging](https://learn.microsoft.com/de-de/shows/net-core-101/net-basic-debugging) or the article [First look at the debugger](https://learn.microsoft.com/en-us/visualstudio/debugger/debugger-feature-tour?view=vs-2022) on Microsoft Learn.
+Visual Studio:
 
-If you want to change the code of your program, you should stop debugging before.
+* If you don't like working with the mouse, use the Visual Studio shortcuts. There are [over 100](https://learn.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2022#bkmk_text-editor-context-specific-shortcuts) of them.
 
 ### Comment on this post ❤️
 
@@ -183,6 +112,8 @@ I am very interested in what readers think of this post and what ideas or questi
 [Woopec Docs]: https://frank.woopec.net/woopec_docs/Turtle.html
 
 [hexafour-03]: {% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}
+
+[hexafour-04b]: {% post_url 2023-07-24-hexafour-04b-debugging %}
 
 [hexafour-05]: {% post_url 2023-08-13-hexafour-05-variables-loops-dry %}
 

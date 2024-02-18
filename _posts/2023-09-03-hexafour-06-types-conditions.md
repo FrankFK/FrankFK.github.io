@@ -99,7 +99,7 @@ We can use the value of variable colorName to fill our hexagon with this color:
     pen.EndFill(colorName);
 ```
 
-The hexagon is thus filled with the desired color. With one exception: What happens if the user clicked the Cancel button in the dialog window? If you start the program in the debugger (see this [post][hexafour-04]) and click the Cancel button, the debugger shows this:
+The hexagon is thus filled with the desired color. With one exception: What happens if the user clicked the Cancel button in the dialog window? If you start the program in the debugger (see this [post][hexafour-04b]) and click the Cancel button, the debugger shows this:
 
 ![The Visual Studio Debugger displays a window titled "Exception User-Unhandled". The window contains the text: System.ArgumentNullException Value cannot be null.](/assets/images/hexafour/VsNullException.png)
 
@@ -285,7 +285,8 @@ I am very interested in what readers think of this post and what ideas or questi
 [MSDocsLoops]: https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/tutorials/branches-and-loops-local
 [WoopecDocsMainClasses]: https://frank.woopec.net/woopec_docs/MainClasses.html
 
-[hexafour-04]: {% post_url 2023-07-23-hexafour-04-debugging %}
+[hexafour-04a]: {% post_url 2023-07-23-hexafour-04a-compiler-errors%}
+[hexafour-04b]: {% post_url 2023-07-24-hexafour-04b-debugging%}
 
 [hexafour-05]: {% post_url 2023-08-13-hexafour-05-variables-loops-dry %}
 

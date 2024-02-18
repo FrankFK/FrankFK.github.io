@@ -127,7 +127,8 @@ I am very interested in what readers think of this post and what ideas or questi
 [hexafour-01]: {% post_url 2023-07-01-hexafour-01-overview %}
 [hexafour-02]: {% post_url 2023-07-02-hexafour-02-first-program %}
 [hexafour-03]: {% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}
-[hexafour-04]: {% post_url 2023-07-23-hexafour-04-debugging %}
+[hexafour-04a]: {% post_url 2023-07-23-hexafour-04a-compiler-errors%}
+[hexafour-04b]: {% post_url 2023-07-24-hexafour-04b-debugging%}
 [hexafour-05]: {% post_url 2023-08-13-hexafour-05-variables-loops-dry %}
 [hexafour-06]: {% post_url 2023-09-03-hexafour-06-types-conditions %}
 [hexafour-07]: {% post_url 2023-10-29-hexafour-07-board-concept %}

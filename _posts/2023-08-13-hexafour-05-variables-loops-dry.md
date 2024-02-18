@@ -184,13 +184,7 @@ From this example, you can see how important it is to write clean code.
 
 ### Debugging of variables
 
-When using variables, errors can happen. But also here the debugger helps. If you put the cursor on the check `edgeCounter < numberOfEdges`, you can create a breakpoint there with F9 (see [previous article][hexafour-04]). When you then start the program in the debugger (with F5), it stops at this breakpoint. You can then see in the debugger what values the variables have:
-
-![Screenshot showing Visual Studio with two windows. The upper window shows source code, including a for loop. A breakpoint is set on the condition of the for loop. The lower "Auto" window shows the current values of the two variables used in the condition.](/assets/images/hexafour/VSBreakpointWithWatchWindow.png)
-
-Below the code window, Visual Studio displays an Autos window. This window displays the values of the variables that are currently playing a role. You can see in this example that `edgeCounter` has the value 0 and `numberOfEdges` has the value 6. You can then run the code step by step (with F10) or until the next breakpoint (with F5) and always see the current value of the variable.
-
-The debugger has many more features for variables. For example, moving the mouse cursor over a variable in the code will automatically display its value. You can find more information about debugging variables in the [Microsoft documentation][MSDocsInspectVariables].
+When using variables, errors can happen. But also here the debugger helps. You can find a description in this [post][hexafour-04b].
 
 ### The bottom line
 
@@ -201,7 +195,7 @@ If you want to try out a few things yourself: For example, you could try the fol
 
 ### TL;DR
 
-This post is part of a series. You can find the previous post [here][hexafour-04], an overview [here][hexafour-overview] and the next post [here][hexafour-06].
+This post is part of a series. You can find the previous post [here][hexafour-04b], an overview [here][hexafour-overview] and the next post [here][hexafour-06].
 
 Clean Code
 * Clean code makes your code more readable and maintainable.
@@ -212,9 +206,6 @@ C#
 * *Variable* definition (`var edgeCounter = 0`), change (`edgeCounter = edgeCounter + 1;`), check (`edgeCounter < 6`) and usage  (`Right(360-0 / edgeNumber`).
 * *Loops* (`for` or `while`), see [Microsoft Tutorial][MSDocsLoops].
 * Definition of *conditions*, for example `(edgeCounter < 6)`. There are many more possibilities, see [Microsoft Tutorial][MSDocsLoops].
-
-Debugging
-* The debugger has many features for variables, see [Microsoft documentation][MSDocsInspectVariables].
 
 Woopec library
 * Advanced users can use the *Pen class* instead of the Turtle class. 
@@ -238,7 +229,8 @@ I am very interested in what readers think of this post and what ideas or questi
 
 [hexafour-03]: {% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}
 
-[hexafour-04]: {% post_url 2023-07-23-hexafour-04-debugging %}
+[hexafour-04a]: {% post_url 2023-07-23-hexafour-04a-compiler-errors%}
+[hexafour-04b]: {% post_url 2023-07-24-hexafour-04b-debugging%}
 
 [hexafour-06]: {% post_url 2023-09-03-hexafour-06-types-conditions %}
 

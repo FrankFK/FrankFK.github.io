@@ -72,7 +72,8 @@ I am very interested in what readers think of this post and what ideas or questi
 
 [hexafour-03]: {% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}
 
-[hexafour-04]: {% post_url 2023-07-23-hexafour-04-debugging %}
+[hexafour-04a]: {% post_url 2023-07-23-hexafour-04a-compiler-errors%}
+[hexafour-04b]: {% post_url 2023-07-24-hexafour-04b-debugging%}
 
 [hexafour-05]: {% post_url 2023-08-13-hexafour-05-variables-loops-dry %}
 

@@ -69,7 +69,8 @@ The following list contains the posts of this series published so far.
 * [Learn to fly with C#][hexafour-01]
 * [The first C# program with graphics][hexafour-02]
 * [Draw a hexagon with C#][hexafour-03]
-* [Why is this simple C# Program not working? Fixing Compiler Errors and using the Visual Studio Debugger][hexafour-04]
+* [Why is this simple C# Program not working? Fixing Compiler Errors][hexafour-04a]
+* [C# Debugging for Beginners][hexafour-04b]
 * [It is never to early to write clean code][hexafour-05]
 * [0 is not equal to null. Definition and Use of the appropriate C# Types][hexafour-06]
 * [First thing about a Concept, then take the next Coding Step][hexafour-07]
@@ -94,9 +95,9 @@ If you are looking for specific topics, these lists can help you:
 
 * [Installation, debugger start, debugger stop][hexafour-02]
 * [IntelliSense][hexafour-03]
-* Keyboard shortcuts: [jump to corresponding brace, and more][hexafour-04]
-* Compiler errors: [tips and tricks to fix them][hexafour-04]
-* Debugging: [start, stop, breakpoints, step over, step into][hexafour-04], [window placement][hexafour-04], [variables][hexafour-05], [exceptions][hexafour-06]
+* Keyboard shortcuts: [jump to corresponding brace, and more][hexafour-04a]
+* Compiler errors: [tips and tricks to fix them][hexafour-04a]
+* Debugging: [start, stop, breakpoints, step over, step into][hexafour-04b], [window placement][hexafour-04b], [variables][hexafour-04b], [methods][hexafour-04b], [exceptions][hexafour-06]
 
 *Woopec graphics library*:
 
@@ -128,7 +129,8 @@ I am very interested in what readers think of this post and what ideas or questi
 [hexafour-01]: {% post_url 2023-07-01-hexafour-01-overview %}
 [hexafour-02]: {% post_url 2023-07-02-hexafour-02-first-program %}
 [hexafour-03]: {% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}
-[hexafour-04]: {% post_url 2023-07-23-hexafour-04-debugging %}
+[hexafour-04a]: {% post_url 2023-07-23-hexafour-04a-compiler-errors%}
+[hexafour-04b]: {% post_url 2023-07-24-hexafour-04b-debugging%}
 [hexafour-05]: {% post_url 2023-08-13-hexafour-05-variables-loops-dry %}
 [hexafour-06]: {% post_url 2023-09-03-hexafour-06-types-conditions %}
 [hexafour-07]: {% post_url 2023-10-29-hexafour-07-board-concept %}

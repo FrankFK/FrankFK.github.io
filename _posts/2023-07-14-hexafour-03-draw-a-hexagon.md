@@ -139,7 +139,7 @@ Maybe you haven't noticed, but in the code examples above we used not only metho
 
 We have managed to draw a hexagon. We could even choose any color we wanted for the filling.
 
-In the [next post][hexafour-04] I will explain how to fix compiler errors and how to run the program step by step in the debugger. Until then, you may want to program your own image with Turtle commands.
+In the next posts I will explain how to [fix compiler errors][hexafour-04a] and how to run the program step by step in the [debugger][hexafour-04b]. Until then, you may want to program your own image with Turtle commands.
 
 ### TL;DR
 
@@ -162,4 +162,5 @@ I am very interested in what readers think of this post and what ideas or questi
 
 [Woopec-doc-helper-classes]: https://frank.woopec.net/woopec_docs/HelperClasses.html
 
-[hexafour-04]: {% post_url 2023-07-23-hexafour-04-debugging %}
+[hexafour-04a]: {% post_url 2023-07-23-hexafour-04a-compiler-errors%}
+[hexafour-04b]: {% post_url 2023-07-24-hexafour-04b-debugging%}

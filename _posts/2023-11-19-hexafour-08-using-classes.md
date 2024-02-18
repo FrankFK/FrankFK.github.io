@@ -53,7 +53,7 @@ public static void WoopecMain()
 
 Each `new Turtle()` command creates a new Turtle. In C# this is called an **instance**. So here we create two instances of the Turtle class, first turtle1 and then turtle2. When we run the program, we first see blue turtle1 moving to the top right and then green turtle2 moving to the bottom right of the screen. 
 
-It is best to try out the above code step by step in the Visual Studio debugger - how to do this is described in the [fourth post][hexafour-04] if this series. You can then see that variables turtle1 and turtle2 have different values. For example, at the end of the program, the `Position` property of variable turtle1 has a different value than that of variable turtle 2.
+It is best to try out the above code step by step in the Visual Studio debugger - how to do this is described in the [fourth post][hexafour-04b] if this series. You can then see that variables turtle1 and turtle2 have different values. For example, at the end of the program, the `Position` property of variable turtle1 has a different value than that of variable turtle 2.
 
 A little tip: You often create an object using `new` and then set individual properties of the object directly afterwards - as in the above example Shape, Color and Speed. This can be done more compactly using a so-called **object initializer**. The code then looks like this:
 
@@ -274,7 +274,8 @@ I am very interested in what readers think of this post and what ideas or questi
 [hexafour-01]: {% post_url 2023-07-01-hexafour-01-overview %}
 [hexafour-02]: {% post_url 2023-07-02-hexafour-02-first-program %}
 [hexafour-03]: {% post_url 2023-07-14-hexafour-03-draw-a-hexagon %}
-[hexafour-04]: {% post_url 2023-07-23-hexafour-04-debugging %}
+[hexafour-04a]: {% post_url 2023-07-23-hexafour-04a-compiler-errors%}
+[hexafour-04b]: {% post_url 2023-07-24-hexafour-04b-debugging%}
 [hexafour-05]: {% post_url 2023-08-13-hexafour-05-variables-loops-dry %}
 [hexafour-06]: {% post_url 2023-09-03-hexafour-06-types-conditions %}
 [hexafour-07]: {% post_url 2023-10-29-hexafour-07-board-concept %}
