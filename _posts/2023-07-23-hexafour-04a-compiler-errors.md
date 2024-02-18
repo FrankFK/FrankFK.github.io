@@ -3,6 +3,7 @@ layout: posts
 title: Why is this simple C# Program not working? Fixing Compiler Errors (h4-04)
 tags: LearnToCode C# HexaFour
 excerpt_separator: <!--more-->
+last_modified_at: 2024-02-17 8:30:00 +0000
 typora-root-url: ..
 ---
 ![Image with Visual Studio compiler errors: CS1002 ; expected. CS1003 , expected. CS1022 Type or namespace definition, or end-of-file expected. CS7036 There is no argument given that corresponds to the required parameter. And more.](/assets/images/hexafour/CompilerErrors.png)
