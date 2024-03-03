@@ -15,7 +15,7 @@ Programs can quickly become complicated. The first remedy for complexity is to d
 
 ### The beginning of Spaghetti Code
 
-Let's start with the program code from the [last HexaFour post][hexafour-08]. I left out the actual program lines and only wrote down the number of these lines:
+Let's start with program code from the [last HexaFour post][hexafour-08]. I left out the actual program lines and only wrote down how many lines a section consists of:
 
 ```csharp
 public static void WoopecMain()
@@ -25,21 +25,21 @@ public static void WoopecMain()
     // Draw the edges of a rhombus and register it as a Shape
     // 15 lines of code ...
 
-    // Create the first game board
+    // Create elements of the board
     // 30 lines of code ...
     
-	// Give each rhombus a different color
+	// Give each board element a different color
     // 7 lines of code ...
 }
 ```
 
-The program contains more than 50 lines. Because the program was already difficult to understand, comments were added to describe what the following lines do, for example: "Create first game board". If we were to continue programming in this way, we would very soon have [Spaghetti code](https://en.wikipedia.org/wiki/Spaghetti_code) that would be difficult to understand.
+The program contains more than 50 lines. Because the program was already difficult to understand, comments were added to describe what the following lines do, for example: "Create elements of the board". If we were to continue programming in this way, we would very soon have [Spaghetti code](https://en.wikipedia.org/wiki/Spaghetti_code) that would be difficult to understand.
 
-We can significantly improve the readability of the program if we use methods.
+We can significantly improve the readability of the program if we start breaking the program down into methods.
 
 ### Definition of the first simple method
 
-We use methods to divide the program into smaller chunks. We have already *used* methods, for example `Rotate` and `Move` are methods of the Woopec library. And we have already written code in a method, because `WoopecMain` is also a method. Now we are **defining a method** for the first time:
+Methods are used to divide the program into smaller chunks. We have already used methods in previous posts, for example `Rotate` and `Move` are methods of the Woopec library. And we have already written code in a method, because `WoopecMain` is also a method. Now we are **defining a new method** for the first time:
 
 ```csharp
 public static void WoopecMain()
@@ -49,10 +49,10 @@ public static void WoopecMain()
     // Draw the edges of a rhombus and register it as a Shape
     RegisterRhombusShape();
 
-    // Create the first game board
+    // Create elements of the board
     // 30 lines of code ...
     
-	// Give each rhombus a different color
+	// Give each board element a different color
     // 7 lines of code ...
 }
 
@@ -65,24 +65,24 @@ public static void RegisterRhombusShape()
     pen.Move(edgeLength / 2);
     pen.BeginPoly();
     pen.Rotate(120);
-    // etc.
+    // and so on (see previous post hexafour post)
     var polygon = pen.EndPoly();
     Shapes.Add("rhombus", polygon);
 }
 ```
 
-We have defined a method called `RegisterRhombusShape` here. This method consists of several parts:
+In the code above the method `RegisterRhombusShape` is defined. This method consists of several parts:
 
 * The method starts with `private static void`. We won't worry about that for now. For the time being, we start every method like this.
 * This is followed by the name of the method. A common convention is that the method name always begins with a capital letter. The method name can consist of several terms and must not contain any spaces. To make it easier to recognize the terms in the method name, each term begins with a capital letter. So in our example: `RegisterRhombusShape`.
 * This is followed by two round brackets. These brackets can also contain parameters, we will deal with this later.
 * The program code to be executed by the method is placed between the curly brackets. 
 
-The new method is called in `WoopecMain()`. This call executes the program code in `RegisterRhombusShape`. After executing the code in the method, the program returns to `WoopecMain()` and executes the next program lines.
+The new method is called by`WoopecMain()`. This call executes the program code in `RegisterRhombusShape`. After executing the code in the method, the program returns to `WoopecMain()` and executes the next program lines.
 
 ### Method parameters
 
-The above code has a problem: In `WoopecMain` the variable `radiusOfToken` was set to the value 20. This value is also required by `RegisterRhombusShape`. But a method cannot simply access the variables of another method. That is why a separate variable `radiusOfToken` was defined in `RegisterRhombusShape`.
+The above code has a problem: In `WoopecMain` the variable `radiusOfToken` was set to the value 20. This value is also required by `RegisterRhombusShape`. But a method cannot simply access the variables of another method. That is why a separate variable `radius` was defined in `RegisterRhombusShape`.
 
 This can be improved by using method parameters:
 
@@ -108,9 +108,123 @@ The method name is now followed by a **method parameter** inside the brackets. I
 
 ### Debugging methods
 
-It is best to try out the changed code directly in Visual Studio and use the debugger to see what happens.
+It is best to try out the changed code directly in Visual Studio and use the debugger to see what happens. How to do this is described in the second part of this [post][hexafour-04b]. Try it out right away.
 
+### A method can change the value of parameters
 
+Next, we also want to define methods for "Create elements of the board" and "Give each board element a different color". We could do it something like this:
+
+```csharp
+public static void WoopecMain()
+{
+    var radiusOfToken = 20.0;           // size of the token
+    
+    // Draw the edges of a rhombus and register it as a Shape
+    RegisterRhombusShape(radiusOfToken);
+
+    var boardElements = new List<Figure>();
+    
+    // Create elements of the board and add them to the list:
+    CreateGameBoard(radiusOfToken, boardElements);
+    
+	// Give each board element a different color
+    SetColorOfBoardElements(boardElements);
+}
+
+public static void RegisterRhombusShape(double radius)
+{
+    // Code see above
+}
+
+public static void CreateGameBoard(double radius, List<Figure> boardElements)
+{
+	// Omitted code that sets a few variables (see previous post hexafour post)
+    for (var row = 0; row <= maxRow; row++)
+    {
+        // Omitted code that sets a few variables (see previous post hexafour post)
+        for (var column = firstColumn; column <= lastColumn; column += 2)
+        {
+            var boardElement = new Figure() { Shape = Shapes.Get("rhombus") };
+            boardElement.Position = (
+                boardLowerLeftX + column * rhombusWidth,
+                boardLowerLeftY + row * rhombusHeight
+            );
+            boardElements.Add(boardElement);
+            boardElement.IsVisible = true;
+        }
+    }
+}
+    
+public static void SetColorOfBoardElements(List<Figure> boardElements)
+{
+    var hue = 0.0;
+    var hueSkip = 360.0 / boardElements.Count;
+    foreach (var be in boardElements)
+    {
+        be.Color = Color.FromHSV(hue, 1, 1);
+        hue = hue + hueSkip;
+    }
+}                                                                 
+```
+
+An empty List of the type Figure is created in WoopecMain. This should contain all elements of the board. This empty list is passed as a parameter to the method CreateGameBoard. CreateGameBoard creates new board elements and inserts them into the list. After CreateGameBoard has finished, the list is then passed to SetColorOfBoardElements and all board elements are given the desired color.
+
+It is best to use the debugger again to see what happens here. This is described in the second part of this [post][hexafour-04b]. Try it out right away.
+
+The important point here is that the variable boardElements created in WoopecMain is a so-called **reference type**. If you pass such a variable  as a parameter to a method (in our example CreateGameBoard), and this parameter is changed within the method, then this has a direct effect on the variable and it is changed. This is why the variable boardElements in WoopecMain contains all the elements of the board after calling CreateGameBoard.
+
+But...
+
+### A method should not change the value of its parameters
+
+Take a look at the code from WoopecMain. How can you recognize when elements are entered or changed in the boardElemets list? You can't recognize that at all. This is bad because it makes WoopecMain difficult to understand.
+
+It is therefore better if you get used to the following rule right from the start:
+
+> Write methods in such a way that they do not change the values of their parameters.
+
+Of course, there are always exceptions, but in the vast majority of cases you can manage this. 
+
+### Return values of methods
+
+We can easily change CreateGameBoard to follow the new rule. Because a method can return results to the caller. This works like this:
+
+```csharp
+public static List<Figure> CreateGameBoard(double radius)
+{
+    var boardElements = new List<Figure>();
+	// Same code as before
+    return boardElements;
+}
+```
+
+Here, the list of board elements is created within the CreateGameBoard method. The elements are then created and inserted into the list. And at the end, the list is returned to the caller via the **`return` command**. The data type returned by the method must now be specified before the name of the method. This is why the name of the method is no longer preceded by `void` but by `List<Figure>`.
+
+The code in WoopecMain can now be changed to:
+
+```csharp
+public static void WoopecMain()
+{
+    var radiusOfToken = 20.0;           // size of the token
+
+    // Draw the edges of a rhombus and register it as a Shape
+    RegisterRhombusShape(radiusOfToken);
+
+    // Create elements of the board and add them to the list:
+    List<Figure> boardElements = CreateGameBoard(radiusOfToken);
+
+    // Give each board element a different color
+    SetColorOfBoardElements(boardElements);
+}
+```
+
+Now we can see much better what CreateGameBoard does.
+
+But wait. What does the SetColorOfBoardElements method do with the boardElements? It changes their color. This contradicts our new rule that a method should not change the value of its parameters. 
+
+### Let the compiler prevent you from changing values of method parameters
+
+Hier weiter.....
 
 
 ### The bottom line
