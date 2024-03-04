@@ -224,10 +224,159 @@ But wait. What does the SetColorOfBoardElements method do with the boardElements
 
 ### Let the compiler prevent you from changing values of method parameters
 
-Hier weiter.....
+Can we prevent the value of boardElements from being changed when `SetColorOfBoardElements(boardElements)` is called? **C# records** can be used for such cases. I will explain records in more detail later. For now, it is sufficient to note that a record is normally immutable. For our example, we define a simple record:
 
+```csharp
+public record BoardElement(string Shape, Color FillColor, double Row, double Column);
+```
+
+With this we have defined something like a simple class that contains all the properties we currently need: a shape name, a color and the row and column where the board element is to be displayed.
+
+The code no longer works with a list of Figures, but with a list of BoardElements. To do this, we need to change the code a little:
+
+```csharp
+public static void WoopecMain()
+{
+    var radiusOfToken = 20.0;           // size of the token
+    
+    // Draw the edges of a rhombus and register it as a Shape
+    RegisterRhombusShape(radiusOfToken);
+
+    // Create elements of the board and add them to the list:
+    List<BoardElement> boardElements = CreateGameBoard();
+    
+    // Give each board element a different color
+    SetColorOfBoardElements(boardElements);
+}
+
+public static List<BoardElement> CreateGameBoard()
+{
+    var boardElements = new List<BoardElement>();
+    var maxRow = 4;
+    var maxColumn = 10;
+    for (var row = 0; row <= maxRow; row++)
+    {
+        var firstColumn = 0;
+        var lastColumn = maxColumn;
+        if (row % 2 == 1)
+        {
+            firstColumn = 1;
+            lastColumn = maxColumn - 1;
+        }
+
+        for (var column = firstColumn; column <= lastColumn; column += 2)
+        {
+            var boardElement = new BoardElement("rhombus", Colors.Black, row, column);
+            boardElements.Add(boardElement);
+        }
+    }
+    return boardElements;
+}
+
+public static void SetColorOfBoardElements(List<BoardElement> boardElements)
+{
+    var hue = 0.0;
+    var hueSkip = 360.0 / boardElements.Count;
+    foreach (var be in boardElements)
+    {
+        be.FillColor = Color.FromHSV(hue, 1, 1);
+        hue = hue + hueSkip;
+    }
+}
+
+```
+
+The CreateGameBoard method has become somewhat simpler. It no longer creates Figure objects that are immediately displayed on the screen. Instead, it creates BoardElement objects that specify in their properties what is to be displayed on the screen later.
+
+Method SetColorOfBoardElements has hardly changed. But when you compile the program, there is a compiler error: 
+
+```csharp
+	error CS8852: Init-only property or indexer 'BoardElement.FillColor' ...
+```
+
+We have achieved what we wanted: The compiler no longer allows method SetColorOfBoardElements to change the value of board elements.
+
+We now change the method so that it no longer changes the parameter boardElements and instead returns a *new list* containing the changed elements:
+
+```csharp
+public static List<BoardElement> SetColorOfBoardElements(List<BoardElement> boardElements)
+{
+    var result = new List<BoardElement>();
+    // ...
+    foreach (var be in boardElements)
+    {
+        var changedElement = be with { FillColor = Color.FromHSV(hue, 1, 1) };
+        result.Add( changedElement );
+        // ...
+    }
+    return result;
+}
+```
+
+Using the **with expression** (for more information see [Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/with-expression)), the code creates a copy of the BoardElement `be` and changes one of the properties. The result is the `changedElement`. The list of all changed BoardElements is returned by the method as the result.
+
+### Now we're done
+
+Finally, we need a method that actually displays the BoardElements on the screen:
+
+```csharp
+public static void DrawBoardElements(List<BoardElement> boardElements, double radius)
+{
+    foreach (var boardElement in boardElements)
+    {
+        var figure = new Figure()
+        {
+            Shape = Shapes.Get(boardElement.Shape),
+            Color = boardElement.FillColor,
+            Heading = 90
+        };
+
+        var boardLowerLeftX = -300;
+        var boardLowerLeftY = -100;
+        var rhombusWidth = 2 * radius;
+        var rhombusHeight = Math.Sqrt(3) * 2 * radius;
+
+        figure.Position = (
+                    boardLowerLeftX + boardElement.Column * rhombusWidth,
+                    boardLowerLeftY + boardElement.Row * rhombusHeight
+                );
+
+        figure.IsVisible = true;
+    }
+}
+```
+
+The main method now looks like this:
+
+```csharp
+public static void WoopecMain()
+{
+    var radiusOfToken = 20.0;
+    RegisterRhombusShape(radiusOfToken);
+    List<BoardElement> boardElements = CreateGameBoard();
+    List<BoardElement> coloredBoardElements = SetColorOfBoardElements(boardElements);
+    DrawBoardElements(coloredBoardElements, radiusOfToken);
+}
+```
+
+The code is now so simple and self-explanatory that it no longer requires any comments. We have turned a main method that was over 50 lines long and hard to understand into a method that can be understood immediately. There is no longer a spaghetti code.
 
 ### The bottom line
+
+...
+
+If you still don't find the main method beautiful enough, you can take a look at how to define [extension methods](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods) in C#. This allows you to make the main method look like this:
+
+```csharp
+public static void WoopecMain()
+{
+    var radiusOfToken = 20.0;
+    RegisterRhombusShape(radiusOfToken);
+    CreateGameBoard().SetColorOfBoardElements().DrawBoardElements(radiusOfToken);
+}
+```
+
+
 
 
 ### TL;DR
