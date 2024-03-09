@@ -250,7 +250,7 @@ If you want to try something yourself: The board design from the previous post a
 
 ### TL;DR
 
-This post is part of a series. You can find the previous post [here][hexafour-07] and an overview [here][hexafour-overview].
+This post is part of a series. You can find the previous post [here][hexafour-07], the next post [here][hexafour-09] and an overview [here][hexafour-overview].
 
 
 C#
@@ -279,5 +279,7 @@ I am very interested in what readers think of this post and what ideas or questi
 [hexafour-05]: {% post_url 2023-08-13-hexafour-05-variables-loops-dry %}
 [hexafour-06]: {% post_url 2023-09-03-hexafour-06-types-conditions %}
 [hexafour-07]: {% post_url 2023-10-29-hexafour-07-board-concept %}
+[hexafour-09]: {% post_url 2024-03-09-hexafour-09-define-methods %}
+
 [WoopecDocsMainClasses]: https://frank.woopec.net/woopec_docs/MainClasses.html
 

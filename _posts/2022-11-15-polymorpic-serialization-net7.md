@@ -98,3 +98,7 @@ private void PerformRoundTrip(ScreenObject screenObject)
 The improvements in .NET 7 make the technical code you had to write in .NET 6 obsolete (about 100 lines for the example above). It's super simple now.
 
 [PostNet6]: {% post_url 2022-05-10-blog-post-inter-process-communication %} "IPC with polymorphic objects and System.Text.Json Serialization"
+
+### Comment on this post ❤️
+
+I am very interested in what readers think of this post and what ideas or questions they have. The easiest way to do this is to respond to my [anonymous survey](https://forms.office.com/r/S4LLdNSRHu).

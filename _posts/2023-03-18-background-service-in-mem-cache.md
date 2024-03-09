@@ -337,3 +337,6 @@ More details of this example can be found on [GitHub](https://github.com/FrankFK
 
 Currently, I still don't like the fact that my example has no automatic tests. That might be my next project...
 
+### Comment on this post ❤️
+
+I am very interested in what readers think of this post and what ideas or questions they have. The easiest way to do this is to respond to my [anonymous survey](https://forms.office.com/r/D3K7qA654d).

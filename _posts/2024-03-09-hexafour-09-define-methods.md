@@ -1,21 +1,21 @@
 ---
 layout: posts
-title: To be defined
+title: "Introduction to C# Methods, and a Rule for it: Do not change the Values of their Parameters (h4-09)"
 tags: LearnToCode C# HexaFour
-image: /assets/images/hexafour/RhombusesWithColors.png
+image: /assets/images/hexafour/SchrankWoopec1Scaled.png
 excerpt_separator: <!--more-->
 typora-root-url: ..
 ---
 
-<img src="/assets/images/hexafour/RhombusesWithColors.png" alt="A game board with 5 rows containing several rhombuses. Each rhombus has a different color." style="zoom:78%;" />
+<img src="/assets/images/hexafour/SchrankWoopec1Scaled.png" alt="A wooden board painted with colors from Woopec example. Copyright by Frank Kruse" style="zoom:78%;" />
 
-Programs can quickly become complicated. The first remedy for complexity is to divide the program into methods. The most important things we need at the beginning are: Definition of methods, parameters, return values, and one rule: avoid changing the values of input parameters. C# records help us to comply with this rule.
+Programs can quickly become complicated. The first remedy for complexity is to divide the program into methods. To get started, you just need to know how to define methods and how to deal with parameters and return values. One rule also helps here: Do not change the values of method parameters. C# records help you to follow this rule.
 
 <!--more-->
 
 ### The beginning of Spaghetti Code
 
-Let's start with program code from the [last HexaFour post][hexafour-08]. I left out the actual program lines and only wrote down how many lines a section consists of:
+Let's start with an example. I'll take the program from the [last HexaFour post][hexafour-08] as an example, but actually all first programs quickly look like this.
 
 ```csharp
 public static void WoopecMain()
@@ -33,18 +33,18 @@ public static void WoopecMain()
 }
 ```
 
-The program contains more than 50 lines. Because the program was already difficult to understand, comments were added to describe what the following lines do, for example: "Create elements of the board". If we were to continue programming in this way, we would very soon have [Spaghetti code](https://en.wikipedia.org/wiki/Spaghetti_code) that would be difficult to understand.
+I left out the actual program lines and only wrote down how many lines a section consists of. The program contains more than 50 lines. Because the program was already difficult to understand, comments were added to describe what the following lines do, for example: "Create elements of the board". If we were to continue programming in this way, we would very soon have [Spaghetti code](https://en.wikipedia.org/wiki/Spaghetti_code) that would be very difficult to understand.
 
-We can significantly improve the readability of the program if we start breaking the program down into methods.
+We can significantly improve the readability of a program if we start breaking the program down into methods.
 
 ### Definition of the first simple method
 
-Methods are used to divide the program into smaller chunks. We have already used methods in previous posts, for example `Rotate` and `Move` are methods of the Woopec library. And we have already written code in a method, because `WoopecMain` is also a method. Now we are **defining a new method** for the first time:
+Methods are used to divide the program into smaller chunks. We have already used methods in previous posts, for example Rotate and Move are methods of the Woopec library. And we have already written code in a method, because `WoopecMain` is also a method. Now we are **defining a new method** for the first time:
 
 ```csharp
 public static void WoopecMain()
 {
-    var radiusOfToken = 20.0;           // size of the token
+    var radiusOfToken = 20.0;     // size of the token
     
     // Draw the edges of a rhombus and register it as a Shape
     RegisterRhombusShape();
@@ -78,11 +78,11 @@ In the code above the method `RegisterRhombusShape` is defined. This method cons
 * This is followed by two round brackets. These brackets can also contain parameters, we will deal with this later.
 * The program code to be executed by the method is placed between the curly brackets. 
 
-The new method is called by`WoopecMain()`. This call executes the program code in `RegisterRhombusShape`. After executing the code in the method, the program returns to `WoopecMain()` and executes the next program lines.
+The new method is called by WoopecMain. This call executes the program code in `RegisterRhombusShape`. After executing the code in the method, the program returns to WoopecMain and executes the next program lines.
 
 ### Method parameters
 
-The above code has a problem: In `WoopecMain` the variable `radiusOfToken` was set to the value 20. This value is also required by `RegisterRhombusShape`. But a method cannot simply access the variables of another method. That is why a separate variable `radius` was defined in `RegisterRhombusShape`.
+The above code has a problem: In WoopecMain the variable radiusOfToken was set to the value 20. This value is also required by RegisterRhombusShape. But a method cannot simply access the variables of another method. That is why a separate variable `radius` was defined in RegisterRhombusShape.
 
 This can be improved by using method parameters:
 
@@ -108,7 +108,7 @@ The method name is now followed by a **method parameter** inside the brackets. I
 
 ### Debugging methods
 
-It is best to try out the changed code directly in Visual Studio and use the debugger to see what happens. How to do this is described in the second part of this [post][hexafour-04b]. Try it out right away.
+It is best to try out the changed code directly in Visual Studio and use the debugger to see what happens. How to do this is described in the second part of a previous [post][hexafour-04b]. Try it out right away.
 
 ### A method can change the value of parameters
 
@@ -167,9 +167,9 @@ public static void SetColorOfBoardElements(List<Figure> boardElements)
 }                                                                 
 ```
 
-An empty List of the type Figure is created in WoopecMain. This should contain all elements of the board. This empty list is passed as a parameter to the method CreateGameBoard. CreateGameBoard creates new board elements and inserts them into the list. After CreateGameBoard has finished, the list is then passed to SetColorOfBoardElements and all board elements are given the desired color.
+The List `boardElements` is created in WoopecMain. This should contain all elements of the board. This list is initially empty. It is passed as a parameter to the method CreateGameBoard. This method creates new board elements and inserts them into the list. After CreateGameBoard has finished, the list is then passed to SetColorOfBoardElements and all board elements are given the desired color.
 
-It is best to use the debugger again to see what happens here. This is described in the second part of this [post][hexafour-04b]. Try it out right away.
+It is best to use the debugger again to see what happens here. This is described in the second part of the previous [debugging post][hexafour-04b]. Try it out right away.
 
 The important point here is that the variable boardElements created in WoopecMain is a so-called **reference type**. If you pass such a variable  as a parameter to a method (in our example CreateGameBoard), and this parameter is changed within the method, then this has a direct effect on the variable and it is changed. This is why the variable boardElements in WoopecMain contains all the elements of the board after calling CreateGameBoard.
 
@@ -187,7 +187,7 @@ Of course, there are always exceptions, but in the vast majority of cases you ca
 
 ### Return values of methods
 
-We can easily change CreateGameBoard to follow the new rule. Because a method can return results to the caller. This works like this:
+We can easily change CreateGameBoard to follow the new rule, because a method can return results to the caller. This works like this:
 
 ```csharp
 public static List<Figure> CreateGameBoard(double radius)
@@ -290,8 +290,8 @@ The CreateGameBoard method has become somewhat simpler. It no longer creates Fig
 
 Method SetColorOfBoardElements has hardly changed. But when you compile the program, there is a compiler error: 
 
-```csharp
-	error CS8852: Init-only property or indexer 'BoardElement.FillColor' ...
+```
+    error CS8852: Init-only property or indexer 'BoardElement.FillColor' 
 ```
 
 We have achieved what we wanted: The compiler no longer allows method SetColorOfBoardElements to change the value of board elements.
@@ -359,13 +359,15 @@ public static void WoopecMain()
 }
 ```
 
-The code is now so simple and self-explanatory that it no longer requires any comments. We have turned a main method that was over 50 lines long and hard to understand into a method that can be understood immediately. There is no longer a spaghetti code.
+The code is now so simple and self-explanatory that it no longer requires any comments. 
 
 ### The bottom line
 
-...
+By using methods, we have turned a program that was over 50 lines long and hard to understand into a program that can be understood immediately. There is no longer a spaghetti code.
 
-If you still don't find the main method beautiful enough, you can take a look at how to define [extension methods](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods) in C#. This allows you to make the main method look like this:
+You have probably already written a program with spaghetti code. Make it easier to read by using methods, and also try to adhere to the rule that the values of the method parameters are not changed.
+
+If you still don't find the main method at the end of this post beautiful enough, you can take a look at how to define [extension methods](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods) in C#. This allows you to make the main method look like this:
 
 ```csharp
 public static void WoopecMain()
@@ -376,15 +378,27 @@ public static void WoopecMain()
 }
 ```
 
-
-
-
 ### TL;DR
+
+This post is part of a series. You can find the previous post [here][hexafour-08] and an overview [here][hexafour-overview].
+
+
+C#
+
+* *Methods* can return a value with `return` and have parameters.
+* If the parameter is a *reference type*, a change within the method means that the value at the calling location is also changed. This makes the code more difficult to understand and is therefore better avoided.
+* *C# records* can be used to prevent a method from changing the value of a parameter.
+
+Clean Code
+
+* Write methods in such a way that they do not change the values of their parameters.
+
+
 
 
 ### Comment on this post ❤️
 
-I am very interested in what readers think of this post and what ideas or questions they have. The easiest way to do this is to respond to my [anonymous survey](https://forms.office.com/r/1QnnmuUJHU).
+I am very interested in what readers think of this post and what ideas or questions they have. The easiest way to do this is to respond to my [anonymous survey](https://forms.office.com/r/p2PzhAEu72).
 
 [hexafour-overview]: {% post_url 2023-07-01-hexafour-01-overview %}#overview-of-the-posts-in-this-series
 [hexafour-01]: {% post_url 2023-07-01-hexafour-01-overview %}
