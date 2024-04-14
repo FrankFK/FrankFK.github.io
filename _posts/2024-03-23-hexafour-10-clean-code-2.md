@@ -52,7 +52,7 @@ These are two different concerns, user interface and logic, which we should sepa
 
 ### SRP
 
-SRP stands for the **single responsibility principle**. [Wikipedia](https://en.wikipedia.org/wiki/Single_responsibility_principle) explains this principle with four different descriptions:
+SRP stands for the **single responsibility principle**. [Wikipedia](https://en.wikipedia.org/wiki/Single_responsibility_principle) explains this principle with three different descriptions:
 
 > "A module should be responsible to one, and only one, actor" [...]
 > "A class should have only one reason to change" [...]
@@ -60,7 +60,7 @@ SRP stands for the **single responsibility principle**. [Wikipedia](https://en.w
 
 There is also an article [The Single Responsibility Principle](https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html), in which Robert C. Martin, the originator of the term, describes what he means by it. In this article, Robert C. Martin speaks not only of "responsibilities", but also of "concerns". And the example he uses to explain the single responsibility principle could just as well be an explanation of the separation of concerns principle.
 
-So what is the difference between the "official" definitions of SoC and SRP? I don't know. In my interpretation, SoC is more about the bigger picture And SRP is more about aspects at the next level of detail. And for SRP, this explanation helps me the most: 
+So what is the difference between the "official" definitions of SoC and SRP? I don't know. In my interpretation, SoC is more about the bigger picture and SRP is more about aspects at the next level of detail. And for SRP, this explanation helps me the most: 
 
 > Separate those things that change for different reasons.
 
@@ -83,181 +83,235 @@ To a certain extent, what you consider to be clean code also depends on your own
 
 
 
-*** Ab hier Halde ***
+### Application of the principles to the HexaFour example
 
+We now apply the above principles to the HexaFour example from the [previous post][hexafour-09], and refactor the code.
 
+#### The Main Method is an integration method
 
-### Aufteilung in Methoden
-
-Im nächsten Schritt wollen wir den Programmablauf in Methoden aufteilen. Jede Methode soll sich dabei nur um einen Belang kümmern (Separation of concerns). Wir müssen darum aufpassen, dass wie beispielsweise nicht in einer Methode das Spieler-Koordinatensystem und das Bildschirm-Koordinatensystem vermischen.
-
-Los geht's. 
-
-Das gesamte Spiel besteht schon mal aus drei Belangen: Initialisierung, Spielen und Beenden. Dafür ruft `WoopecMain` drei verschiedene Methoden auf:
+We rewrite the program a little bit:
 
 ```csharp
-public static void WoopecMain()
+internal class Program
 {
-    var tokenRadius = 20.0;
-    var maxRow = 4;
-    var maxCol = 10;
+    public static void WoopecMain()
+    {
+        Configuration configuration = GetConfiguration();
+        InitializeTheGame(configuration);
+        PlayTheGame(configuration);
+    }
 
-    InitializeTheGame(tokenRadius, maxRow, maxCol);
-    PlayTheGame(tokenRadius, maxRow, maxCol);
-    FinishTheGame();
+    #region Configuration
+    // to be defined
+    #endregion Configuration
+
+    #region Initialization
+    // to be defined
+    #endregion Initialization
+
+    #region Play
+    // to be defined
+    #endregion Play
+
+    #region UserInterface
+    // to be defined
+    #endregion UserInterface
 }
 ```
 
-Noch ein kurzer Hinweis dazu: Wir müssen für das Spiel ein paar Werte festlegen: Wie groß soll ein Token auf dem Bildschirm sein (`tokenRadius`) und welchen Index hat die letzte Zeile bzw. Spalte (`maxRow` bzw. `maxCol`). Diese Werte legen wir hier einmal in `WoopecMain` fest und geben sie dann als Parameter an die Methoden weiter. Das werden wir später noch anders und besser lösen. Im Moment ist es so aber am einfachsten zu verstehen.
+The program now essentially consists of four responsibilities: configuration, initialization, playing the actual game and the user interface. We want to keep the methods of different responsibilities well separated. To do this, we are using [C# regions](https://learn.microsoft.com/en-us/cpp/preprocessor/region-endregion?view=msvc-170) for the time being. This is only an interim solution. We should actually define separate classes for these different responsibilities. But we don't know how to do that yet, so we'll do it this way for now.
 
-Als nächstes kümmern wir uns um die Spiel-Initialisierung. Auch hierbei gibt es unterschiedliche Belange, deshalb werden dafür auch wieder unterschiedliche Methoden aufgerufen:
+The main method is now a pure integration method, it contains no logic. It is therefore self-explanatory.
 
-```c#
-private static void InitializeTheGame(double tokenRadius, int maxRow, int maxCol)
-{
-    RegisterTokenShape(tokenRadius);
-    RegisterRhombusShape(tokenRadius);
-    RegisterLeftBorderShape(tokenRadius);
-    RegisterRightBorderShape(tokenRadius);
+In the following, we will look at the code for the various responsibilities.
 
-    List<BoardElement> boardElements = CreateBoardElements(maxRow, maxCol);
-    boardElements.AddRange(CreateBorderBoardElements(maxRow, maxCol));
+#### Configuration
 
-    foreach (var boardElement in boardElements)
-        DrawBoardElement(boardElement, tokenRadius);
-}
-```
-
-Die ersten vier Methoden erzeugen die unterschiedlichen Shapes, die für das Spielbrett benötigt werden. Den Code dafür haben wir im letzten Artikel schon entworfen. Hier exemplarisch die `RegisterRhombusShape` Methode:
-
-```c#
-private static void RegisterRhombusShape(double tokenRadius)
-{
-    var pen = new Pen();
-
-    var edgeLength = 2 * tokenRadius;
-
-    pen.Move(edgeLength / 2);
-
-    pen.BeginPoly();
-
-    pen.Rotate(120);
-    pen.Move(edgeLength);
-    pen.Rotate(120);
-    pen.Move(edgeLength);
-    pen.Rotate(60);
-    pen.Move(edgeLength);
-
-    var polygon = pen.EndPoly();
-
-    Shapes.Add("rhombus", polygon);
-}
-```
-
-Die anderen `Register`-Methoden sehen ähnlich aus. Darum schreibe ich sie hier nicht auf. 
-
-Die nächsten zwei Zeilen von `InitializeTheGame` bewegen sich im Spieler-Koordinatensystem:
+We summarize all configuration properties in a record, and a method defines the current values:
 
 ```csharp
-    List<BoardElement> boardElements = CreateBoardElements(maxRow, maxCol);
-    boardElements.AddRange(CreateBorderBoardElements(maxRow, maxCol));
+private record Configuration(double TokenRadius, int MaxRow, int MaxColumn);
+
+private static Configuration GetConfiguration()
+{
+    return new Configuration(20.0, 4, 10);
+}
 ```
 
-Die aufgerufene Methode  `CreateBoardElements` erzeugt die Hauptobjekte des Spielbretts:
+The configuration could also be read from a file, or the user could enter it freely. But for now, the above solution is enough for us (YAGNI).
 
-```c#
-private static List<BoardElement> CreateBoardElements(int maxRow, int maxCol)
+#### Game initialization
+
+The entry point for game initialization is the InitializeTheGame method: 
+
+```csharp
+private static void InitializeTheGame(Configuration configuration)
+{
+    var boardElements = new List<BoardElement>();
+    boardElements.AddRange(CreateRegularBoardElements(configuration.MaxRow, configuration.MaxColumn));
+    boardElements.AddRange(CreateBorderBoardElements(configuration.MaxRow, configuration.MaxColumn));
+    InitializeUserInterface(configuration, boardElements);
+}
+```
+
+As mentioned above, there are two different concerns: game logic and user interface. We want to separate these as far as possible. The record `BoardElement` is part of the game logic:
+
+```csharp
+private record BoardElement(string Shape, Color FillColor, double Row, double Column);
+```
+
+The following two methods create these board elements:
+
+```csharp
+private static List<BoardElement> CreateRegularBoardElements(int maxRow, int maxColumn)
+{
+    // Analogous to CreateGameBoard method from previous post
+}
+
+private static List<BoardElement> CreateBorderBoardElements(int maxRow, int maxColumn)
 {
     List<BoardElement> boardElements = new();
 
-    var createAnchor = true;
-    for (var row = 0; row <= maxRow; row++)
+    for (var row = -0.5; row <= maxRow + 0.5; row++)
     {
-        for (var col = 0; col <= maxCol; col++)
-        {
-            if (createAnchor)
-                boardElements.Add(new BoardElement("token", Colors.LightBlue, Colors.White, row, col));
-            else
-                boardElements.Add(new BoardElement("rhombus", Colors.LightGray, Colors.LightGray, row, col));
-
-            createAnchor = !createAnchor;
-        }
+        boardElements.Add(new BoardElement("leftborder", Colors.LightGray, row, -0.5));
+        boardElements.Add(new BoardElement("rightborder", Colors.LightGray, row, maxColumn + 0.5));
     }
 
     return boardElements;
 }
 ```
 
-Wir machen das hier aber etwas anders als im letzten Artikel:
+These are operations methods. So there is logic here. I won't explain the methods in detail here because I have already done so in previous posts.
 
-* Im letzten Artikel wurde direkt Woopec-Figures erzeugt und auf den Bildschirm gezeichnet. Das machen wir hier nicht. Wir erzeugen ein `BoardElement`. Dieses Board-Element lebt nicht in der Bildschirm-Welt, sondern in der Spielerwelt. Es merkt sich den Namen des zu zeichnenden Shapes ("token" oder "rhombus"), seine Farben und seine Zeilen- und Spalten-Koordinaten. 
-* Gezeichnet werden diese Board-Elemente hier noch nicht, sie werden lediglich in einer Liste mit Namen `boardElements` gespeichert.
-* Wie kommt die aufrufende Methode `InitializeTheGame` an diese `boardElements`-Liste? Unsere Methode `CreateBoardElements` kann diese Liste zurückgeben. Das macht sie in der letzten Zeile über den Befehl `return boardElements;`.  Damit die aufrufende Methode weiß, welche Art von Daten unsere Methode zurückgibt, wird der Typ dieser Daten vor dem Namen der Methode angegeben:
-      `List<BoardElement> CreateBoardElements(int maxRow, int maxCol)`
+The generated BoardElements are passed on to the InitializeUserInterface method, which displays the elements on the screen.
 
-Wir haben hier das erste Beispiel einer Methode, die nicht nur Parameter hat, sondern auch Werte zurückgibt. Die zweite Methode `CreateBorderBoardElements` funktioniert ähnlich und erzeugt eine Liste der Ränder des Spielbretts. Über die `AddRange` Methode werden beide Listen zu einer großen Liste zusammengefasst.
+#### User Interface
 
-Der letzte Teil in `InitializeTheGame` gibt diese alle Board-Elemente aus der Liste auf dem Bildschirm aus:
+This method is the entry point to the user interface concern:
 
-```c#
-    foreach (var boardElement in boardElements)
-        DrawBoardElement(boardElement, tokenRadius);
-```
-
-Die Methode `DrawBoardElement` kümmert sich um diese Bildschirm-Ausgabe:
-
-```c#
-private static void DrawBoardElement(BoardElement boardElement, double tokenRadius)
+```csharp
+private static void InitializeUserInterface(Configuration configuration, List<BoardElement> boardElements)
 {
-    var figure = new Figure()
-    {
-        IsVisible = false,
-        Shape = Shapes.Get(boardElement.Shape),
-        Speed = Speeds.Fastest,
-        OutlineColor = boardElement.OutlineColor,
-        FillColor = boardElement.FillColor,
-        Heading = 90
-    };
+    RegisterRhombusShape(configuration.TokenRadius);
+    RegisterLeftBorderShape(configuration.TokenRadius);
+    RegisterRightBorderShape(configuration.TokenRadius);
+    RegisterTokenShape(configuration.TokenRadius);
 
-    var boardLowerLeftX = -300;
-    var boardLowerLeftY = -100;
-    var rhombusWidth = 2 * tokenRadius;
-    var rhombusHeight = Math.Sqrt(3) * 2 * tokenRadius;
-
-    figure.Position = (
-        boardLowerLeftX + boardElement.Column * rhombusWidth,
-        boardLowerLeftY + boardElement.Row * rhombusHeight
-    );
-
-    figure.IsVisible = true;
+    DrawBoardElements(boardElements, configuration.TokenRadius);
 }
 ```
 
-Damit haben wir die Belange Spieler-Koordinatensystem und Bildschirm-Koordinatensystem sauber getrennt. 
+This method receives all board elements created by the game logic and draws them on the screen.
 
+To do this, it must first register different types of shapes once under a name. For example like this:
 
-
-### Noch ein Clean Code Prinzip: IOSP
-
-Damit haben wir alle Methoden zusammen, die für die  Spiel-Initialisierung benötigt werden. Zusammengefasst haben wir jetzt diese Methoden:
-
-```
-WoopecMain
-	- InitializeTheGame
-        - RegisterTokenShape
-        - RegisterRhombusShape
-        - RegisterLeftBorderShape
-        - RegisterRightBorderShape
-        - CreateBoardElements
-        - CreateBorderBoardElements
-        - DrawBoardElement
-    - PlayTheGame
-    - FinishTheGame
+```csharp
+public static void RegisterRhombusShape(double radius)
+{
+    // See code in previous post
+    Shapes.Add("rhombus", polygon);
+}
 ```
 
-Die obige Zusammenfassung der Methoden ist so eingerückt, wie sich die Methoden aufrufen. Die Methoden, die am weitesten eingerückt sind sind Operationen, sie rufen keine anderen Methoden auf. Die Methoden, die nicht so weit eingerückt sind, sind Integrationen, sie enthalten quasi keine Logik und rufen nur die anderen Methoden auf.
+These two methods draw the elements on the screen:
 
-Das Befolgen von IOSP hat für die Spiel-Initialisierung ganz gut funktioniert. Das ist aber nicht immer so einfach. Bei `PlayTheGame` wird schwierig. Für heute haben wir aber erstmal genug gemacht.
+```csharp
+private static void DrawBoardElements(List<BoardElement> boardElements, double radius)
+{
+    foreach (var boardElement in boardElements)
+    {
+        DrawBoardElement(boardElement, radius);
+    }
+}
+private static void DrawBoardElement(BoardElement boardElement, double radius)
+{
+    var figure = new Figure()
+    {
+        Shape = Shapes.Get(boardElement.Shape),
+        Color = boardElement.FillColor
+    };
+	// And so on, see code at the end of the previous post
+}
+```
+
+This method is also part of the user interface:
+
+```csharp
+private static UserInput AskUserForNextSlot(int maxCol)
+{
+    int maxSlot = maxCol - 1;
+    int? numInput = Screen.Default.NumInput("Choose slot", $"Enter a slot-number in the range 0..{maxSlot}", maxSlot / 2, 0, maxSlot);
+    if (numInput == null)
+        return new UserInput(true, 0);
+    else
+        return new UserInput(false, numInput.GetValueOrDefault());
+}
+```
+
+As a result, the method returns in a record which action the user would like to perform next:
+
+```csharp
+private record UserInput(bool CancelGame, int Slot);
+```
+
+#### The game itself
+
+All that's missing now is the game itself.
+
+The entry looks like this for now:
+
+```csharp
+private static void PlayTheGame(Configuration configuration)
+{
+    while (true)
+    {
+        UserInput userInput = AskUserForNextSlot(configuration.MaxColumn);
+
+        if (userInput.CancelGame)
+            return;
+        else
+            MakeMove(userInput.Slot, configuration.TokenRadius, configuration.MaxRow);
+    }
+}
+```
+
+According to the IOSP principle, this should actually be a pure integration method. But this is not the case because the method also contains logic. However, I haven't managed to do any better. Nevertheless, it is still self-explanatory from my point of view.
+
+And now it's time for the game itself:
+
+```csharp
+private static void MakeMove(int slot, double tokenRadius, int maxRow)
+{
+    // Of course, a lot is still missing here.
+    // As a first step, we create a token and display it in the right place.
+    BoardElement boardElement = CreateTokenBoardElementForSlot(slot, maxRow);
+    DrawBoardElement(boardElement, tokenRadius);
+}
+
+private static BoardElement CreateTokenBoardElementForSlot(int slot, int maxRow)
+{
+    var slotCol = slot + 0.5;
+    var slotRow = maxRow + 0.5;
+    return new BoardElement("token", Colors.DarkBlue, slotRow, slotCol);
+}
+```
+
+Of course, a lot is still missing. But the beginnings have already been made: The MakeMove method is an integration method. This calls an operation method in which the game logic is implemented. There is currently only one, the CreateTokenBoardElementForSlot method. And at the end, everything is passed on to a UserInterface method (DrawBoardElement), which takes care of the user interface concern.
+
+### Structure
+
+We can take a look at which methods are now available and how they call each other:
+
+![x](/assets/images/hexafour/MethodCallTree.png)
+
+In this image, all *integration* methods are marked with an asterisk (*****), all other methods are operations methods. You can see that we have followed the IOSP principle relatively well here, only with the PlayTheGame method it didn't work one hundred percent.
+
+All methods that deal with the user interface concern are highlighted in green.We have separated this concern well from the concern of game logic.
+
+And I think that the methods are now so compartmentalized that they are only responsible for one thing at a time.
+
+This means that we have followed all the principles we wanted to follow. But as I've already said, there's not just one right way.
 
 ### Kurze Zusammenfassung TBD
 * Zusammenfassung *zentraler Begriff*  usw.
