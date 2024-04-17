@@ -1,13 +1,13 @@
 ---
 layout: posts
-title: Cleaner Code with YAGNI, KISS, SRP, SoC and IOSP, an Example (h4-10)
+title: Clean Code with YAGNI, KISS, SRP, SoC and IOSP, an Example (h4-10)
 tags: LearnToCode C# HexaFour CodeQuality 
 image: TBD
 excerpt_separator: <!--more-->
 typora-root-url: ..
 ---
 
-<img src="/assets/images/hexafour/SchrankWoopec1Scaled.png" alt="A wooden board painted with colors from Woopec example. Copyright by Frank Kruse" style="zoom:78%;" />
+<img src="/assets/images/hexafour/Tiles2.png" alt="Tiles painted with colors from Woopec example. Copyright by Frank Kruse" style="zoom:78%;" />
 
 From the very beginning, you can write code that is easy to understand and easy to extent. Even beginners can try to follow some principles right from the start: You aren't gonna need it (YAGNI), keep it simple, stupid (KISS), separation of concerns (SoC), single responsibility (SRP) and integration operation segregation (IOSP).
 
@@ -299,26 +299,37 @@ private static BoardElement CreateTokenBoardElementForSlot(int slot, int maxRow)
 
 Of course, a lot is still missing. But the beginnings have already been made: The MakeMove method is an integration method. This calls an operation method in which the game logic is implemented. There is currently only one, the CreateTokenBoardElementForSlot method. And at the end, everything is passed on to a UserInterface method (DrawBoardElement), which takes care of the user interface concern.
 
-### Structure
+### The bottom line
 
 We can take a look at which methods are now available and how they call each other:
 
-![x](/assets/images/hexafour/MethodCallTree.png)
+<img src="/assets/images/hexafour/MethodCallTree.png" alt="All methods indented according to their call depth. The code takes the IOSP principle into account: An operation method does not call any other method (with one exception)." style="zoom:78%;" />
 
-In this image, all *integration* methods are marked with an asterisk (*****), all other methods are operations methods. You can see that we have followed the IOSP principle relatively well here, only with the PlayTheGame method it didn't work one hundred percent.
+In this image, all *integration* methods are marked with an asterisk (*****), all other methods are *operation* methods. You can see that we have followed the IOSP principle relatively well here, only the method PlayTheGame does not fit, because this method is an operation method and therefore should not call any other methods. But from my point of view, this structure is good enough.
 
-All methods that deal with the user interface concern are highlighted in green.We have separated this concern well from the concern of game logic.
+All methods that deal with the user interface concern are highlighted in green. We have separated this concern well from the concern of game logic. The code therefore also follows the SoC principle
 
-And I think that the methods are now so compartmentalized that they are only responsible for one thing at a time.
+What's the situation with SRP? On the one hand, the code is now divided into many methods and each method is only responsible for one thing. That should be good enough up to this point. But there is actually more to improve here, because all the code is in a single class. So this one class is responsible for all the different things. This does not fit with SRP. There should actually be more classes. But to do that, we first need to know how to define classes. I'll do that in one of the next articles.
 
-This means that we have followed all the principles we wanted to follow. But as I've already said, there's not just one right way.
+The code is growing and becoming too large to describe in full in an article, but you can find all the code on [GitHub](https://github.com/FrankFK/HexaFour/tree/main/HexaFourV01) from now on. In the next post, I will describe a few basics about GitHub.
 
-### Kurze Zusammenfassung TBD
-* Zusammenfassung *zentraler Begriff*  usw.
-* ...
+### TL;DR
 
-### Übung
-Was kann der Leser ausprobieren?
+This post is part of a series. You can find the previous post [here][hexafour-09] and an overview [here][hexafour-overview].
+
+Clean Code:
+
+* YAGNI: Always implement things when you actually need them, never when you just foresee that you need them.
+* KISS: Keep it simple, stupid.
+* SoC: Separating the program into distinct sections. Each section addresses a separate concern.
+* SRP: Separate those things that change for different reasons.
+* IOSP: Functions shall either only contain logic or they shall only call other functions.
+* Principles can conflict: You have to find your own way.
+
+
+### Comment on this post ❤️
+
+I am very interested in what readers think of this post and what ideas or questions they have. The easiest way to do this is to respond to my [anonymous survey](https://forms.office.com/r/6AGXUL3B53).
 
 [hexafour-01]: {% post_url 2023-07-01-hexafour-01-overview %}
 [hexafour-02]: {% post_url 2023-07-02-hexafour-02-first-program %}
