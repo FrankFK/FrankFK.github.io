@@ -77,6 +77,7 @@ The following list contains the posts of this series published so far.
 * [First thing about a Concept, then take the next Coding Step][hexafour-07]
 * [Create new Instances of a C# Class and store them in a List][hexafour-08]
 * [Introduction to C# Methods, and a Rule for it: Do not change the Values of their Parameters][hexafour-09]
+* [Clean Code with YAGNI, KISS, SRP, SoC and IOSP, an Example][hexafour-10]
 
 If you are looking for specific topics, these lists can help you:
 
@@ -115,7 +116,7 @@ If you are looking for specific topics, these lists can help you:
 *Clean Code*:
 
 * [Meaning][hexafour-01], [Example][hexafour-05]
-* Principles: [coding conventions][hexafour-05], [DRY principle][hexafour-05], [concepts][hexafour-07]
+* Principles: [coding conventions][hexafour-05], [DRY principle][hexafour-05], [concepts][hexafour-07], [YAGNI, KISS, SRP, SoC, IOSP, Design Types][hexafour-10]
 * Tips: [Usage of var][hexafour-06], [immutable method parameters][hexafour-09]
 
 *HexaFour game*:
@@ -139,3 +140,4 @@ I am very interested in what readers think of this post and what ideas or questi
 [hexafour-07]: {% post_url 2023-10-29-hexafour-07-board-concept %}
 [hexafour-08]: {% post_url 2023-11-19-hexafour-08-using-classes %}
 [hexafour-09]: {% post_url 2024-03-09-hexafour-09-define-methods %}
+[hexafour-10]: {% post_url 2024-04-18-hexafour-10-clean-code %}

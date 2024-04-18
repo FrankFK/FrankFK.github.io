@@ -2,7 +2,7 @@
 layout: posts
 title: Clean Code with YAGNI, KISS, SRP, SoC and IOSP, an Example (h4-10)
 tags: LearnToCode C# HexaFour CodeQuality 
-image: TBD
+image: /assets/images/hexafour/Tiles2.png
 excerpt_separator: <!--more-->
 typora-root-url: ..
 ---
@@ -19,11 +19,11 @@ I'll start here again with a quote from the book "Clean Code.  A Handbook of Agi
 
 This "other programmer" can also be yourself if you try to understand your own program that you wrote some time ago.
 
-I have already described two tips for readable code in an [earlier article][hexafour-5]: Follow coding conventions and don't repeat your self (DRY). Now there are more to follow. I will explain this using the small program from the [previous article][hexafour-09].
+I have already described two tips for readable code in an [earlier article][hexafour-05]: Follow coding conventions and don't repeat your self (DRY). Now there are more to follow. I will explain this using the small program from the [previous article][hexafour-09].
 
 ### YAGNI
 
-In this series of articles, we are developing a game. The game is far from finished. We are currently developing the code for drawing the game board. In the last article, we wrote a method for coloring the shapes on the game board. This looks nice, but we don't need it at the moment. The main thing is to have a functioning game in the first place. The colors are nice, maybe we could use them in the future, but right now it's just holding us up.  That's why we're leaving it out. We're applying the YAGNI principle, YAGNI stands for **"You aren't gonna need it."** According to [Wikipedia]([You aren't gonna need it - Wikipedia](https://en.wikipedia.org/wiki/You_aren't_gonna_need_it)), Ron Jeffries once described it like this:
+In this series of articles, we are developing a game. The game is far from finished. We are currently developing the code for drawing the game board. In the last article, we wrote a method for coloring the shapes on the game board. This looks nice, but we don't need it at the moment. The main thing is to have a functioning game in the first place. The colors are nice, maybe we could use them in the future, but right now it's just holding us up.  That's why we're leaving it out. We're applying the YAGNI principle, YAGNI stands for **"You aren't gonna need it."** According to [Wikipedia](https://en.wikipedia.org/wiki/You_aren't_gonna_need_it), Ron Jeffries once described it like this:
 
 > Always implement things when you actually need them, never when you just foresee that you need them.
 
@@ -45,7 +45,7 @@ In order to understand what is meant by this, it is necessary to clarify what is
 
 Two concerns of the game are presented here: 
 
-* On the one hand, the game has an *interface* that the user can see. In this world, there are blue, hexagonal tiles and a game board with gray, rhomboid borders. And it is important that the blue pieces are exactly the right size to fit between the gray rhombuses.
+* On the one hand, the game has a *user interface* that the user can see. In this world, there are blue, hexagonal tiles and a game board with gray, rhomboid borders. And it is important that the blue pieces are exactly the right size to fit between the gray rhombuses.
 * On the other hand, there is the *logic* of the game. The shape, color and size of the tiles are irrelevant here. The game board can be reduced to a grid of columns and rows. And the game pieces can move from one grid point to another according to certain rules.
 
 These are two different concerns, user interface and logic, which we should separate as well as possible according to the SoC principle.
@@ -54,13 +54,15 @@ These are two different concerns, user interface and logic, which we should sepa
 
 SRP stands for the **single responsibility principle**. [Wikipedia](https://en.wikipedia.org/wiki/Single_responsibility_principle) explains this principle with three different descriptions:
 
-> "A module should be responsible to one, and only one, actor" [...]
-> "A class should have only one reason to change" [...]
-> "Gather together the things that change for the same reasons. Separate those things that change for different reasons." [...]
+> A module should be responsible to one, and only one, actor [...]
+> 
+> A class should have only one reason to change [...]
+>
+> Gather together the things that change for the same reasons. Separate those things that change for different reasons. [...]
 
 There is also an article [The Single Responsibility Principle](https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html), in which Robert C. Martin, the originator of the term, describes what he means by it. In this article, Robert C. Martin speaks not only of "responsibilities", but also of "concerns". And the example he uses to explain the single responsibility principle could just as well be an explanation of the separation of concerns principle.
 
-So what is the difference between the "official" definitions of SoC and SRP? I don't know. In my interpretation, SoC is more about the bigger picture and SRP is more about aspects at the next level of detail. And for SRP, this explanation helps me the most: 
+So what is the difference between the "official" definitions of SoC and SRP? I don't know. In my interpretation, SoC is more about the bigger picture and SRP is more about aspects at the next level of detail. For SRP, this explanation helps me the most: 
 
 > Separate those things that change for different reasons.
 
@@ -87,7 +89,7 @@ To a certain extent, what you consider to be clean code also depends on your own
 
 We now apply the above principles to the HexaFour example from the [previous post][hexafour-09], and refactor the code.
 
-#### The Main Method is an integration method
+#### Main method is an integration method
 
 We rewrite the program a little bit:
 
@@ -204,7 +206,7 @@ private static void InitializeUserInterface(Configuration configuration, List<Bo
 
 This method receives all board elements created by the game logic and draws them on the screen.
 
-To do this, it must first register different types of shapes once under a name. For example like this:
+To do this, it must first register different types of shapes  under a name. For example like this:
 
 ```csharp
 public static void RegisterRhombusShape(double radius)
@@ -231,7 +233,7 @@ private static void DrawBoardElement(BoardElement boardElement, double radius)
         Shape = Shapes.Get(boardElement.Shape),
         Color = boardElement.FillColor
     };
-	// And so on, see code at the end of the previous post
+    // And so on, see code at the end of the previous post
 }
 ```
 
@@ -259,7 +261,7 @@ private record UserInput(bool CancelGame, int Slot);
 
 All that's missing now is the game itself.
 
-The entry looks like this for now:
+The entry into game logic looks like this for now:
 
 ```csharp
 private static void PlayTheGame(Configuration configuration)
@@ -305,17 +307,17 @@ We can take a look at which methods are now available and how they call each oth
 
 <img src="/assets/images/hexafour/MethodCallTree.png" alt="All methods indented according to their call depth. The code takes the IOSP principle into account: An operation method does not call any other method (with one exception)." style="zoom:78%;" />
 
-In this image, all *integration* methods are marked with an asterisk (*****), all other methods are *operation* methods. You can see that we have followed the IOSP principle relatively well here, only the method PlayTheGame does not fit, because this method is an operation method and therefore should not call any other methods. But from my point of view, this structure is good enough.
+In this image, all *integration* methods are marked with an asterisk ( * ), all other methods are *operation* methods. You can see that we have followed the IOSP principle relatively well here, only the method PlayTheGame does not fit, because this method is an operation method and therefore should not call any other methods. But from my point of view, this structure is good enough.
 
 All methods that deal with the user interface concern are highlighted in green. We have separated this concern well from the concern of game logic. The code therefore also follows the SoC principle
 
-What's the situation with SRP? On the one hand, the code is now divided into many methods and each method is only responsible for one thing. That should be good enough up to this point. But there is actually more to improve here, because all the code is in a single class. So this one class is responsible for all the different things. This does not fit with SRP. There should actually be more classes. But to do that, we first need to know how to define classes. I'll do that in one of the next articles.
+What's the situation with SRP? The code is now divided into many methods and each method is only responsible for one thing. That should be good enough up to this point. But there is actually more to improve here, because all the code is in a single class. So this one class is responsible for all the different things. This does not fit with SRP. There should actually be more classes. But to do that, we first need to know how to define classes. I'll do that in one of the next articles.
 
 The code is growing and becoming too large to describe in full in an article, but you can find all the code on [GitHub](https://github.com/FrankFK/HexaFour/tree/main/HexaFourV01) from now on. In the next post, I will describe a few basics about GitHub.
 
 ### TL;DR
 
-This post is part of a series. You can find the previous post [here][hexafour-09] and an overview [here][hexafour-overview].
+This post is part of a series. You can find the previous post [here][hexafour-09] and an overview [here][hexafour-01].
 
 Clean Code:
 
@@ -342,3 +344,4 @@ I am very interested in what readers think of this post and what ideas or questi
 [hexafour-08]: {% post_url 2023-11-19-hexafour-08-using-classes %}
 [hexafour-09]: {% post_url 2024-03-09-hexafour-09-define-methods %}
 
+[RobertCMartin]: https://en.wikipedia.org/wiki/Robert_C._Martin
