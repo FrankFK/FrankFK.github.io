@@ -2,7 +2,7 @@ title: "Frank Kruse"
 author: "Frank Kruse"
 email: "frank@woopec.net"
 
-description: "Enjoy learning to code with C# and Woopec-Graphics" # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+description: "Programming is fun. With clean code, the fun lasts longer." # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
 
 # minima:
 #  social_links:
@@ -37,7 +37,7 @@ theme: "minima"
 rss: rss
 
 # 02.04.2023: Diese url wird benoetigt, damit der jekyll-sitemap Generator eine sitemap.xml mit absoluten URLs generiert. Google moechte das so haben.
-url: "https://frank.woopec.net"
+url: "https://github.com/FrankFK/FrankFK.github.io"
     
 plugins:
   - jekyll-feed
@@ -50,12 +50,8 @@ titles_from_headings:
 
 header_pages:
   - blog.md
-  - woopec-docs-index.html
   - about.md
 
-collections:
-  woopec_docs:
-    output: true
 
 defaults:
   - 
