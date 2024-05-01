@@ -1,13 +1,13 @@
 ---
 layout: posts
-title: Sample Post 2
+title: Blogging with Markdown
 tags: GitHub Blogging
 excerpt_separator: <!--more-->
 ---
 
-This first paragraph is in the blog list.
+You can use Markdown (md) files to write blog articles.
 
 <!--more-->
 
-Everything from here on is not in the blog list.
+This is just a random text. Just to show what a blog looks like in GitHub.
 

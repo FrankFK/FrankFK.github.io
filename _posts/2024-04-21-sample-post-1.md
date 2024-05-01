@@ -1,11 +1,11 @@
 ---
 layout: posts
-title: Blogging with Markdown
+title: Blogging with GitHub is easy
 tags: GitHub Blogging
 excerpt_separator: <!--more-->
 ---
 
-You can use Markdown (md) files to write blog articles.
+With GitHub you can easily create your own blog.
 
 <!--more-->
 
