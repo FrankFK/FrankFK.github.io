@@ -1,1 +1,0 @@
-curl https://www.google.com/ping?sitemap=https://frank.woopec.net/sitemap.xml

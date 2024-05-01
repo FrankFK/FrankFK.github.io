@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Sample Post 2
-tags: Woopec.Graphics
+tags: GitHub Blogging
 excerpt_separator: <!--more-->
 ---
 
